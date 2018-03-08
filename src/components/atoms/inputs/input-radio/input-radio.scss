@@ -1,0 +1,82 @@
+@import '../../../../styles/sass/config';
+
+.input-radio {
+  background-color: #989cd8;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__input {
+    display: block;
+    width: rem(20px);
+    height: rem(20px);
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    -webkit-appearance: none;
+
+    &:focus + .input-radio__check {
+      background-color: rgba($color--beta, 0.7);
+    }
+
+    &:focus:checked + .input-radio__check,
+    &:checked + .input-radio__check {
+      background-color: rgba($color--beta, 0.7);
+      > .input-radio__check__icon {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &__check {
+    display: block;
+    width: rem(20px);
+    height: rem(20px);
+    background-color: $color--gamma;
+    margin-right: $gutter-half;
+    border-radius: rem(2px);
+    cursor: pointer;
+    position: relative;
+    // border: 3px solid $color--gamma;
+
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   width: rem(14px);
+    //   height: rem(14px);
+    //   border-radius: rem(2px);
+    //   // margin: 3px;
+    //   border: 3px solid rgba($color--beta, 0.7);
+    //   // background-color: rgba($color--beta, 0.7);
+    //   left: 0px;
+    //   top: 0px;
+    // }
+
+    &__icon {
+      display: block;
+      position: absolute;
+      bottom: -#{rem(1px)};
+      opacity: 0;
+      transition: 0.2s opacity $transition-ease-opacity;
+    }
+  }
+
+  &--has-error {
+    color: $text-color--error;
+  }
+
+  &--is-disabled {
+    opacity: 0.5;
+  }
+
+}

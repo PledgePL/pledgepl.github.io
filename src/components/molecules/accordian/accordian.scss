@@ -1,0 +1,17 @@
+@import '../../../styles/sass/config';
+
+.accordian {
+
+  width: 100%;
+
+  &__item {
+    margin: gutter(1) 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}

@@ -1,0 +1,47 @@
+@import '../../../styles/sass/config';
+
+.accordian-item {
+
+  width: 100%;
+  overflow: visible;
+
+  &__title {
+    position: relative;
+    &::-webkit-details-marker {
+      display: none
+    }
+  }
+
+  &__body {
+    overflow: hidden;
+    height: 0;
+    padding-left: calc(10px + #{gutter(0.5)});
+    // margin-bottom: gutter(1);
+    transition-duration: $transition-duration-rotate;
+    transition-timing-function: $transition-ease-rotate;
+    transition-property: height;
+
+    img {
+    	max-width: 100%;
+    	height: auto;
+    }
+
+
+    &__measure {
+      padding: gutter(0.75) 0 gutter(0.75);
+      overflow: hidden;
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &[open],
+  &--open {
+    .accordian-item__body {
+      height: auto;
+    }
+  }
+
+}

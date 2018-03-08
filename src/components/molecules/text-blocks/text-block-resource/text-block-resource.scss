@@ -1,0 +1,23 @@
+@import '../../../../styles/sass/config';
+
+.text-block-resource {
+
+  &__icon {
+    display: block;
+    margin: 0 0 gutter(1) 0;
+    text-align: center;
+  }
+
+  &__title {
+    display: block;
+    text-align: left;
+  }
+
+  &__body {
+    display: block;
+    margin: 0 0 0 0;
+    text-align: left;
+  }
+
+
+}

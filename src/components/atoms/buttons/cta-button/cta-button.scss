@@ -1,0 +1,111 @@
+@import '../../../../styles/sass/config';
+
+.cta-button {
+	position: relative;
+	background-color: $color--beta;
+	color: $text-color--beta;
+	display: inline-block;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	width: auto;
+	min-height: rem(66px);
+	border-radius: rem(33px);
+	@include baseline($fontsize: theta, $below: 0, $lineheight: 1);
+  text-transform: uppercase;
+  letter-spacing: rem(1px);
+	transition: all 0.5s linear;
+
+	&:hover {
+		background-color: #83CECC;
+  	color: #FFFFFF;
+	}
+
+	&__label {
+		flex: 0 0 auto;
+		display: block;
+		padding: gutter(0.75) gutter(1.5);
+		min-width: rem(200px);
+		white-space: nowrap;
+	}
+
+	&__loading {
+		line-height: 0;
+		flex: 0 0 auto;
+		display: block;
+		padding: gutter(0.75) gutter(1);
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	&__label + &__loading {
+		padding: gutter(0.75) gutter(0.75) gutter(0.75) 0;
+	}
+
+  &--size-large {
+
+    @include baseline($fontsize: iota, $below: 0, $lineheight: 1);
+		line-height: calc(#{rem(66px)} - #{gutter(1.5)});
+
+		@include media-query(sm) {
+			@include baseline($fontsize: eta, $below: 0, $lineheight: 1);
+			line-height: calc(#{rem(66px)} - #{gutter(1.5)});
+		}
+  }
+
+	&--size-small {
+		min-height: rem(46px);
+		border-radius: rem(46px);
+    @include baseline($fontsize: iota, $below: 0, $lineheight: 1);
+		line-height: calc(#{rem(66px)} - #{gutter(1.5)});
+
+		.cta-button__label {
+			min-width: rem(120px);
+			padding: gutter(0.25) gutter(1.25);
+		}
+  }
+
+	&--size-extra-small {
+		min-height: rem(36px);
+		border-radius: rem(36px);
+    @include baseline($fontsize: iota, $below: 0, $lineheight: 1);
+		text-transform: none;
+
+		.cta-button__label {
+			min-width: rem(100px);
+			padding: gutter(0.25) gutter(.75);
+		}
+  }
+
+	&--modifier-alpha {
+		background-color: transparent;
+		color: $text-color--gamma;
+		&:hover {
+			background-color: transparent;
+	  	color: $text-color--alpha;
+		}
+	}
+
+	&--modifier-beta {
+		background-color: $color--gamma;
+		color: $color--alpha;
+		&:hover {
+			background-color: $color--gamma;
+			color: $color--alpha;
+		}
+	}
+
+	&--is-loading {
+		padding-right: gutter(3);
+	}
+
+	&--width-100 {
+		width: 100%;
+	}
+}

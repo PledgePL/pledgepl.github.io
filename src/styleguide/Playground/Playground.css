@@ -1,0 +1,15 @@
+.root {
+	/*composes: border from "../../../node_modules/react-styleguidist/src/styles/colors.css";*/
+  border: 1px solid #F1F1F1;
+	overflow: hidden;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+
+.editor {
+}
+
+.preview {
+	margin-bottom: 3px;
+	padding: 15px;
+}

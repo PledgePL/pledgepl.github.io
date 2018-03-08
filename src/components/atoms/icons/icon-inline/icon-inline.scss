@@ -1,0 +1,74 @@
+@import '../../../../styles/sass/config';
+
+.icon-inline {
+  display: inline-block;
+  position: relative;
+  padding: 0px gutter(1);
+  margin: 0 auto;
+  text-indent: 100%;
+  overflow: hidden;
+  vertical-align: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+
+  &--lightbulb {
+    background-image: url('./lightbulb.svg');
+    width: rem(64px);
+    height: rem(68px);
+  }
+
+  &--building {
+    background-image: url('./building.svg');
+    width: rem(52px);
+    height: rem(69px);
+  }
+
+  &--people {
+    background-image: url('./people.svg');
+    width: rem(59px);
+    height: rem(58px);
+  }
+
+  &--graph {
+    background-image: url('./graph.svg');
+    width: rem(75px);
+    height: rem(75px);
+  }
+
+  &--briefcase {
+    background-image: url('./briefcase.svg');
+    width: rem(75px);
+    height: rem(75px);
+  }
+
+  &--money {
+    background-image: url('./money.svg');
+    width: rem(75px);
+    height: rem(75px);
+  }
+
+  &--shield {
+    background-image: url('./shield.svg');
+    width: rem(75px);
+    height: rem(75px);
+  }
+
+  &--eye {
+    background-image: url('./eye.svg');
+    width: rem(75px);
+    height: rem(75px);
+  }
+
+  &--paper {
+    background-image: url('./paper.svg');
+    width: rem(75px);
+    height: rem(75px);
+  }
+
+  &--stack {
+    background-image: url('./stack.svg');
+    width: rem(75px);
+    height: rem(75px);
+  }
+}

@@ -1,0 +1,94 @@
+@import '../../../../styles/sass/config';
+
+@keyframes dash {
+  to {
+    stroke-dasharray: 100;
+  }
+}
+
+@keyframes play-button-icon-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.play-button {
+  position: relative;
+	cursor: pointer;
+	border: none;
+  background-color: transparent;
+  color: $text-color--beta;
+  fill: $text-color--beta;
+  line-height: 1;
+  margin: 0;
+
+  &__icon {
+    display: inline-block;
+    width: rem(51.48px);
+    height: rem(51.48px);
+    transform-origin: center;
+    vertical-align: middle;
+
+    &__outline {
+      stroke-dasharray: 150;
+      stroke: $text-color--beta;
+    }
+
+    &__triangle {
+
+      &--filled {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__spinner {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__label {
+    display: none;
+    line-height: 1;
+    margin-top: -1px;
+    vertical-align: middle;
+    line-height: rem(51.48px);
+    @include media-query(md) {
+      display: inline-block;
+      height: 100%;
+    }
+  }
+
+  &__icon + &__label {
+    margin-left: gutter(0.5);
+  }
+
+  &__spinner + &__label {
+    margin-left: gutter(0.5);
+  }
+
+  &:hover, &:active {
+    .play-button__icon__triangle--filled {
+      opacity: 1;
+    }
+  }
+
+  &--loading {
+
+    .play-button__icon {
+      animation: play-button-icon-rotate 0.7s linear infinite;
+      animation-fill-mode: forwards;
+    }
+
+    .play-button__icon__outline {
+      animation: dash 0.3s ease('out-sine');
+      animation-fill-mode: forwards;
+    }
+
+    .play-button__icon__triangle {
+      opacity: 0!important;
+    }
+
+
+  }
+}

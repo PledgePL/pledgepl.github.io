@@ -1,0 +1,8 @@
+@import '../../../styles/sass/config';
+
+.block-tile {
+  // @include aspect-ratio(1, 1);
+  @include media-query(md) {
+    @include aspect-ratio(1, 1);
+  }
+}

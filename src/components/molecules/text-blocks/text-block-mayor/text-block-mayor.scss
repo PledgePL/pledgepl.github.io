@@ -1,0 +1,18 @@
+@import '../../../../styles/sass/config';
+
+.text-block-mayor {
+  text-align: center;
+  padding-bottom: gutter(1);
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    background-color: $color--gamma;
+    width: rem(100px);
+    height: rem(3px);
+    left: 50%;
+    margin-left: -#{rem(50px)};
+  }
+}

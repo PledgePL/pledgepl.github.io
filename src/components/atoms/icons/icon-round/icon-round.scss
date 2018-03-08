@@ -1,0 +1,45 @@
+@import '../../../../styles/sass/config';
+
+.icon-round {
+  display: block;
+  position: relative;
+  background-color: #989cd8;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 12px 0 0 0;
+  margin: 0 auto;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+
+  }
+
+  &--logo:after {
+    background-image: url('./icon-round--logo.svg');
+  }
+
+  &--megaphone:after {
+    background-image: url('./icon-round--megaphone.svg');
+  }
+
+  &--envelope:after {
+    background-image: url('./icon-round--envelope.svg');
+  }
+
+  &--chart:after {
+    background-image: url('./icon-round--chart.svg');
+  }
+
+  &--download:after {
+    background-image: url('./icon-round--download.svg');
+  }
+}

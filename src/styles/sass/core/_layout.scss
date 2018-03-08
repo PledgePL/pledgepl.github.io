@@ -1,0 +1,15 @@
+
+@include generate-breakpoint-prefixes {
+  &u-text-align-left {
+    text-align: left;
+  }
+
+  &u-text-align-right {
+    text-align: right;
+  }
+
+  &u-text-align-center {
+    text-align: center;
+  }
+  
+}

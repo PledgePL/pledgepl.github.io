@@ -1,0 +1,214 @@
+// SCSS mixins
+// ---------------------------------------
+
+
+$ease: (
+  in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530),
+  in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190),
+  in-quart:     cubic-bezier(0.895,  0.030, 0.685, 0.220),
+  in-quint:     cubic-bezier(0.755,  0.050, 0.855, 0.060),
+  in-sine:      cubic-bezier(0.470,  0.000, 0.745, 0.715),
+  in-expo:      cubic-bezier(0.950,  0.050, 0.795, 0.035),
+  in-circ:      cubic-bezier(0.600,  0.040, 0.980, 0.335),
+  in-back:      cubic-bezier(0.600, -0.280, 0.735, 0.045),
+  out-quad:     cubic-bezier(0.250,  0.460, 0.450, 0.940),
+  out-cubic:    cubic-bezier(0.215,  0.610, 0.355, 1.000),
+  out-quart:    cubic-bezier(0.165,  0.840, 0.440, 1.000),
+  out-quint:    cubic-bezier(0.230,  1.000, 0.320, 1.000),
+  out-sine:     cubic-bezier(0.390,  0.575, 0.565, 1.000),
+  out-expo:     cubic-bezier(0.190,  1.000, 0.220, 1.000),
+  out-circ:     cubic-bezier(0.075,  0.820, 0.165, 1.000),
+  out-back:     cubic-bezier(0.175,  0.885, 0.320, 1.275),
+  in-out-quad:  cubic-bezier(0.455,  0.030, 0.515, 0.955),
+  in-out-cubic: cubic-bezier(0.645,  0.045, 0.355, 1.000),
+  in-out-quart: cubic-bezier(0.770,  0.000, 0.175, 1.000),
+  in-out-quint: cubic-bezier(0.860,  0.000, 0.070, 1.000),
+  in-out-sine:  cubic-bezier(0.445,  0.050, 0.550, 0.950),
+  in-out-expo:  cubic-bezier(1.000,  0.000, 0.000, 1.000),
+  in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860),
+  in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550)
+);
+
+@function ease($key) {
+  @if map-has-key($ease, $key) {
+    @return map-get($ease, $key);
+  }
+
+  @warn "Unkown '#{$key}' in $ease.";
+  @return null;
+}
+
+@mixin rootsize {
+  // @include media-query(md) {
+  //   font-size: $rootsize / 16 * 100%;
+  // }
+  // font-size: 100%;
+
+
+    font-size: ($rootsize * 0.75) / 16 * 100%;
+    @include media-query(md) {
+      font-size: ($rootsize * 1) / 16 * 100%;
+    }
+
+    // @include respond-to(mobile) {
+    //   font-size: ($rootsize * .80) / 16 * 100%;
+    // }
+}
+
+// Value in scale in $modular-scale?
+// Used in following fontsize mixin.
+@function in-modular-scale($key) {
+  $output: map-has-key($modular-scale, $key);
+  @return $output;
+}
+
+@function strip-units($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function rem($value) {
+  @return (strip-units($value) / $rootsize) + rem;
+}
+
+@function gutter($lines) {
+  @return vr($lines);
+}
+
+@function vr($lines) {
+  @return ($lines*2) + rem;
+}
+
+
+// Font-size in rems. Either set per breakpoint or for all.
+// Use values as you would for pixels i.e. 16 or use values from the modular scale.
+@function fontsize($fontsize) {
+  // Type of chosen variables.
+  $font-value: type-of($fontsize);
+
+  // Check if value exists in scale.
+  $in-scale: in-modular-scale($fontsize);
+
+  // If using a number for fontsize.
+  @if $font-value == number {
+    @return rem($fontsize);
+
+  // If using a variable from the scale for fontsize.
+  } @else if $in-scale == true {
+    // $get-scale: map-get($modular-scale, scale-0);
+    $get-size: map-get($modular-scale, $fontsize);
+    @return rem($get-size);
+
+  } @else {
+    @warn "#{$fontsize} is not a valid scale variable";
+  }
+}
+
+// Advanced baseline magic.
+// ! Read the README to help understand what is going on here.
+// Parts based on https://gist.github.com/razwan/10662500
+@mixin baseline($fontsize, $lineheight: null, $above: 0, $below: 2) {
+  $in-scale: in-modular-scale($fontsize);
+  font-size: fontsize($fontsize);
+
+  $line-height-scale: 1.5;//($rootsize*2)/16; // should be 1.5
+
+  // If using a number for fontsize.
+  @if $in-scale == true {
+
+    $get-size: map-get($modular-scale, $fontsize);
+
+    // round to nearest 0.5
+    $lines: floor(($get-size / $rootsize) * $line-height-scale * 2 ) / 2;
+    line-height: vr($lines / 2);
+    margin-bottom: trailer($below);
+
+  } @else {
+    @warn "#{$fontsize} is not a valid scale variable";
+  }
+
+
+}
+
+@function leading($fontsize) {
+  $in-scale: in-modular-scale($fontsize);
+  $line-height-scale: 1.5;//($rootsize*2)/16; // should be 1.5
+
+  // If using a number for fontsize.
+  @if $in-scale == true {
+
+    $get-size: map-get($modular-scale, $fontsize);
+
+    // round to nearest 0.5
+    $lines: floor(($get-size / $rootsize) * $line-height-scale * 2 ) / 2;
+    @return vr($lines / 2);
+
+  } @else {
+    @warn "#{$fontsize} is not a valid scale variable";
+  }
+
+
+}
+
+@function trailer($below: 0) {
+  @return vr($below/2);
+}
+
+
+
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > div,
+  > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+
+// returns the apropriate media query
+// for the given breakpoint name
+@mixin media-query($breakpoint) {
+  @if (map-get($breakpoints, $breakpoint)) == null {
+    @content;
+  } @else {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+}
+
+// nest content inside breakpoint prefix classes
+// in the apropriate media query block
+@mixin generate-breakpoint-prefixes {
+  @if ($generate-responsive-classes == true) {
+    // generate prefixed classes
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    $breakpoint-prefix: "#{$breakpoint-name}-";
+
+    @include media-query($breakpoint-name) {
+      // Columns
+      .#{$breakpoint-prefix} {
+        @content;
+      }
+    }
+   }
+  } @else {
+    // only return xs styles
+   .xs- { @content; }
+  }
+}

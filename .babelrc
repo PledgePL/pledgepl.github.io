@@ -1,0 +1,19 @@
+{
+    "presets": [
+        ["es2015", {
+            "modules": false
+        }], "react", "stage-0"
+    ],
+    "plugins": [
+      "lodash",
+      "transform-decorators-legacy",
+      "transform-runtime",
+      "transform-object-assign",
+      "react-require"],
+    "env": {
+        "development": {},
+        "gulp": {
+            "presets": ["es2015", "react", "stage-0"]
+        }
+    }
+}

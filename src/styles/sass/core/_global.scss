@@ -1,0 +1,137 @@
+::selection {
+	background-color: rgb(233, 236, 238);
+}
+::-moz-selection {
+	background-color: rgb(233, 236, 238);
+}
+* {
+	padding: 0;
+	margin: 0;
+	// position: relative;
+	box-sizing: border-box;
+	outline-color: #6b7074;
+	// outline: none;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	// -webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	// transition: background-color 0.5s, opacity 0.3s;
+
+}
+
+section {
+	width: 100%;
+	display: block;
+	z-index: 10;
+	clear: both;
+}
+// h1 {
+// 	font-family: 'Roboto Slab', serif;
+// 	font-size: 32px;
+// 	font-weight: 500;
+// 	line-height: 1em;
+// 	margin-bottom: 1em;
+// }
+// h2 {
+// 	font-family: 'Roboto Slab', serif;
+// 	font-size: 30px;
+// 	font-weight: 300;
+// 	line-height: 1.3em;
+// 	margin-bottom: 1em;
+// }
+// h3 {
+// 	font-size: 16px;
+// 	font-weight: 300;
+// 	line-height: 1.6em;
+// 	margin-bottom: 1em;
+// }
+// h4 {
+// 	font-size: 13px;
+// 	letter-spacing: 0.1em;
+// 	text-transform: uppercase;
+// 	font-weight: 300;
+// 	margin-bottom: 0.6em;
+// 	color: #858A8E;
+// }
+a.button {
+	font-size: 13px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	font-weight: 300;
+	background-color: #6ac3c1;
+	color: #FFFFFF!important;
+	display: inline-block;
+	font-family: 'Roboto', serif;
+	line-height: 3.6em;
+	text-align: center;
+	cursor: pointer;
+	letter-spacing: 0.1em;
+	outline: none;
+	border: none;
+	padding: 0 30px;
+	border-radius: 100px;
+	&:hover {
+		background-color: #83CECC;
+	}
+}
+input#submit {
+	font-size: 13px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	font-weight: 300;
+	background-color: #6ac3c1;
+	color: #FFFFFF;
+	display: inline-block;
+	font-family: 'Roboto', serif;
+	line-height: 3.6em;
+	text-align: center;
+	cursor: pointer;
+	letter-spacing: 0.1em;
+	outline: none;
+	border: none;
+	padding: 0 30px;
+	border-radius: 100px;
+	&:hover {
+		background-color: #83CECC;
+	}
+}
+a {
+	color: #6ac3c1;
+	text-decoration: none;
+	&:hover {
+		color: #6ac3c1;
+		text-decoration: none;
+	}
+	&:active {
+		color: #6ac3c1;
+		text-decoration: none;
+	}
+}
+a.button.secondary {
+	background-color: #ACBFD2;
+	&:hover {
+		background-color: #BDCCDB;
+	}
+}
+// .left {
+// 	float: left;
+// }
+// .right {
+// 	float: right;
+// }
+// .clear {
+// 	clear: both;
+// }
+.show {
+	display: block!important;
+  transform: none;
+}
+.hide {
+	display: none;
+}
+.container {
+	z-index: 1;
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}

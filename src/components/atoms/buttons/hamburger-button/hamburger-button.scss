@@ -1,0 +1,65 @@
+@import '../../../../styles/sass/config';
+
+.hamburger-button {
+	margin: 0;
+	-webkit-button-appearance: none;
+	border: 0;
+	background-color: transparent;
+	padding: gutter(1) gutter(1);
+	margin-right: -#{gutter(1)};
+	display: inline-block;
+	&__line {
+		display: block;
+		height: 6px;
+		width: 36px;
+		background: #FFFFFF;
+		position: relative;
+		transition: 0.2s;
+		&:before {
+			content: '';
+			position: absolute;
+			top: -12px;
+			left: 0;
+			width: 36px;
+			height: 6px;
+			background: #FFFFFF;
+			transition: 0.2s;
+
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 12px;
+			left: 0;
+			width: 36px;
+			height: 6px;
+			background: #FFFFFF;
+			transition: 0.2s;
+		}
+	}
+
+	&--active {
+		.hamburger-button__line {
+			background-color: transparent;
+		}
+		.hamburger-button__line:before {
+			transform: rotate(45deg);
+			top: 0;
+		}
+		.hamburger-button__line:after {
+			transform: rotate(-45deg);
+			top: 0;
+		}
+	}
+	// span.active {
+	// 	background: transparent;
+	// 	&:before {
+	// 		-webkit-transform: rotate(45deg);
+	// 		top: 0;
+	// 	}
+	// 	&:after {
+	// 		-webkit-transform: rotate(-45deg);
+	// 		top: 0;
+	// 	}
+	// }
+}

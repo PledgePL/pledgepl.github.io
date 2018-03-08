@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <polygon id="Fill-8" fill="#FFFFFF" points="12 27 15 27 15 15 12 15"></polygon>
+            <path d="M13.4649561,10 C12.2839561,10 11.3299561,10.956 11.3299561,12.133 C11.3299561,13.31 12.2839561,14.266 13.4649561,14.266 C14.6409561,14.266 15.5959561,13.31 15.5959561,12.133 C15.5959561,10.956 14.6409561,10 13.4649561,10" id="Fill-10" fill="#FFFFFF"></path>
+            <path d="M21.226,18.0769 L21,18.0769 L21,15.0769 L17,15.0769 L17,27.0769 L21,27.0769 L21,21.6029 C21,20.0599 21.234,18.5639 23.147,18.5639 C25.034,18.5639 25,20.3289 25,21.7009 L25,27.0769 L29,27.0769 L29,20.9659 C29,17.7789 28.371,15.7479 24.646,15.7479 C22.857,15.7479 21.717,17.0769 21.226,18.0769 Z" id="Fill-11" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

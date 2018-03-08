@@ -1,0 +1,23 @@
+@import '../../../styles/sass/config';
+
+.resource-card {
+
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: $color--gamma;
+  border: 1px solid $color--alpha;
+  padding: gutter(2);
+  overflow: hidden;
+  flex: 1 0 auto;
+
+  @include respond-to(mobile) {
+    padding: gutter(1);
+  }
+
+  &__icon {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+}

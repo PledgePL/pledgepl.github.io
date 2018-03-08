@@ -1,0 +1,61 @@
+@import "../../../styles/sass/main";
+
+.template-app {
+  overflow: hidden;
+  min-height: 100vh;
+  will-change: background-color;
+  background-color: #FFF;
+}
+
+.template-app__header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+}
+
+.template-app__loading {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 201;
+}
+
+.template-app__loading__bar {
+  position: absolute;
+  background-color: $color--delta;
+  height: rem(5px);
+}
+
+.template-app__body__transition {
+  overflow: hidden;
+  &__child {
+    transform: translateZ(0);
+    position: relative;
+  }
+}
+
+.example-enter {
+  opacity: 0.01;
+  transition: opacity 0.3s ease-out 0.1s;
+  will-change: opacity;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+}
+
+.example-leave {
+  opacity: 1;
+  // transition: opacity 3s linear 0s;
+  // will-change: opacity;
+}
+
+.example-leave.example-leave-active {
+  // opacity: 0;
+}

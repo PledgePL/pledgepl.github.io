@@ -1,0 +1,72 @@
+@import '../../../styles/sass/config';
+
+$spinner-size: 30;
+
+
+@function pi() {
+  @return 3.14159265359;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+        stroke-dashoffset: (0.66 * $spinner-size);
+    } 50% {
+        transform: rotate(720deg);
+        stroke-dashoffset: (pi() * 0.85 * $spinner-size);
+    } 100% {
+        transform: rotate(1080deg);
+        stroke-dashoffset: (0.66 * $spinner-size);
+    }
+}
+
+
+@keyframes spinnerlarge {
+    0% {
+        transform: rotate(0deg);
+        stroke-dashoffset: (0.66 * 51.48);
+    } 50% {
+        transform: rotate(720deg);
+        stroke-dashoffset: (pi() * 0.85 * 51.48);
+    } 100% {
+        transform: rotate(1080deg);
+        stroke-dashoffset: (0.66 * 51.48);
+    }
+}
+
+.spinner {
+    display: inline-block;
+    width: $spinner-size+ px;
+    height: $spinner-size + px;
+    x: 0px;
+    y: 0px;
+    transform: translateZ(0);
+
+    &__outline {
+        fill: transparent;
+        stroke: $text-color--beta;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-dasharray: (pi() * 0.85 * $spinner-size);
+        transform-origin: (0.5px * $spinner-size) (0.5px * $spinner-size) 0;
+        animation: spinner 2s linear infinite;
+    }
+}
+
+
+.spinner.spinner--size-large {
+  display: inline-block;
+  width: 51.48px;
+  height: 51.48px;
+  x: 0px;
+  y: 0px;
+  .spinner__outline {
+    fill: transparent;
+    stroke: $text-color--beta;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: (pi() * 0.85 * 51.48);
+    transform-origin: (0.5px * 51.48) (0.5px * 51.48) 0;
+    animation: spinnerlarge 2s linear infinite;
+  }
+}

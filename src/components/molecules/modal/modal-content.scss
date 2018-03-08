@@ -1,0 +1,44 @@
+@import '../../../styles/sass/config';
+.m-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+
+  &__inner {
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(#989cd8, 0.95);
+    }
+
+    flex: 1 1 100%;
+		width: 100%;
+		// max-width: $max-width;
+    padding: $gutter $gutter-double;
+
+    display: flex;
+    align-items: center;
+
+    &__dialog {
+      flex: 0 0 auto;
+      text-align: center;
+      z-index: 1;
+  		width: 100%;
+  		max-width: $max-width;
+  		margin: 0 auto;
+      position: relative;
+    }
+
+  }
+}

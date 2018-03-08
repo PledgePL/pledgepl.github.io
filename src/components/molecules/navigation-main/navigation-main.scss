@@ -1,0 +1,25 @@
+@import '../../../styles/sass/config';
+
+.navigation-main {
+
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    margin: gutter(1);
+    @media screen and ( max-height: 440px ){
+      margin: gutter(0.25);
+    }
+  }
+
+  @include media-query(md) {
+    flex-direction: row;
+    margin: 0 gutter(1);
+  }
+
+}

@@ -1,0 +1,54 @@
+@import '../../../../styles/sass/config';
+
+.text-block-quote {
+  position: relative;
+  display: inline-block;
+  min-height: rem(100px);
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: 111px 82px;
+  padding: gutter(1) 0;
+  fill: lighten($color--beta, 28%);
+
+  &__content {
+    z-index: 1;
+    position: relative;
+  }
+
+  &__quote,
+  &--quote-right .text-block-quote__quote {
+    display: block;
+    width: 30%;
+    height: 82px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform-origin: 50% 50%;
+    z-index: 0;
+    max-width: 80px;
+  }
+
+  &--quote-left {
+    .text-block-quote__quote {
+      top: 0;
+      left: 0;
+      right: auto;
+      bottom: auto;
+      transform: rotateZ(180deg);
+      z-index: 0;
+    }
+
+  }
+
+  &--quote-alpha {
+    fill: $color--alpha;
+  }
+
+  &--quote-beta {
+    fill: lighten($color--alpha, 14%);
+  }
+
+  &--quote-gamma {
+    fill: $color--gamma;
+  }
+}

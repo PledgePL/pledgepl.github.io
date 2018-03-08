@@ -1,0 +1,35 @@
+@import "./config";
+
+.ReactStyleguidist-Layout__root {
+
+  .ReactStyleguidist-Layout__content {
+  max-width: 1200px + 60px;
+  padding: 0px 30px;
+  }
+}
+
+.ReactStyleguidist-colors__base-bg {
+  background: #FFF;
+}
+
+.ReactStyleguidist-colors__base {
+  color: $text-color--alpha;
+}
+
+
+.ReactStyleguidist-Playground__root {
+
+  .ReactStyleguidist-Playground__preview {
+    background: #F1F1F1;
+    margin-bottom: 0px;
+  }
+
+}
+//
+// .ReactStyleguidist-Editor__root {
+//
+//   .CodeMirror {
+//     background-color: #FFF!important;
+//   }
+//
+// }

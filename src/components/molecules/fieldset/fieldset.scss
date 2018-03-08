@@ -1,0 +1,41 @@
+@import '../../../styles/sass/config';
+
+.fieldset {
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  &__legend__description {
+    display: block;
+
+    &,
+    &:hover {
+      color: $text-color--beta;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__legend__error {
+    display: block;
+  }
+
+  &--has-error {
+    .fieldset__legend__error {
+      color: $text-color--error;
+    }
+  }
+
+  &__body__item {
+    margin: gutter(1) 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

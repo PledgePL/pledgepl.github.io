@@ -1,0 +1,21 @@
+@import '../../../../styles/sass/config';
+
+.logo-button {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &--size-large > .logo-button__image  {
+  }
+
+  & > .logo-button__image,
+  &--size-medium > .logo-button__image  {
+    width: rem(130px);
+    height: rem(56px);
+  }
+
+  &.logo-button--size-small > .logo-button__image {
+    width: rem(100px);
+    height: rem(43px);
+  }
+}

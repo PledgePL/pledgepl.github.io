@@ -1,0 +1,46 @@
+@import '../../../../styles/sass/config';
+
+.benefit-layout {
+
+  width: 100%;
+  // overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &__icon {
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    flex: 0 1 auto;
+  }
+
+  &__title {
+    flex: 0 0 auto;
+  }
+
+  &__content {
+    flex: 0 0 auto;
+
+    > *,
+    & {
+
+      // hack to make the font size dynamic to view width
+      @include media-query(md) {
+        line-height: 1.5!important;
+        font-size: 1.7vw!important;
+        @include media-query(lg) {
+          font-size: 1.10vw!important;
+          @include media-query(xl) {
+            font-size: initial!important;
+            line-height: initial!important;
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,30 @@
+@import '../../../../styles/sass/config';
+
+.section-partners {
+  width: 100%;
+  background-color: $color--gamma;
+  color: $text-color--alpha;
+  overflow: hidden;
+  margin: gutter(3) auto gutter(3);
+
+  &__content {
+    margin: 0 auto 0 auto;
+    padding: 0 gutter(1);
+    width: 100%;
+    max-width: rem(1200px);
+
+    &__title {
+      text-align: center;
+      margin: 0 auto gutter(2);
+      width: 100%;
+    }
+
+    &__grid {
+      margin: gutter(2) auto;
+      width: 100%;
+      max-width: rem(1000px);
+    }
+
+  }
+
+}

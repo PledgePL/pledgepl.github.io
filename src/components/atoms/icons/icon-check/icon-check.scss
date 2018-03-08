@@ -1,0 +1,89 @@
+@import '../../../../styles/sass/config';
+
+.icon-check {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 20px;
+
+  &--has-background:before {
+    content: '';
+    position: absolute;
+    width: rem(20px);
+    height: rem(20px);
+    background-color: $color--gamma;
+    border-radius: rem(2px);
+  }
+
+  &__content {
+    display: block;
+  	top: 0px;
+  	left: 2px;
+  	width: 12px;
+  	height: 5px;
+  	-ms-transform: rotate(45deg);
+  	-webkit-transform: rotate(45deg);
+  	transform: rotate(45deg) translate(-10px, -10px);
+  	opacity: 1;
+  	transition: opacity 500ms ease;
+  	&::before {
+  		position: absolute;
+  		content: '';
+  		left: 25px;
+  		width: 5px;
+  		height: 18px;
+  		background-color: $color--gamma;
+  		top: 2px;
+  	}
+  	&::after {
+  		position: absolute;
+  		content: '';
+  		top: 17px;
+  		left: 18px;
+  		width: 12px;
+  		height: 5px;
+  		background-color: $color--gamma;
+  	}
+  }
+
+  &--size-large {
+    width: rem(34px);
+    height: rem(34px);
+
+    &.icon-check--has-background {
+
+      &:before {
+        width: rem(34px);
+        height: rem(34px);
+        border-radius: rem(4px);
+      }
+
+    }
+
+    .icon-check__content {
+      display: block;
+    	top: 0px;
+    	left: -4px;
+    	width: 12px;
+    	height: 5px;
+    	&::before {
+    		left: 42px;
+    		width: 6px;
+    		height: 34px;
+    		top: -12px;
+    	}
+    	&::after {
+    		top: 16px;
+    		left: 30px;
+    		width: 16px;
+    		height: 6px;
+    	}
+    }
+
+
+
+  }
+
+
+
+}

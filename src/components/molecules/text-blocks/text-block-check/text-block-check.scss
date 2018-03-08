@@ -1,0 +1,22 @@
+@import '../../../../styles/sass/config';
+
+.text-block-check {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+
+
+  &__icon {
+    flex: 0 0 auto;
+    margin-right: vr(1);
+    margin-top: vr(0.25);
+  }
+
+  &__content {
+
+    flex: 1 1 100%;
+
+  }
+}

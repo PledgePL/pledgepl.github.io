@@ -1,0 +1,27 @@
+@import '../../../styles/sass/config';
+.modal-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in 0.5s;
+}
+
+.modal-enter.modal-enter-active {
+	opacity: 1;
+}
+
+.modal-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.modal-leave.modal-leave-active {
+  opacity: 0.01;
+}
+
+.modal-appear {
+  opacity: 0.01;
+}
+
+.modal-appear.modal-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}

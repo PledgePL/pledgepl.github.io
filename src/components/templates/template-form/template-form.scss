@@ -1,0 +1,14 @@
+@import '../../../styles/sass/config';
+
+.template-form {
+
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color--alpha;
+  padding-top: rem(80px);
+
+  &__item {
+
+  }
+
+}

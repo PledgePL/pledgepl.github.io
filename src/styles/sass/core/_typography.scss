@@ -1,0 +1,601 @@
+
+/*
+Styleguide Base - Typography
+*/
+
+body {
+  font-family: map-get($bodytype, font-family);
+  font-style: normal;
+  font-weight: map-get($bodytype, regular);
+  line-height: 2rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0px;
+  margin: 0px;
+  // -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  // -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  // -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  // -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  // font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend .text-font--heading;
+}
+
+p, small {
+  @extend .text-font--body;
+}
+
+h1 {
+  @extend .text-size-1;
+}
+
+h2 {
+  @extend .text-size-2;
+}
+
+h3 {
+  @extend .text-size-3;
+}
+
+h4 {
+  @extend .text-size-4;
+}
+
+h5 {
+  @extend .text-size-5;
+}
+
+h6 {
+  @extend .text-size-6;
+}
+
+p {
+  @extend .text-size-7;
+}
+
+small {
+  @extend .text-size-9;
+}
+
+button {
+  @extend .text-size-7;
+}
+
+input {
+  @extend .text-size-7;
+}
+
+.text-size-xxl {
+
+  &.text-size-xxl--trailer-0 {
+    @include baseline($fontsize: xxl, $below: 0);
+  }
+
+  &,
+  &.text-size-xxl--trailer-1 {
+    @include baseline($fontsize: xxl, $below: 1);
+  }
+
+  &.text-size-xxl--trailer-2 {
+    @include baseline($fontsize: xxl, $below: 2);
+  }
+
+}
+
+
+.text-size-xl {
+
+  &.text-size-xl--trailer-0 {
+    @include baseline($fontsize: xl, $below: 0);
+  }
+
+  &,
+  &.text-size-xl--trailer-1 {
+    @include baseline($fontsize: xl, $below: 1);
+  }
+
+  &.text-size-xl--trailer-2 {
+    @include baseline($fontsize: xl, $below: 2);
+  }
+
+}
+
+@include generate-breakpoint-prefixes {
+
+  // EXTRA EXTRA LARGE
+  &text-size-xxl {
+    font-size: fontsize(xxl)!important;
+    line-height: leading(xxl)!important;
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-xxl--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-xxl--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-xxl--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  // EXTRA LARGE
+  &text-size-xl {
+    font-size: fontsize(xl)!important;
+    line-height: leading(xl)!important;
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-xl--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-xl--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-xl--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  // H1
+  &text-size-1 {
+    &,
+    & > p {
+      font-size: fontsize(alpha)!important;
+      line-height: leading(alpha)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-1--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-1--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-1--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  // H2
+  &text-size-2 {
+    &,
+    & > p {
+      font-size: fontsize(beta)!important;
+      line-height: leading(beta)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-2--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-2--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-2--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  // H3
+  &text-size-3 {
+    &,
+    & > p {
+      font-size: fontsize(gamma)!important;
+      line-height: leading(gamma)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-3--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-3--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-3--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  // H4
+  &text-size-4 {
+    &,
+    & > p {
+      font-size: fontsize(delta)!important;
+      line-height: leading(delta)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-4--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-4--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-4--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  // H5
+  &text-size-5 {
+    &,
+    & > p {
+      font-size: fontsize(epsilon)!important;
+      line-height: leading(epsilon)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-5--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-5--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-5--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  // H6
+  &text-size-6 {
+    &,
+    & > p {
+      font-size: fontsize(zeta)!important;
+      line-height: leading(zeta)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-6--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-6--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-6--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  // P
+  &text-size-7 {
+    &,
+    & > p {
+      letter-spacing: rem(0.5px);
+      font-size: fontsize(eta)!important;
+      line-height: leading(eta)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-7--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-7--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-7--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  &text-size-8 {
+    &,
+    & > p {
+      letter-spacing: rem(0.5px);
+      font-size: fontsize(theta)!important;
+      line-height: leading(theta)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-8--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-8--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-8--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  &text-size-9 {
+    &,
+    & > p {
+      letter-spacing: rem(0.5px);
+      font-size: fontsize(iota)!important;
+      line-height: leading(iota)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-9--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-9--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-9--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  &text-size-10 {
+    &,
+    & > p {
+      letter-spacing: rem(0.5px);
+      font-size: fontsize(kappa)!important;
+      line-height: leading(kappa)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-10--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-10--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-10--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+  &text-size-11 {
+    &,
+    & > p {
+      letter-spacing: rem(0.5px);
+      font-size: fontsize(lamda)!important;
+      line-height: leading(lamda)!important;
+      margin-bottom: trailer(1)!important;
+    }
+  }
+  &text-size-11--trailer-0 {
+    margin-bottom: trailer(0)!important;
+  }
+  &text-size-11--trailer-1 {
+    margin-bottom: trailer(1)!important;
+  }
+  &text-size-11--trailer-2 {
+    margin-bottom: trailer(2)!important;
+  }
+
+
+
+}
+
+.text-size-1 {
+
+  &.text-size-1--trailer-0 {
+    @include baseline($fontsize: alpha, $below: 0);
+  }
+
+  > p,
+  &,
+  &.text-size-1--trailer-1 {
+    @include baseline($fontsize: alpha, $below: 1);
+  }
+
+  &.text-size-1--trailer-2 {
+    @include baseline($fontsize: alpha, $below: 2);
+  }
+
+}
+
+.text-size-2 {
+
+  &.text-size-2--trailer-0 {
+    @include baseline($fontsize: beta, $below: 0);
+  }
+
+  > p,
+  &,
+  &.text-size-2--trailer-1 {
+    @include baseline($fontsize: beta, $below: 1);
+  }
+
+  &.text-size-2--trailer-2 {
+    @include baseline($fontsize: beta, $below: 2);
+  }
+
+}
+
+.text-size-3 {
+
+  &.text-size-3--trailer-0 {
+    @include baseline($fontsize: gamma, $below: 0);
+  }
+
+  > p,
+  &,
+  &.text-size-3--trailer-1 {
+    @include baseline($fontsize: gamma, $below: 1);
+  }
+
+  &.text-size-3--trailer-2 {
+    @include baseline($fontsize: gamma, $below: 2);
+  }
+
+}
+
+.text-size-4 {
+
+  &.text-size-4--trailer-0 {
+    @include baseline($fontsize: delta, $below: 0);
+  }
+
+  > p,
+  &,
+  &.text-size-4--trailer-1 {
+    @include baseline($fontsize: delta, $below: 1);
+  }
+
+  &.text-size-4--trailer-2 {
+    @include baseline($fontsize: delta, $below: 2);
+  }
+
+}
+
+.text-size-5 {
+
+  &.text-size-5--trailer-0 {
+    @include baseline($fontsize: epsilon, $below: 0);
+  }
+
+  &,
+  &.text-size-5--trailer-1 {
+    @include baseline($fontsize: epsilon, $below: 1);
+  }
+
+  &.text-size-5--trailer-2 {
+    @include baseline($fontsize: epsilon, $below: 2);
+  }
+
+}
+
+.text-size-6 {
+
+  &,
+  &.text-size-6--leader-0 {
+    margin-top: 0;
+  }
+
+  &.text-size-6--leader-1 {
+    margin-top: (1*$rootsize)/$rootsize + rem;
+  }
+
+  &.text-size-6--leader-2 {
+    margin-top: (2*$rootsize)/$rootsize + rem;
+  }
+
+  &.text-size-6--trailer-0 {
+    @include baseline($fontsize: zeta, $below: 0);
+  }
+
+  > p,
+  &,
+  &.text-size-6--trailer-1 {
+    @include baseline($fontsize: zeta, $below: 1);
+  }
+
+  &.text-size-6--trailer-2 {
+    @include baseline($fontsize: zeta, $below: 2);
+  }
+
+}
+
+.text-size-7 {
+
+  letter-spacing: rem(0.5px);
+
+  &.text-size-7--trailer-0 {
+    @include baseline($fontsize: eta, $below: 0);
+  }
+
+  > p,
+  &,
+  &.text-size-7--trailer-1 {
+    @include baseline($fontsize: eta, $below: 1);
+  }
+
+  &.text-size-7--trailer-2 {
+    @include baseline($fontsize: eta, $below: 2);
+  }
+
+}
+
+.text-size-8 {
+
+  letter-spacing: rem(0.5px);
+
+  &.text-size-8--trailer-0 {
+    @include baseline($fontsize: theta, $below: 0);
+  }
+
+  > p,
+  &,
+  &.text-size-8--trailer-1 {
+    @include baseline($fontsize: theta, $below: 1);
+  }
+  &.text-size-8--trailer-2 {
+    @include baseline($fontsize: theta, $below: 2);
+  }
+
+}
+
+.text-size-9 {
+
+  letter-spacing: rem(0.5px);
+
+  > p,
+  &,
+  &.text-size-9--trailer-0 {
+    @include baseline($fontsize: iota, $below: 0);
+  }
+
+  &.text-size-9--trailer-1 {
+    @include baseline($fontsize: iota, $below: 1);
+  }
+
+  &.text-size-9--trailer-2 {
+    @include baseline($fontsize: iota, $below: 2);
+  }
+
+}
+
+.text-size-10 {
+
+  letter-spacing: rem(0.5px);
+
+  &,
+  &.text-size-10--trailer-0 {
+    @include baseline($fontsize: kappa, $below: 0);
+  }
+
+  &.text-size-10--trailer-1 {
+    @include baseline($fontsize: kappa, $below: 1);
+  }
+
+  &.text-size-10--trailer-2 {
+    @include baseline($fontsize: kappa, $below: 2);
+  }
+
+}
+
+.text-size-11 {
+
+  letter-spacing: rem(0.5px);
+
+  &,
+  &.text-size-11--trailer-0 {
+    @include baseline($fontsize: lamda, $below: 0);
+  }
+
+  &.text-size-11--trailer-1 {
+    @include baseline($fontsize: lamda, $below: 1);
+  }
+
+  &.text-size-11--trailer-2 {
+    @include baseline($fontsize: lamda, $below: 2);
+  }
+
+}
+
+.text-font--heading {
+  font-family: map-get($headingtype, font-family);
+  font-weight: map-get($headingtype, regular);
+  &.text-font--bold {
+    font-weight: map-get($headingtype, bold);
+  }
+}
+
+.text-style--italic {
+  font-style: italic;
+}
+
+
+
+.text-font--body {
+  font-family: map-get($bodytype, font-family);
+  font-weight: map-get($bodytype, regular);
+  &.text-font--bold {
+    font-weight: map-get($bodytype, bold);
+  }
+}
+
+
+.text-util--whitespace-no-wrap {
+  white-space: nowrap;
+}
+
+.text-util--transform-uppercase {
+  text-transform: uppercase;
+}

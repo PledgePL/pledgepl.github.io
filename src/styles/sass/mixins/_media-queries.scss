@@ -1,0 +1,27 @@
+@mixin respond-to($media...) {
+  @if index($media, mobile) {
+    @media only screen and (max-width: 640px) { @content; }
+  }
+  @if index($media, tablet-portrait) {
+    @media only screen and (min-width: 641px) and (max-width: 768px) { @content; }
+  }
+	@if index($media, tablet-landscape) {
+    @media only screen and (min-width: 769px) and (max-width: 1023px) { @content; }
+  }
+  @if index($media, desktop) {
+    @media only screen and (min-width: 1024px) { @content; }
+  }
+
+  // MORE CUSTOM CONTROLS
+  // @if index($media, mobile-portrait) {
+  //   @media only screen and (max-width: 480px) { @content; }
+  // }
+  // @if index($media, mobile-landscape) {
+  //   @media only screen and (min-width: 481px) and (max-width: 640px) { @content; }
+  // }
+  //
+  // @if index($media, desktop-large) {
+  //   @media only screen and (min-width: 1280px) { @content; }
+  // }
+
+}

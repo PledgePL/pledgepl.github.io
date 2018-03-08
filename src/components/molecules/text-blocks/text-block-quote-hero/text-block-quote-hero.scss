@@ -1,0 +1,48 @@
+@import '../../../../styles/sass/config';
+
+.text-block-quote-hero {
+  position: relative;
+  display: inline-block;
+  min-height: rem(100px);
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: rem(111px) rem(82px);
+  padding: gutter(1) 0;
+  margin: 0 rem(60);
+  fill: $color--gamma;
+
+  @include respond-to(mobile) {
+    margin: 0 rem(20);
+  }
+
+  &__quote-left,
+  &__quote-right {
+    position: absolute;
+    width: rem(40px);
+    transform-origin: center;
+    @include respond-to(mobile) {
+      width: rem(20px);
+    }
+  }
+
+  &__quote-left {
+    left: calc(#{rem(-40)} - #{gutter(0.5)});
+    transform: translateY(-3px) rotate(180deg);
+    @include respond-to(mobile) {
+      left: calc(#{rem(-10)} - #{gutter(0.5)});
+    }
+  }
+
+  &__quote-right {
+    right: calc(#{rem(-40)} - #{gutter(0.5)});
+    transform: translateY(-100%);
+    @include respond-to(mobile) {
+      right: calc(#{rem(-10)} - #{gutter(0.5)});
+    }
+  }
+
+  &__content {
+    width: 100%;
+    max-width: rem(800px);
+  }
+}

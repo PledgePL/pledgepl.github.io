@@ -1,0 +1,391 @@
+@media (max-width: 1250px) {
+	.container {
+		width: 96%;
+		min-width: 96%;
+	}
+	section.hero {
+		div.bg {
+			div.container {
+				left: 2%;
+				width: 70%;
+				margin: 0;
+				h1 {
+					padding: 0;
+				}
+			}
+		}
+	}
+  section.intro {
+    padding: 70px 0;
+    div.requirements {
+      ul {
+        li {
+          img.check {
+            width: 8%;
+          }
+          div.description {
+            width: 86%;
+            margin: 0 0 0 4%;
+          }
+        }
+      }
+    }
+  }
+	section.faq {
+		div.requirements {
+			width: 100%;
+			ul {
+				width: 100%;
+			}
+		}
+	}
+}
+@media (max-width: 1050px) {
+	h1 {
+		font-size: 30px;
+	}
+	h2 {
+		font-size: 24px;
+		line-height: 1.4em;
+	}
+	section.foundingPartners {
+		ul.list-inline {
+			li {
+				width: 20%;
+				margin: 4% 6%;
+				padding: 0;
+				text-align: center;
+				&:nth-child(1) {
+					width: 10%;
+				}
+				&:nth-child(3) {
+					width: 10%;
+				}
+				&:nth-child(4) {
+					width: 10%;
+				}
+				&:nth-child(7) {
+					width: 10%;
+				}
+				&:nth-child(9) {
+					width: 16%;
+				}
+			}
+		}
+	}
+	section.intro {
+		h2 {
+			width: 100%;
+		}
+		h3 {
+			width: 100%;
+		}
+		div.requirements {
+			margin: 50px auto 30px 6%;
+			width: 100%;
+		}
+	}
+  section.get-involved {
+    div.requirements {
+      margin: 0;
+      width: 100%;
+      ul {
+        li {
+          float: none;
+          width: 100%;
+          overflow: hidden;
+          margin-top: 50px;
+          div.description {
+            display: block;
+            margin: 3em 15% 0;
+            float: left;
+            padding: 0 40px;
+            min-height: 240px;
+            width: 70%;
+            h2, h3 {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+	// .header {
+	// 	a.button {
+	// 		display: none;
+	// 	}
+	// 	nav {
+	// 		display: none;
+	//     transform: none;
+	// 	}
+	// 	a.menu {
+	// 		display: block;
+	// 	}
+	// }
+	section.hero {
+		div.bg {
+			div.container {
+				h1 {
+					padding: 0 0 0 10px;
+				}
+			}
+		}
+	}
+  #about section.hero {
+    h1 {
+      line-height: 1.3em;
+      width: 100%;
+      top: 60%;
+    }
+  }
+	section.intro {
+		padding: 70px 0;
+		div.requirements {
+			margin: 30px auto 0;
+			width: 350px;
+			ul {
+				li {
+					width: 100%;
+					float: none;
+					margin: 25px 0 0 0;
+					clear: both;
+					overflow: auto;
+				}
+			}
+		}
+	}
+  section.foundingPartners {
+    ul.list-inline {
+      li:nth-child(6) {
+        width: 14%;
+      }
+      li:nth-child(7) {
+        width: 27%;
+      }
+      li:nth-child(8) {
+        width: 10%;
+      }
+      li:nth-child(9) {
+        width: 23%;
+      }
+    }
+  }
+	section.faq {
+		div.requirements {
+			ul {
+				-moz-column-count: 1;
+				-moz-column-gap: 60px;
+				-webkit-column-count: 1;
+				-webkit-column-gap: 60px;
+				column-count: 1;
+				column-gap: 60px;
+				width: 80%;
+        margin: auto;
+				list-style: none;
+				overflow: auto;
+			}
+		}
+	}
+  section.get-involved {
+    div.requirements {
+      ul {
+        li {
+          div.description {
+            margin: 3em 0 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  section.cta {
+		a.button {
+			width: 300px;
+			height: 57px;
+			font-size: 16px;
+      display: block;
+      margin: 30px auto 15px auto;
+		}
+		div.contact {
+			width: 100%;
+			img.email {
+				width: 5%;
+				margin: 0;
+			}
+			p {
+				float: right;
+				width: 93%;
+				margin: 0;
+			}
+		}
+    div.buttons {
+      width: 100%;
+    }
+	}
+  #why {
+		section.intro ul {
+      column-count: 1!important;
+      column-gap: 60px!important;
+      width: 90%!important;
+      margin: auto!important;
+    }
+    section.intro ul li:nth-child(3) {
+        margin: 60px 0 60px 0;
+    }
+    #chart1 {
+      img.chart1 {
+        width: 90%;
+        float: none;
+        display: block;
+        margin: auto;
+      }
+      h2:nth-child(1) {
+        width: 90%;
+      }
+      div.description {
+        width: 90%;
+        margin: 0 auto 50px auto;
+        float: none;
+
+        h2 {
+          width: 100%;
+        }
+      }
+      h3 {
+        width: 100%;
+      }
+    }
+    #chart2 {
+      h3 {
+        width: 90%;
+        text-align: left;
+      }
+      h2 {
+        width: 90%;
+      }
+    }
+    img.chart2 {
+      width: 80%;
+    }
+
+  }
+  #join .join {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  // br {
+  //   display: none;
+  // }
+	h1 {
+		font-size: 22px;
+	}
+	h3 {
+		font-size: 14px;
+	}
+	#about {
+		section.hero {
+			min-height: 300px;
+		}
+	}
+	section.foundingPartners {
+		ul.list-inline {
+			li {
+				width: 36%;
+				margin: 6% 6%;
+				padding: 0;
+				text-align: center;
+				&:nth-child(1) {
+					width: 20%;
+				}
+				&:nth-child(3) {
+					width: 20%;
+				}
+				&:nth-child(4) {
+					width: 20%;
+				}
+				&:nth-child(7) {
+					width: 20%;
+				}
+				&:nth-child(9) {
+					width: 23%;
+				}
+			}
+		}
+	}
+	section.partners {
+		ul.list-inline {
+			li {
+				width: 48%;
+				margin: 1%;
+				height: 220px;
+
+        h2 {
+          line-height: 220px;
+        }
+			}
+		}
+	}
+  section.join {
+    div.container {
+      div.field {
+        width: 100%;
+      }
+      div.field:nth-child(4),
+      div.field:nth-child(5) {
+        margin: 0 0 45px 0;
+      }
+      .left, .right {
+        float: none;
+      }
+    }
+  }
+	// footer {
+  //   div.contact {
+  //     width: 100%;
+  //     padding: 0 10%;
+  //     img.email {
+  //       display: none;
+  //     }
+  //   }
+	// 	div.footer {
+	// 		img.pledge {
+	// 			position: relative;
+	// 			top: auto;
+	// 			left: auto;
+	// 			width: 150px;
+	// 			margin: 30px auto;
+	// 			right: auto;
+	// 			display: block;
+	// 		}
+	// 		div.social {
+	// 			position: relative;
+	// 			top: auto;
+	// 			left: auto;
+	// 			width: 104px;
+	// 			margin: 50px auto;
+	// 			text-align: center;
+	// 		}
+	// 		p.credits {
+	// 			width: 90%;
+	// 		}
+	// 	}
+	// }
+}
+@media (max-width: 450px) {
+	section.hero {
+		div.bg {
+			div.container {
+				h1 {
+					br {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

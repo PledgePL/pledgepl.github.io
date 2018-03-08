@@ -1,0 +1,68 @@
+@import '../../../../styles/sass/config';
+
+.section-form {
+
+  width: 100%;
+
+  background-color: $color--alpha;
+  color: $text-color--beta;
+
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    padding: gutter(2) gutter(1) gutter(3);
+    width: 100%;
+    max-width: rem(800px);
+
+    &__fieldset {
+      margin: gutter(3) 0;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__submit {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      &__button + &__error {
+        margin-left: gutter(1)
+      }
+
+      &__error {
+
+        clip:rect(0px,0px,0px,0px);
+
+        &, a, a:hover {
+          color: $text-color--error;
+        }
+
+        a, a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+
+  &__inline-radio-text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    &__radio {
+      flex: 0 1 0;
+    }
+
+    &__text {
+      flex: 1 1 0;
+    }
+  }
+
+}

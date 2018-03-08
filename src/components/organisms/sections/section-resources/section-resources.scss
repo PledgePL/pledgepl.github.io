@@ -1,0 +1,29 @@
+@import '../../../../styles/sass/config';
+
+.section-resources {
+
+  width: 100%;
+  background-color: $color--epsilon;
+  overflow: hidden;
+
+  &__content {
+    margin: gutter(3) auto gutter(3);
+    padding: 0 $gutter;
+    width: 100%;
+    max-width: rem(1200px);
+
+    &__title {
+      color: $text-color--alpha;
+      margin: gutter(2) auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    &__body {
+      margin: gutter(2) auto;
+      width: 100%;
+    }
+
+  }
+
+}

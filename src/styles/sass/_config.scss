@@ -1,0 +1,72 @@
+@import "./lib/baseline/index";
+@import "./mixins/media-queries";
+@import "./util/index";
+
+// FONTS
+$heading-font: "stag-sans-light", Helvetica, Arial, sans-serif;
+$body-font: "stag-sans-light", Helvetica, Arial, sans-serif;
+$meta-font: "stag-sans-light", Helvetica, Arial, sans-serif;
+$cta-font: "stag-sans-light", Helvetica, Arial, sans-serif;
+
+//
+// Add typefaces here.
+// Add weight and style details too.
+$bodytype: (
+  font-family: ('Roboto','Arial','Helvetica', sans-serif),
+  regular: 400,
+  bold: 700,
+  italic: italic
+);
+
+$headingtype: (
+  font-family: ('Roboto Slab','Gerogia', serif),
+  regular: 400,
+  bold: 500
+);
+
+// FONT SIZES
+$modular-scale: (
+  xxl:     (46.184),
+  xl:      (41.053),
+  alpha:   (32.437),
+  beta:    (28.833),
+  gamma:   (25.629),
+  delta:   (22.781),
+  epsilon: (20.25),
+  zeta:    (18.0),
+  eta:     (16.0),
+  theta:   (14.222),
+  iota:    (12.642),
+  kappa:   (11.237),
+  lamda:   (9.989)
+);
+
+// COLORS
+$color--alpha: #989cd7;
+$color--beta: #6ac3c1;
+$color--gamma: #ffffff;
+$color--delta: #f0f5fa;
+$color--epsilon: #f7fafc;
+$color--zeta: #e6e6e6;
+$color--eta: #000000;
+
+// TEXT COLORS
+$text-color--alpha: #6b7074;
+$text-color--beta: #ffffff;
+$text-color--gamma: $color--beta;
+$text-color--delta: $color--alpha;
+$text-color--error: #FCEE21;
+
+
+// DIMENSIONS
+$gutter: vr(1);
+$gutter-quarter: vr(1/4);
+$gutter-half: vr(1/2);
+$gutter-double: vr(2);
+$max-width: rem(760px);
+
+// TRANSITION
+$transition-duration-fade: 0.3s;
+$transition-ease-opacity: ease(in-sine);
+$transition-duration-rotate: 0.2s;
+$transition-ease-rotate: ease(in-out-sine);

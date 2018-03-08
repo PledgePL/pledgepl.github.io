@@ -1,0 +1,68 @@
+@import '../../../../styles/sass/config';
+
+.input-text {
+  display: block;
+  position: relative;
+  margin: gutter(0.5) 0 0 0;
+
+  &__input,
+  &__label {
+    padding: $gutter-half 0;
+    margin: 0;
+    @include baseline($fontsize: eta, $below: 0, $lineheight: 1);
+    color: $text-color--beta;
+    letter-spacing: rem(0.5px);
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__label {
+    position: absolute;
+    top: rem(2px);
+    left: 0px;
+    pointer-events: none;
+    transform-origin: left center;
+    transition: 0.2s transform ease(out-cubic);
+  }
+
+  &__error {
+    position: absolute;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    bottom: gutter(0.25);
+    background-color: $text-color--beta;
+  }
+
+  &--has-value {
+
+    .input-text__label {
+      transform: translateY(-#{gutter(1)}) scale(0.8, 0.8);
+    }
+
+  }
+
+  &--has-error {
+    .input-text__input,
+    .input-text__error {
+      color: $text-color--error;
+    }
+    &:after {
+      background-color: $text-color--error;
+    }
+  }
+
+  &--is-disabled {
+    opacity: 0.5;
+  }
+}

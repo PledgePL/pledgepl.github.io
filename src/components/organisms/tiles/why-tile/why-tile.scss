@@ -1,0 +1,50 @@
+@import '../../../../styles/sass/config';
+
+.why-tile {
+
+  width: 100%;
+  height: 100%;
+  background-color: $color--gamma;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include media-query(lg) {
+      padding: 7%;
+    }
+    @include media-query(xl) {
+      padding: 7%;
+    }
+  }
+
+  &--alpha {
+    background-color: $color--alpha;
+    color: $text-color--beta;
+  }
+
+  &--beta {
+    background-color: $color--delta;
+  }
+
+  &--gamma {
+    background-color: lighten($color--beta, 28%);
+  }
+
+  &--padding-0 {
+    .why-tile__content {
+      padding: 0!important;
+    }
+  }
+
+}

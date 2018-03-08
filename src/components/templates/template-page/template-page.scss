@@ -1,0 +1,18 @@
+.template-page {
+  min-height: 100vh;
+  background-color: #FFF;
+
+  &--join-us {
+    background-color: #989cd8;
+    transition: none;
+
+    * {
+  		color: #FFFFFF;
+  	}
+
+    footer {
+  		background-color: transparent;
+    	transition: none;
+  	}
+  }
+}

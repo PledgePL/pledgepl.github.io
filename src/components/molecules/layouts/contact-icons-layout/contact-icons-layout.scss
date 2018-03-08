@@ -1,0 +1,21 @@
+@import '../../../../styles/sass/config';
+
+.contact-icons-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  margin: -#{gutter(0.25)};
+  list-style: none;
+
+  &__item {
+    flex: 0 0 auto;
+    margin: gutter(0.25);
+    font-size: 0;
+    line-height: 0;
+  }
+
+}

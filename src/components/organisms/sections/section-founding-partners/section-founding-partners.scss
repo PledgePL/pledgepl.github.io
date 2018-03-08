@@ -1,0 +1,34 @@
+@import '../../../../styles/sass/config';
+
+.section-founding-partners {
+
+  width: 100%;
+
+  background-color: $color--gamma;
+  color: $text-color--alpha;
+  overflow: hidden;
+
+  &__content {
+  margin: gutter(2) auto gutter(3);
+  padding: 0 $gutter;
+  width: 100%;
+  max-width: rem(1200px);
+  text-align: center;
+
+    &__title {
+      margin: gutter(3) auto;
+      width: 100%;
+    }
+
+    &__grid {
+      margin: gutter(2) auto;
+      width: 100%;
+    }
+
+    &__cta {
+      margin: gutter(2.5) auto 0;
+    }
+
+  }
+
+}
