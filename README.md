@@ -20,7 +20,8 @@ npm run webpack
 
 Check static version
 ```bash
-http-server ./docs -p 7070
+http-server . -p 8080
+open http://localhost:8080
 ```
 
 node --version
