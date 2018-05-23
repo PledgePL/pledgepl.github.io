@@ -1,6 +1,6 @@
 {
-  "assets/0ab0b55426c7e630d7b3.2.client.js": "assets/0ab0b55426c7e630d7b3.2.client.js",
   "assets/16c449a84363e6a90083.1.client.js": "assets/16c449a84363e6a90083.1.client.js",
+  "assets/3a478bdf41f31c860fcf.2.client.js": "assets/3a478bdf41f31c860fcf.2.client.js",
   "assets/b33f51169020822687ac.0.client.js": "assets/b33f51169020822687ac.0.client.js",
   "assets/images/accordian-button-chevron.svg": "assets/images/ab86694a3d51859e07a75a7faa43b593.svg",
   "assets/images/bg-poster.jpg": "assets/images/bd2655dd7eda28adf8a2fd173e3e8a42.jpg",
@@ -21,5 +21,5 @@
   "assets/images/stack.svg": "assets/images/96cd3541678b22a87f1f4b26320f429c.svg",
   "bg.mp4": "28b7e7ba7c0a68f272699f6d149bef6d.mp4",
   "main.js": "assets/b5014f3598a7eb761838.main.client.js",
-  "vendor.js": "assets/90c2896090e1416c20de.vendor.client.js"
+  "vendor.js": "assets/871956ba904b16c5751c.vendor.client.js"
 }
