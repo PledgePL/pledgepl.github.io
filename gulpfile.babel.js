@@ -50,16 +50,12 @@ gulp.task('render-static', (callback) => {
       }, { js: webpackStats.entrypoints.main.assets, jsPreload: [], css: [] })
   }
 
-  console.log('LOCALS')
-  console.log(locals.assets);
-
   const renderPromises = uris.map(uri =>
     new Promise((resolve, reject) => {
       const uriLocals = Object.assign({}, locals, { path: uri })
       render(uriLocals)
         .then((html) => {
           const filePath = path.join(__dirname, path.normalize(`${uriLocals.path}index.html`))
-          console.log('save file at: '+filePath)
           return fsep
                   .ensureDirAsync(path.dirname(filePath))
                   .then(() => fsep.writeFileAsync(filePath, html))
