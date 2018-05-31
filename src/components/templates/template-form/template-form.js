@@ -6,7 +6,7 @@ import SectionForm from '../../organisms/sections/section-form/section-form'
 const TemplateForm = props => (
   <main className="template-form">
     <iframe
-       className="template-form__iframe"
+      className="template-form__iframe"
       src="https://docs.google.com/forms/d/e/1FAIpQLSfiXvVAKV7ToEXuapN3YDna8cZEiWqMumV9p_xPFh66vEAELQ/viewform?embedded=true"
       frameborder="0"
       marginheight="0"
