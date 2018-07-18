@@ -1,12 +1,10 @@
-@import '../../../../styles/sass/config';
+@import "../../../../styles/sass/config";
 
 .logo-layout {
-
   width: 100%;
   overflow: hidden;
 
   &__content {
-
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -16,7 +14,6 @@
     margin-bottom: -#{gutter(1)};
 
     @include media-query(sm) {
-
       flex-direction: row;
       flex-wrap: wrap;
     }
@@ -36,9 +33,8 @@
         height: auto;
         max-width: 100%;
         max-height: 100%;
+        object-fit: contain;
       }
     }
-
   }
-
 }
