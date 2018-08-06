@@ -25,7 +25,7 @@ const SectionWhyPledgeTiles = props => (
             <QuoteLayout
               quote="Pledge Parental Leave is a hugely important movement for the US creative industry that will help not only individuals and families but companies and society at large."
               name="Jules Ehrhardt"
-              title="Co-Owner, ustwo"
+              title="Co-Founder, Pledge Parental Leave"
               ariaTitle="Co-Owner, Us Two"
               src="/static/avatars/jules-ehrhardt.jpg"
               quoteDirection="left"
@@ -88,10 +88,10 @@ const SectionWhyPledgeTiles = props => (
           </WhyTile>
           <WhyTile>
             <QuoteLayout
-              quote="Caring for the careers of our employees is paramount and goes beyond the projects they do. We don't just think of them as employees—they're human beings and one of the most important times in their lives might occur while they're part of Moment's team. We believe in celebrating and supporting that precious time, which is why we are proud to be among PPL’s founding partners."
-              name="Shannon O'Brien"
-              src="/static/avatars/shannon-obrien.jpg"
-              title="Partner & Managing Director, Moment Design"
+              quote="As a proud founding partner of this initiative, we look forward to more organizations recognizing that better arrangements for working parents can deliver extraordinarily positive social and business impact over the long term."
+              name="Richard Whitehall"
+              src="/static/avatars/richard-whitehall.jpg"
+              title="Executive Director and Partner, Smart Design"
               quoteDirection="right"
               quoteType={null}
             />
