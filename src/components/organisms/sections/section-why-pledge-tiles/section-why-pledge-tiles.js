@@ -107,7 +107,7 @@ const SectionWhyPledgeTiles = props => (
             />
           </WhyTile>
           <WhyTile type="alpha" padding={0}>
-            <ImageTileLayout src="/static/photos/_R9Q2898.jpg" alt="" />
+            <ImageTileLayout src="/static/photos/collab.jpg" alt="" />
           </WhyTile>
         </BlockGrid>
       </div>
