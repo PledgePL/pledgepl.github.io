@@ -57,9 +57,9 @@ const SectionWhyPledgeTiles = props => (
           <WhyTile>
             <QuoteLayout
               quote="For us, a great Parental Leave policy is a core investment in our company culture. At Doberman, we expect our people to be on the very top of creativity and innovation. That is why well-being and work/life balance becomes the single most important piece of a sustainable business model."
-              name="Anders Frostenson"
-              src="/static/avatars/anders-frostenson.jpg"
-              title="Managing Director, Doberman"
+              name="Lisa Lindström"
+              src="/static/avatars/lisa-lindstrom.jpg"
+              title="Founder & CEO, Doberman"
               quoteDirection="right"
               quoteType={null}
             />
