@@ -28,5 +28,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+        spreadsheetId: '1kAplImjNVteoUDhyEifDB9oVjvAVsSmnpq6ncPleID4',
+        worksheetTitle: 'Partners',
+        credentials: require('./client_secret.json'),
+      },
+    },
   ],
 }
