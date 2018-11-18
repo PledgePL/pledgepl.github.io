@@ -690,6 +690,40 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@dylanvann/gatsby-cloudinary@^0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@dylanvann/gatsby-cloudinary/-/gatsby-cloudinary-0.0.18.tgz#49213fee82eae81932e4bde31e4283dc351ee06c"
+  integrity sha512-6TCIOxNRJekcx66ejR1kWRYQ4WsYeUnIoKxDdHFwTeYqXIoB8s+YyPSEbHoJj50bYGTjs5WrL8ETLsZwR8QfQA==
+  dependencies:
+    axios "^0.18.0"
+    classnames "^2.2.6"
+    cloudinary "^1.11.0"
+    md5-file "^4.0.0"
+    react-fast-image "^0.0.21"
+    react-img-tag "^0.0.2"
+    react-video-tag "^0.0.10"
+    url-exists-promise "^1.0.2"
+
+"@dylanvann/gatsby-transformer-cloudinary@^1.0.36":
+  version "1.0.36"
+  resolved "https://registry.yarnpkg.com/@dylanvann/gatsby-transformer-cloudinary/-/gatsby-transformer-cloudinary-1.0.36.tgz#be699571ebd0fa837a97f2b081d3a5378ddb850b"
+  integrity sha512-yc2psG44Q/aybd1MbXisehbJtAy/pag68h17k+H8lyYlJhlUlL1mmIEsxW9/3vxFeKCaT5f2bytCwyNA47PB6A==
+  dependencies:
+    "@dylanvann/gatsby-cloudinary" "^0.0.18"
+    common-tags "^1.8.0"
+    react-fast-image "^0.0.18"
+
+"@fs/gatsby-plugin-drive@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@fs/gatsby-plugin-drive/-/gatsby-plugin-drive-0.0.1.tgz#217eea48db7a13ce07f6188f604bec5e17c3e361"
+  integrity sha1-IX7qSNt6E84H9hiPYEvsXhfD42E=
+  dependencies:
+    babel-runtime "^6.26.0"
+    gtoken "^2.3.0"
+    mkdirp "^0.5.1"
+    request "^2.87.0"
+    rimraf "^2.6.2"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1286,6 +1320,14 @@ aws-sign2@~0.7.0:
 aws4@^1.2.1, aws4@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
+
+axios@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+  integrity sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
+  dependencies:
+    follow-redirects "^1.3.0"
+    is-buffer "^1.1.5"
 
 axobject-query@^2.0.1:
   version "2.0.2"
@@ -2482,6 +2524,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
@@ -2529,6 +2576,14 @@ clone@^0.2.0:
 clone@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
+
+cloudinary@^1.11.0:
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/cloudinary/-/cloudinary-1.13.2.tgz#af3c3f5091119d743d85c27be9405cf15e9012db"
+  integrity sha512-mZWxWxgln6Bkk5QA72BGb1mwRBFs+r94ZzdN37gROPL7FSOslhvFfEvF/Rz/ruPqR7mblMdzVz3wuLQi1oCalw==
+  dependencies:
+    lodash "^4.17.11"
+    q "^1.5.1"
 
 co@3.1.0:
   version "3.1.0"
@@ -2625,7 +2680,7 @@ commander@~2.8.1:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-common-tags@^1.4.0:
+common-tags@^1.4.0, common-tags@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
 
@@ -2911,6 +2966,11 @@ crypto-browserify@^3.11.0:
 crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
+
+crypto@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/crypto/-/crypto-1.0.1.tgz#2af1b7cad8175d24c8a1b0778255794a21803037"
+  integrity sha512-VxBKmeNcqQdiUQUW2Tzq0t377b54N2bMtXO/qiLa+6eRRmmC4qT3D4OnTGoT/U6O9aklQ/jTwbOtRMTTY8G0Ig==
 
 css-color-names@0.0.4, css-color-names@^0.0.4:
   version "0.0.4"
@@ -4526,7 +4586,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.3.0:
   version "1.5.9"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.9.tgz#c9ed9d748b814a39535716e531b9196a845d89c6"
   dependencies:
@@ -4693,9 +4753,10 @@ gatsby-cli@^2.4.5:
     yargs "^11.1.0"
     yurnalist "^0.2.1"
 
-gatsby-image@^2.0.15:
+gatsby-image@^2.0.20:
   version "2.0.20"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.20.tgz#89e85d8c2c2ff8553f0831ffdde689a3679933a4"
+  integrity sha512-AxLNe1W9QbVr23iD7h/ryoBOo1PfpjLm2tgZ7ITi5NQqMOIn23YCUfWtSWDWQFd226twyfsHzJFr5XZM3Lyl0g==
   dependencies:
     "@babel/runtime" "^7.0.0"
     prop-types "^15.6.1"
@@ -5161,6 +5222,14 @@ google-p12-pem@^0.1.0:
   dependencies:
     node-forge "^0.7.1"
 
+google-p12-pem@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/google-p12-pem/-/google-p12-pem-1.0.2.tgz#c8a3843504012283a0dbffc7430b7c753ecd4b07"
+  integrity sha512-+EuKr4CLlGsnXx4XIJIVkcKYrsa2xkAmCvxRhX2HsazJzUBAJ35wARGeApHUn4nNfPD03Vl057FskNr20VaCyg==
+  dependencies:
+    node-forge "^0.7.4"
+    pify "^3.0.0"
+
 google-spreadsheet@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/google-spreadsheet/-/google-spreadsheet-2.0.3.tgz#e0b0518897ff548364f0c06779f2c98692916e5b"
@@ -5319,6 +5388,17 @@ gtoken@^1.1.0:
     jws "^3.0.0"
     mime "^1.4.1"
     request "^2.72.0"
+
+gtoken@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/gtoken/-/gtoken-2.3.0.tgz#4e0ffc16432d7041a1b3dbc1d97aac17a5dc964a"
+  integrity sha512-Jc9/8mV630cZE9FC5tIlJCZNdUjwunvlwOtCz6IDlaiB4Sz68ki29a1+q97sWTnTYroiuF9B135rod9zrQdHLw==
+  dependencies:
+    axios "^0.18.0"
+    google-p12-pem "^1.0.0"
+    jws "^3.1.4"
+    mime "^2.2.0"
+    pify "^3.0.0"
 
 gud@^1.0.0:
   version "1.0.0"
@@ -6531,7 +6611,7 @@ jwa@~1.0.0:
     buffer-equal-constant-time "^1.0.1"
     ecdsa-sig-formatter "^1.0.0"
 
-jws@^3.0.0:
+jws@^3.0.0, jws@^3.1.4:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/jws/-/jws-3.1.5.tgz#80d12d05b293d1e841e7cb8b4e69e561adcf834f"
   integrity sha512-GsCSexFADNQUr8T5HPJvayTjvPIfoyJPtLQBwn5a4WZQchcrPMPMAWcC1AzJVRDKyD6ZPROPAxgv6rfHViO4uQ==
@@ -6953,6 +7033,11 @@ md5-file@^3.1.1:
   dependencies:
     buffer-alloc "^1.1.0"
 
+md5-file@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/md5-file/-/md5-file-4.0.0.tgz#f3f7ba1e2dd1144d5bf1de698d0e5f44a4409584"
+  integrity sha512-UC0qFwyAjn4YdPpKaDNw6gNxRf7Mcx7jC1UGCY4boCzgvU2Aoc1mOGzTtrjjLKhM5ivsnhoKpQVxKPp+1j1qwg==
+
 md5.js@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -7359,7 +7444,7 @@ node-forge@0.7.5:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.5.tgz#6c152c345ce11c52f465c2abd957e8639cd674df"
 
-node-forge@^0.7.1:
+node-forge@^0.7.1, node-forge@^0.7.4:
   version "0.7.6"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.6.tgz#fdf3b418aee1f94f0ef642cd63486c77ca9724ac"
   integrity sha512-sol30LUpz1jQFBjOKwbjxijiE3b6pjd74YwfD0fJOKPjF+fONKb2Yg8rYgS6+bK6VDl+/wfr4IYpC7jDzLUIfw==
@@ -8605,7 +8690,7 @@ punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-q@^1.1.2:
+q@^1.1.2, q@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
@@ -8721,6 +8806,24 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
+react-fast-image@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/react-fast-image/-/react-fast-image-0.0.18.tgz#09034b6272c7747593e87d66147eb108acb805ea"
+  integrity sha512-YQDxjC39s/pZ424iWLq/gY86uuR6aQn7fbjVMZiN3tCor7qWhNK6EGctHfcXoS0OAj0qXSO7mFZivPrHChA57Q==
+  dependencies:
+    classnames "^2.2.6"
+    react-img-tag "^0.0.2"
+    react-video-tag "^0.0.10"
+
+react-fast-image@^0.0.21:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/react-fast-image/-/react-fast-image-0.0.21.tgz#8e554e5bb8ed1b21353f7df7e29137d99ff234ab"
+  integrity sha512-SuhZiKjeQgXAX9z5G+/1K2nr9upP4JNBTWqfWKSY2lUvVVeKwLLRa28zw6ZOv5oiheGP5XrcSUamHcjxSeFw9A==
+  dependencies:
+    classnames "^2.2.6"
+    react-img-tag "^0.0.2"
+    react-video-tag "^0.0.10"
+
 react-helmet@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
@@ -8741,6 +8844,11 @@ react-hot-loader@^4.1.0:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
 
+react-img-tag@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/react-img-tag/-/react-img-tag-0.0.2.tgz#b666147fe979ccf183d4bccb0d9768166c755c21"
+  integrity sha512-ox7Ut5irQQ8M1QE/6HfwB4AfKyiobTBY2iwhkilgz7+FXnwbRnjZZ2EG2O4EvZlKm1v1ZvahwZfjMqfweu5d+Q==
+
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
@@ -8751,6 +8859,11 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-video-tag@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/react-video-tag/-/react-video-tag-0.0.10.tgz#eace2386a77cd17351a9cac7497856aa7d4be25d"
+  integrity sha512-vwe5S9snuflOKjDv6nOFDxyeZ5gCZ5/g83rFp5x7BHmD+Y2mMuCMDVwFeeZWQwjgW5Nwmga870/J2Op0olBikg==
 
 react@^16.5.1:
   version "16.6.3"
@@ -9061,7 +9174,7 @@ replace-ext@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
 
-request@^2.65.0, request@^2.69.0, request@^2.72.0, request@^2.83.0, request@^2.85.0:
+request@^2.65.0, request@^2.69.0, request@^2.72.0, request@^2.83.0, request@^2.85.0, request@^2.87.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   dependencies:
@@ -10475,6 +10588,11 @@ uri-js@^4.2.2:
 urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
+
+url-exists-promise@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/url-exists-promise/-/url-exists-promise-1.0.2.tgz#deec077c1a77ca4acc9e3212e1e7153d06d57a3a"
+  integrity sha512-iEwP6Y4tDEU/uhdGyM0hCbNfqZVHQWNyyQDFMZUzhIcrLQVKGB8K0mzVEsdXyQRVNeU+DLJuWJgouNmvu5ffpg==
 
 url-loader@^1.0.1:
   version "1.1.2"
