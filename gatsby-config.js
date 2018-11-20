@@ -3,6 +3,8 @@ require('dotenv').config()
 
 console.log("ENV VARS")
 
+process.env.GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY ? process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n') : process.env.GOOGLE_PRIVATE_KEY
+
 console.log("process.env.GOOGLE_TYPE",process.env.GOOGLE_TYPE)
 console.log("process.env.GOOGLE_PROJECT_ID",process.env.GOOGLE_PROJECT_ID)
 console.log("process.env.GOOGLE_PRIVATE_KEY_ID",process.env.GOOGLE_PRIVATE_KEY_ID)
@@ -11,7 +13,7 @@ console.log("process.env.GOOGLE_CLIENT_EMAIL",process.env.GOOGLE_CLIENT_EMAIL)
 console.log("process.env.GOOGLE_CLIENT_ID",process.env.GOOGLE_CLIENT_ID)
 console.log("process.env.GOOGLE_AUTH_URI",process.env.GOOGLE_AUTH_URI)
 console.log("process.env.GOOGLE_TOKEN_URI",process.env.GOOGLE_TOKEN_URI)
-console.log("process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_UR",process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_UR)
+console.log("process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI",process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI)
 console.log("process.env.GOOGLE_CLIENT_X509_CERT_URL",process.env.GOOGLE_CLIENT_X509_CERT_URL)
 
 
@@ -57,7 +59,7 @@ module.exports = {
           "client_id": process.env.GOOGLE_CLIENT_ID,
           "auth_uri": process.env.GOOGLE_AUTH_URI,
           "token_uri": process.env.GOOGLE_TOKEN_URI,
-          "auth_provider_x509_cert_url": process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_UR,
+          "auth_provider_x509_cert_url": process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI,
           "client_x509_cert_url": process.env.GOOGLE_CLIENT_X509_CERT_URL,
         },
       },
