@@ -54,7 +54,6 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
                 ? `https://res.cloudinary.com/pledgepl/image/upload/f_auto,dpr_auto/v1542411695/google-drive/${id}`
                 : null
           }
-          console.log('source', source)
           return {
             originalUrl: source.logoUrl,
             cloudinaryUrl: cloudinaryUrl,
@@ -69,9 +68,7 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  console.log('node.internal.type', node.internal.type)
   if (node.internal.type === 'googleSheetPartnersRow') {
-    console.log(`node`, node)
     const {
       createNodeField,
       createNode,
@@ -79,7 +76,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       deleteNode,
     } = actions
     const rowNode = getNode(node.parent)
-    console.log(`actions`, actions)
 
     // Sanitize CMS output
     if (!node.active) {
