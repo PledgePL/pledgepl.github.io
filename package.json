@@ -6,18 +6,28 @@
   "dependencies": {
     "@dylanvann/gatsby-transformer-cloudinary": "^1.0.36",
     "@fs/gatsby-plugin-drive": "^0.0.1",
+    "babel-preset-gatsby": "^0.1.4",
     "crypto": "^1.0.1",
+    "emotion": "^9.2.12",
+    "emotion-normalize": "^8.0.0",
+    "emotion-server": "^9.2.12",
+    "emotion-theming": "^9.2.9",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.20",
+    "gatsby-plugin-emotion": "^2.0.6",
     "gatsby-plugin-manifest": "^2.0.5",
+    "gatsby-plugin-no-sourcemaps": "^2.0.1",
     "gatsby-plugin-offline": "^2.0.11",
+    "gatsby-plugin-polyfill-io": "^1.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sharp": "^2.0.7",
+    "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-source-google-sheets": "^1.1.1",
     "gatsby-transformer-sharp": "^2.1.4",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -37,5 +47,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  }
+  },
+  "browserslist": [
+    "> 1% in US",
+    "not IE > 0"
+  ]
 }

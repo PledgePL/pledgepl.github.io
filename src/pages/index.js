@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
               logoUrl: { cloudinaryUrl },
             },
           }) => {
-            const imageSrc = cloudinaryUrl
+            let imageSrc = cloudinaryUrl
             return (
               <li key={id}>
                 <h3>{partnerName}</h3>
