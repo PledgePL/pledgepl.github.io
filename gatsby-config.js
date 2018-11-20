@@ -1,6 +1,20 @@
 const path = require('path')
 require('dotenv').config()
 
+console.log("ENV VARS")
+
+console.log("process.env.GOOGLE_TYPE",process.env.GOOGLE_TYPE)
+console.log("process.env.GOOGLE_PROJECT_ID",process.env.GOOGLE_PROJECT_ID)
+console.log("process.env.GOOGLE_PRIVATE_KEY_ID",process.env.GOOGLE_PRIVATE_KEY_ID)
+console.log("process.env.GOOGLE_PRIVATE_KEY",process.env.GOOGLE_PRIVATE_KEY)
+console.log("process.env.GOOGLE_CLIENT_EMAIL",process.env.GOOGLE_CLIENT_EMAIL)
+console.log("process.env.GOOGLE_CLIENT_ID",process.env.GOOGLE_CLIENT_ID)
+console.log("process.env.GOOGLE_AUTH_URI",process.env.GOOGLE_AUTH_URI)
+console.log("process.env.GOOGLE_TOKEN_URI",process.env.GOOGLE_TOKEN_URI)
+console.log("process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_UR",process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_UR)
+console.log("process.env.GOOGLE_CLIENT_X509_CERT_URL",process.env.GOOGLE_CLIENT_X509_CERT_URL)
+
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
