@@ -21,8 +21,6 @@ export default class Logo extends React.Component {
   }
 
   render() {
-    const { siteTitle } = this.props
-    console.log("render logo")
     return (
       <StaticQuery
         query={graphql`

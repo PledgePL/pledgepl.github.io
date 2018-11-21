@@ -6,7 +6,7 @@ import { ThemeProvider } from 'emotion-theming'
 import emotionNormalize from 'emotion-normalize'
 import { injectGlobal } from 'emotion'
 
-import theme from '../styles/theme'
+import theme, {baseFontSize} from '../styles/theme'
 import Header from './header'
 
 // Normalize.css
@@ -17,6 +17,11 @@ injectGlobal`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
+  }
+  html {
+    font-family: "Roboto",Arial,Helvetica,sans-serif;
+    font-weight: 400;
+    font-size: ${16/baseFontSize*100}%;
   }
 `
 

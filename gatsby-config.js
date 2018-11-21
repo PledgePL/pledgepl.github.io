@@ -2,18 +2,29 @@ const path = require('path')
 require('dotenv').config()
 
 // pre process the GOOGLE_PRIVATE_KEY
-process.env.GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY ? process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n') : process.env.GOOGLE_PRIVATE_KEY
+process.env.GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY
+  ? process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
+  : process.env.GOOGLE_PRIVATE_KEY
 
-console.log("process.env.GOOGLE_TYPE",process.env.GOOGLE_TYPE)
-console.log("process.env.GOOGLE_PROJECT_ID",process.env.GOOGLE_PROJECT_ID)
-console.log("process.env.GOOGLE_PRIVATE_KEY_ID",process.env.GOOGLE_PRIVATE_KEY_ID)
-console.log("process.env.GOOGLE_PRIVATE_KEY",process.env.GOOGLE_PRIVATE_KEY)
-console.log("process.env.GOOGLE_CLIENT_EMAIL",process.env.GOOGLE_CLIENT_EMAIL)
-console.log("process.env.GOOGLE_CLIENT_ID",process.env.GOOGLE_CLIENT_ID)
-console.log("process.env.GOOGLE_AUTH_URI",process.env.GOOGLE_AUTH_URI)
-console.log("process.env.GOOGLE_TOKEN_URI",process.env.GOOGLE_TOKEN_URI)
-console.log("process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI",process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI)
-console.log("process.env.GOOGLE_CLIENT_X509_CERT_URL",process.env.GOOGLE_CLIENT_X509_CERT_URL)
+console.log('process.env.GOOGLE_TYPE', process.env.GOOGLE_TYPE)
+console.log('process.env.GOOGLE_PROJECT_ID', process.env.GOOGLE_PROJECT_ID)
+console.log(
+  'process.env.GOOGLE_PRIVATE_KEY_ID',
+  process.env.GOOGLE_PRIVATE_KEY_ID
+)
+console.log('process.env.GOOGLE_PRIVATE_KEY', process.env.GOOGLE_PRIVATE_KEY)
+console.log('process.env.GOOGLE_CLIENT_EMAIL', process.env.GOOGLE_CLIENT_EMAIL)
+console.log('process.env.GOOGLE_CLIENT_ID', process.env.GOOGLE_CLIENT_ID)
+console.log('process.env.GOOGLE_AUTH_URI', process.env.GOOGLE_AUTH_URI)
+console.log('process.env.GOOGLE_TOKEN_URI', process.env.GOOGLE_TOKEN_URI)
+console.log(
+  'process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI',
+  process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI
+)
+console.log(
+  'process.env.GOOGLE_CLIENT_X509_CERT_URL',
+  process.env.GOOGLE_CLIENT_X509_CERT_URL
+)
 
 module.exports = {
   siteMetadata: {
@@ -49,16 +60,17 @@ module.exports = {
         spreadsheetId: '1kAplImjNVteoUDhyEifDB9oVjvAVsSmnpq6ncPleID4',
         worksheetTitle: 'Partners',
         credentials: {
-          "type": process.env.GOOGLE_TYPE,
-          "project_id": process.env.GOOGLE_PROJECT_ID,
-          "private_key_id": process.env.GOOGLE_PRIVATE_KEY_ID,
-          "private_key": process.env.GOOGLE_PRIVATE_KEY,
-          "client_email": process.env.GOOGLE_CLIENT_EMAIL,
-          "client_id": process.env.GOOGLE_CLIENT_ID,
-          "auth_uri": process.env.GOOGLE_AUTH_URI,
-          "token_uri": process.env.GOOGLE_TOKEN_URI,
-          "auth_provider_x509_cert_url": process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI,
-          "client_x509_cert_url": process.env.GOOGLE_CLIENT_X509_CERT_URL,
+          type: process.env.GOOGLE_TYPE,
+          project_id: process.env.GOOGLE_PROJECT_ID,
+          private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
+          private_key: process.env.GOOGLE_PRIVATE_KEY,
+          client_email: process.env.GOOGLE_CLIENT_EMAIL,
+          client_id: process.env.GOOGLE_CLIENT_ID,
+          auth_uri: process.env.GOOGLE_AUTH_URI,
+          token_uri: process.env.GOOGLE_TOKEN_URI,
+          auth_provider_x509_cert_url:
+            process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI,
+          client_x509_cert_url: process.env.GOOGLE_CLIENT_X509_CERT_URL,
         },
       },
     },
@@ -87,7 +99,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-no-sourcemaps",
+      resolve: 'gatsby-plugin-no-sourcemaps',
     },
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyzer',
@@ -96,11 +108,20 @@ module.exports = {
     //     production: true,
     //   },
     // },
-  //   {
-  //     resolve: `gatsby-plugin-polyfill-io`,
-  //     options: {
-  //        features: [`IntersectionObserver`]
-  //     },
-  //  },
+    //   {
+    //     resolve: `gatsby-plugin-polyfill-io`,
+    //     options: {
+    //        features: [`IntersectionObserver`]
+    //     },
+    //  },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto+Slab`,
+          `Roboto\:300,400`
+        ],
+      },
+    },
   ],
 }

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../components/layout'
-
 import styled from 'react-emotion'
 
 const Title = styled('h1')`

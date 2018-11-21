@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { withTheme } from 'emotion-theming'
 import Logo from './logo'
+import Text from './text'
 
 const Header = styled('header')`
   background-color: ${props => props.theme.bgColor2};
@@ -22,19 +24,15 @@ const HeaderContent = styled('div')`
   padding: 1rem;
 `
 
-export default ({ siteTitle }) => (
+export default withTheme((props) => (
   <Header>
     <HeaderContent>
       <div className="header__content__logo">
         <Logo />
       </div>
-      <div
-        className="
-          header__content__secondary-nav
-          xs-u-block
-          xs-u-text-align-right
-        md-u-hide"
-      />
+      <div>
+        <Text textColor="textColor1">Hello World</Text>
+      </div>
     </HeaderContent>
   </Header>
-)
+))
