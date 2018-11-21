@@ -1,8 +1,7 @@
 const path = require('path')
 require('dotenv').config()
 
-console.log("ENV VARS")
-
+// pre process the GOOGLE_PRIVATE_KEY
 process.env.GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY ? process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n') : process.env.GOOGLE_PRIVATE_KEY
 
 console.log("process.env.GOOGLE_TYPE",process.env.GOOGLE_TYPE)
@@ -15,7 +14,6 @@ console.log("process.env.GOOGLE_AUTH_URI",process.env.GOOGLE_AUTH_URI)
 console.log("process.env.GOOGLE_TOKEN_URI",process.env.GOOGLE_TOKEN_URI)
 console.log("process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI",process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URI)
 console.log("process.env.GOOGLE_CLIENT_X509_CERT_URL",process.env.GOOGLE_CLIENT_X509_CERT_URL)
-
 
 module.exports = {
   siteMetadata: {
