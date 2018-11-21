@@ -11,11 +11,11 @@ const Title = styled('h1')`
 `
 
 const SecondPage = () => (
-  <Layout>
+  <>
     <Title>Hi from the second page</Title>
     <p>Welcome to page 2</p>
     <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  </>
 )
 
 export default SecondPage
