@@ -13,6 +13,8 @@ export default withTheme(
     tagName = 'span',
     textSize = 'alpha',
     textColor = 'textColor1',
+    textTransform = 'none',
+    inline = false,
     children,
   }) => {
     const fontSize = theme[`textSize${capitalizeFirstLetter(textSize)}`]
@@ -21,10 +23,11 @@ export default withTheme(
     const Text = styled(tagName)`
       ${mq({
         color: theme[textColor],
-        '&, & > p': {
+        textTransform,
+        '&, & p': {
           fontSize,
           lineHeight,
-          margin: 0,
+          margin: `0 0 ${inline ? 0 : '1rem'} 0`,
           fontWeight: 'normal',
         },
       })}

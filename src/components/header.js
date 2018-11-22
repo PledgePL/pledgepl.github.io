@@ -31,7 +31,7 @@ export default withTheme((props) => (
         <Logo />
       </div>
       <div>
-        <Text textColor="textColor1">Hello World</Text>
+        <Text textColor="textColor1" inline={true}>Hello World</Text>
       </div>
     </HeaderContent>
   </Header>
