@@ -28,7 +28,7 @@ export default class Logo extends React.Component {
             file(name: { eq: "pledgepl-logo-white" }) {
               childImageSharp {
                 id
-                fixed(width: 130) {
+                fixed(width: 131) {
                   ...GatsbyImageSharpFixed_withWebp_noBase64
                 }
               }
@@ -36,7 +36,7 @@ export default class Logo extends React.Component {
           }
         `}
         render={data => {
-          console.log('render logo')
+          console.log("ata.file.childImageSharp.fixed", data.file.childImageSharp.fixed)
           return (
             <Img
               fixed={data.file.childImageSharp.fixed}

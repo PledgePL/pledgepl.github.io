@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
         <p>This is a paragraph text</p>
         <p>Here is another paragraph</p>
       </Text>
-      <CTAButton>We're ready to join</CTAButton>
+      <CTAButton href='#'>We're ready to join</CTAButton>
       <Link to="/page-2/">Go to page 2</Link>
     </>
   )

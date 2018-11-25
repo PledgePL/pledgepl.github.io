@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 import { withTheme } from 'emotion-theming'
 import Logo from './logo'
-import Text from './text'
+import CTAButton from './cta-button'
 
 const Header = styled('header')`
   background-color: ${props => props.theme.bgColor2};
@@ -24,14 +24,16 @@ const HeaderContent = styled('div')`
   padding: 1rem;
 `
 
-export default withTheme((props) => (
+export default withTheme(props => (
   <Header>
     <HeaderContent>
       <div className="header__content__logo">
         <Logo />
       </div>
       <div>
-        <Text textColor="textColor1" inline={true}>Hello World</Text>
+        <CTAButton href="#" size="small">
+          We're ready to join
+        </CTAButton>
       </div>
     </HeaderContent>
   </Header>

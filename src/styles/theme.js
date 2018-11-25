@@ -50,6 +50,7 @@ const theme = {
   bgColor1: '#f0f5fa',
   bgColor2: '#989cd7',
   bgColor3: '#6ac3c1',
+  bgColor3Active: '#83cecc',
   textColor1: '#6b7074',
   textColor2: '#fff',
   textSizeAlpha: pxToRem(modularScale.alpha),
