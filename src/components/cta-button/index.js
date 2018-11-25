@@ -4,11 +4,11 @@ import { withTheme } from 'emotion-theming'
 import Text from '../text'
 import { mq } from '../../styles/theme'
 
-export default withTheme(({ theme, href, children, size='large' }) => {
-const isLarge = size === 'large'
-const heightMultiplier = isLarge ? 11 : 8
-const paddingVertical = isLarge ? theme.spacingUnit3 : theme.spacingUnit1
-const paddingHorizontal = isLarge ? theme.spacingUnit6 : theme.spacingUnit5
+export default withTheme(({ theme, href, children, size = 'large' }) => {
+  const isLarge = size === 'large'
+  const heightMultiplier = isLarge ? 11 : 8
+  const paddingVertical = isLarge ? theme.spacingUnit3 : theme.spacingUnit1
+  const paddingHorizontal = isLarge ? theme.spacingUnit6 : theme.spacingUnit5
 
   const CTAButton = styled(href ? 'a' : 'button')`
     background-color: ${theme.bgColor3};
@@ -20,7 +20,9 @@ const paddingHorizontal = isLarge ? theme.spacingUnit6 : theme.spacingUnit5
     border-radius: 50%;
     -webkit-appearance: none;
     text-decoration: none;
+    text-align: center;
     ${mq({
+      letterSpacing: theme.spacingUnit1.map(_ => _ / 6),
       paddingLeft: paddingHorizontal,
       paddingRight: paddingHorizontal,
       paddingTop: paddingVertical,
@@ -30,16 +32,16 @@ const paddingHorizontal = isLarge ? theme.spacingUnit6 : theme.spacingUnit5
       borderRadius: theme.spacingUnit1.map(_ => (_ * heightMultiplier) / 2),
     })}
     &:hover {
-        background-color: ${theme.bgColor3Active};
+      background-color: ${theme.bgColor3Active};
     }
   `
 
   return (
-    <CTAButton {...{href}}>
+    <CTAButton {...{ href }}>
       <Text
         inline={true}
         textColor="textColor2"
-        textSize={isLarge ? "eta" : "iota"}
+        textSize={isLarge ? 'eta' : 'iota'}
         textTransform="uppercase"
       >
         {children}

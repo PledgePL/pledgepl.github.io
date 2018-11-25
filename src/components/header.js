@@ -32,7 +32,7 @@ export default withTheme(props => (
       </div>
       <div>
         <CTAButton href="#" size="small">
-          We're ready to join
+          Join us today
         </CTAButton>
       </div>
     </HeaderContent>
