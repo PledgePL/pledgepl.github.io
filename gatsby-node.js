@@ -113,3 +113,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     // createParentChildLink({ parent: node, child: driveImageNode })
   }
 }
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        'styled-components': require.resolve('@emotion/styled')
+      }
+    },
+  })
+}

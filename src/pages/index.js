@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Text from '../components/text'
-import CTAButton from '../components/cta-button'
+import ButtonCTA from '../components/button-cta'
 
 const IndexPage = ({ data }) => {
   console.log(data)
@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
         <p>This is a paragraph text</p>
         <p>Here is another paragraph</p>
       </Text>
-      <CTAButton href='#'>We're ready to join</CTAButton>
+      <ButtonCTA href='#'>We're ready to join</ButtonCTA>
       <Link to="/page-2/">Go to page 2</Link>
     </>
   )

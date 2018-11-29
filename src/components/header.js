@@ -1,8 +1,9 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 import Logo from './logo'
-import CTAButton from './cta-button'
+import ButtonCTA from './button-cta'
+import ButtonMenu from './button-menu'
 
 const Header = styled('header')`
   background-color: ${props => props.theme.bgColor2};
@@ -16,7 +17,7 @@ const HeaderContent = styled('div')`
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   width: 100%;
   height: 100%;
   max-width: 1200px;
@@ -31,9 +32,14 @@ export default withTheme(props => (
         <Logo />
       </div>
       <div>
-        <CTAButton href="#" size="small">
+        <ButtonMenu href="#">Why Pledge</ButtonMenu>
+        <ButtonMenu href="#">Our Partners</ButtonMenu>
+        <ButtonMenu href="#">Support</ButtonMenu>
+      </div>
+      <div>
+        <ButtonCTA href="#" size="small">
           Join us today
-        </CTAButton>
+        </ButtonCTA>
       </div>
     </HeaderContent>
   </Header>

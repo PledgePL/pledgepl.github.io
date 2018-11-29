@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 import Text from '../text'
 import { mq } from '../../styles/theme'
@@ -10,7 +10,7 @@ export default withTheme(({ theme, href, children, size = 'large' }) => {
   const paddingVertical = isLarge ? theme.spacingUnit3 : theme.spacingUnit1
   const paddingHorizontal = isLarge ? theme.spacingUnit6 : theme.spacingUnit5
 
-  const CTAButton = styled(href ? 'a' : 'button')`
+  const ButtonCTA = styled(href ? 'a' : 'button')`
     background-color: ${theme.bgColor3};
     display: inline-flex;
     justify-content: center;
@@ -37,15 +37,16 @@ export default withTheme(({ theme, href, children, size = 'large' }) => {
   `
 
   return (
-    <CTAButton {...{ href }}>
+    <ButtonCTA {...{ href }}>
       <Text
         inline={true}
-        textColor="textColor2"
+        color="beta"
         textSize={isLarge ? 'eta' : 'iota'}
         textTransform="uppercase"
+        whiteSpace="nowrap"
       >
         {children}
       </Text>
-    </CTAButton>
+    </ButtonCTA>
   )
 })

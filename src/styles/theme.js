@@ -41,6 +41,19 @@ const fontSizeToLineHeight = (modularScaleValue) => {
 }
 
 const theme = {
+  space: [ 0, 4, 8, 16, 32, 64, 128, 256 ],
+  breakpoints: [ '576px', '768px', '992px', '1200px' ],
+
+  fonts: {
+    alpha: '"Roboto",Arial,Helvetica,sans-serif',
+    beta: '"Roboto Slab",Gerogia,serif'
+  },
+
+  colors: {
+    alpha: '#6b7074',
+    beta: '#fff'
+  },
+
   spacingUnit1: [4, 6],
   spacingUnit2: [8, 12],
   spacingUnit3: [12, 18],
@@ -64,7 +77,11 @@ const theme = {
   lineHeightGamma: fontSizeToLineHeight(modularScale.gamma),
   lineHeightEta: fontSizeToLineHeight(modularScale.eta),
   lineHeightTheta: fontSizeToLineHeight(modularScale.theta),
-  lineHeightIota: fontSizeToLineHeight(modularScale.iota)
+  lineHeightIota: fontSizeToLineHeight(modularScale.iota),
+  fontFamilyPrimary: '"Roboto",Arial,Helvetica,sans-serif',
+  fontWeightPrimary: 400,
+  fontFamilySecondary: '"Roboto Slab",Gerogia,serif',
+  fontWeightSecondary: 400,
 }
 
 export default theme
