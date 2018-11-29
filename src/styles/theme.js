@@ -48,6 +48,15 @@ const theme = {
     alpha: '"Roboto",Arial,Helvetica,sans-serif',
     beta: '"Roboto Slab",Gerogia,serif'
   },
+  
+
+  fontSizes: {
+    eta: [12, 16]
+  },
+
+  fontWeights: {
+    alpha: '400'
+  },
 
   colors: {
     alpha: '#6b7074',
@@ -83,5 +92,8 @@ const theme = {
   fontFamilySecondary: '"Roboto Slab",Gerogia,serif',
   fontWeightSecondary: 400,
 }
+
+
+theme.fontSizes.big = [2, 4]
 
 export default theme

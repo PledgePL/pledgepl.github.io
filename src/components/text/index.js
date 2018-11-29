@@ -1,58 +1,39 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Box } from '@rebass/grid'
-import { fontFamily } from 'styled-system'
+import { withTheme } from 'emotion-theming'
+import { fontFamily, fontWeight, letterSpacing, themeGet } from 'styled-system'
 
-const CustomBox = styled(Box)(fontFamily, props => ({
-  textTransform: props.textTransform,
-  whiteSpace: props.whiteSpace,
-}))
+const CustomBox = styled(Box)(
+  fontFamily,
+  fontWeight,
+  letterSpacing,
+  props => {
+    return ({
+      textTransform: props.textTransform,
+      whiteSpace: props.whiteSpace
+    })
+  }  
+)
 
-export const Text = props => <CustomBox {...props} />
+const Text = props => {
+  // Get the font size value from the theme
+  // Need to do this, as fontSize does not support array from named theme properties
+  props = {
+    ...props,
+    fontSize: themeGet(`fontSizes.${props.fontSize}`, null)(props)
+  }
+  return <CustomBox {...props} />
+}
 
 Text.defaultProps = {
-  as: 'div',
+  as: 'span',
   fontFamily: 'alpha',
+  fontWeight: 'alpha',
   textTransform: null,
+  fontSize: 'eta',
   whiteSpace: null,
   color: 'alpha',
 }
 
-export default Text
-
-// export default withTheme(
-//   ({
-//     theme,
-//     tagName = 'span',
-//     textSize = 'alpha',
-//     textColor = 'textColor1',
-//     textTransform = 'none',
-//     fontFamily = 'primary',
-//     whiteSpace = 'normal',
-//     inline = false,
-//     children,
-//   }) => {
-//     fontFamily = theme[`fontFamily${capitalizeFirstLetter(fontFamily)}`]
-//     const fontWeight = theme[`fontWeight${capitalizeFirstLetter(fontFamily)}`]
-//     const fontSize = theme[`textSize${capitalizeFirstLetter(textSize)}`]
-//     const lineHeight = theme[`lineHeight${capitalizeFirstLetter(textSize)}`]
-
-//     const Text = styled(tagName)`
-//       ${mq({
-//         color: theme[textColor],
-//         textTransform,
-//         '&, & p': {
-//           fontFamily,
-//           fontWeight,
-//           fontSize,
-//           lineHeight,
-//           whiteSpace,
-//           margin: `0 0 ${inline ? 0 : '1rem'} 0`,
-//           fontWeight: 'normal',
-//         },
-//       })}
-//     `
-
-//     return <Box>{children}</Box>
-//   }
-// )
+export default withTheme(Text)
