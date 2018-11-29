@@ -34,11 +34,11 @@ export default withTheme(({ theme, href, children, size = 'large' }) => {
   `
 
   return (
-    <ButtonCTA {...{ href }} pt={1} pb={1} pl={[3,4]} pr={[3,4]}>
+    <ButtonCTA {...{ href }} pt={1} pb={1} pl={[3, 4]} pr={[3, 4]}>
       <Text
         inline={true}
         color="beta"
-        fontSize={'eta'}
+        fontSize="eta"
         textSize={isLarge ? 'eta' : 'iota'}
         textTransform="uppercase"
         whiteSpace="nowrap"

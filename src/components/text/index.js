@@ -21,7 +21,7 @@ const Text = props => {
   // Need to do this, as fontSize does not support array from named theme properties
   props = {
     ...props,
-    fontSize: themeGet(`fontSizes.${props.fontSize}`, null)(props)
+    fontSize: themeGet(`fontSizes.${props.fontSize}`, props.fontSize)(props)
   }
   return <CustomBox {...props} />
 }

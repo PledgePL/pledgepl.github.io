@@ -51,7 +51,10 @@ const theme = {
   
 
   fontSizes: {
-    eta: [12, 16]
+    alpha: [24.32772, 32.437],
+    eta: [12, 16],
+    theta: [10.66653, 14.222],
+    iota: [9.4815, 12.642],
   },
 
   fontWeights: {
@@ -92,8 +95,5 @@ const theme = {
   fontFamilySecondary: '"Roboto Slab",Gerogia,serif',
   fontWeightSecondary: 400,
 }
-
-
-theme.fontSizes.big = [2, 4]
 
 export default theme
