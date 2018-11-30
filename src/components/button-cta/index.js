@@ -2,46 +2,56 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 import { Box } from '@rebass/grid'
+import { style } from 'styled-system'
 import Text from '../text'
-import { mq } from '../../styles/theme'
 
 export default withTheme(({ theme, href, children, size = 'large' }) => {
   const isLarge = size === 'large'
-  const heightMultiplier = isLarge ? 11 : 8
-  const paddingVertical = isLarge ? theme.spacingUnit3 : theme.spacingUnit1
-  const paddingHorizontal = isLarge ? theme.spacingUnit6 : theme.spacingUnit5
 
-  const ButtonCTA = styled(Box)`
+  const ButtonCTA = styled(Box)(
+    `
     background-color: ${theme.bgColor3};
+    display: inline-block;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    border: none;
     outline: none;
-    border-radius: 50%;
     -webkit-appearance: none;
     text-decoration: none;
     text-align: center;
-    ${mq({
-      letterSpacing: theme.spacingUnit1.map(_ => _ / 6),
-      minHeight: theme.spacingUnit1.map(_ => _ * heightMultiplier),
-      minWidth: theme.spacingUnit1.map(_ => _ * 20),
-      borderRadius: theme.spacingUnit1.map(_ => (_ * heightMultiplier) / 2),
-    })}
     &:hover {
       background-color: ${theme.bgColor3Active};
     }
-  `
+  `,
+    // attach the borderRadius to use the space arr in theme
+    style({
+      prop: "borderRadius",
+      cssProperty: "border-radius",
+      key: "space"
+    }),
+  )
+  
+  const paddingHorizontal = isLarge ? 5 : 4
+  const paddingVertical = isLarge ? [4, 5] : [3, 4]
+  const borderRadius = isLarge ? 6 : 5
+  const fontSize = isLarge ? 'eta' : 'iota'
 
   return (
-    <ButtonCTA {...{ href }} pt={1} pb={1} pl={[3, 4]} pr={[3, 4]}>
+    <ButtonCTA
+      {...{ href }}
+      pt={paddingVertical}
+      pb={paddingVertical}
+      pl={paddingHorizontal}
+      pr={paddingHorizontal}
+      borderRadius={borderRadius}
+    >
       <Text
         inline={true}
         color="beta"
-        fontSize="eta"
-        textSize={isLarge ? 'eta' : 'iota'}
+        fontSize={fontSize}
         textTransform="uppercase"
         whiteSpace="nowrap"
+        letterSpacing={0.5}
       >
         {children}
       </Text>

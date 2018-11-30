@@ -41,7 +41,7 @@ const fontSizeToLineHeight = (modularScaleValue) => {
 }
 
 const theme = {
-  space: [ 0, 4, 8, 16, 32, 64, 128, 256 ],
+  space: [ 0, 4, 8, 12, 16, 24, 32, 64, 128, 256 ],
   breakpoints: [ '576px', '768px', '992px', '1200px' ],
 
   fonts: {
