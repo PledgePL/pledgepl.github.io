@@ -31,7 +31,7 @@ export default withTheme(({ theme, href, children, size = 'large' }) => {
     }),
   )
   
-  const paddingHorizontal = isLarge ? 5 : 4
+  const paddingHorizontal = isLarge ? 7 : 6
   const paddingVertical = isLarge ? [4, 5] : [3, 4]
   const borderRadius = isLarge ? 6 : 5
   const fontSize = isLarge ? 'eta' : 'iota'
