@@ -26,7 +26,7 @@ export default withTheme(({ theme, href, children, size = 'large' }) => {
     // attach the borderRadius to use the space arr in theme
     style({
       prop: "borderRadius",
-      cssProperty: "border-radius",
+      cssProperty: "borderRadius",
       key: "space"
     }),
   )

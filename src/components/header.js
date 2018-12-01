@@ -12,11 +12,11 @@ const Header = styled(Flex)`
   box-shadow: 0 0 20px rgba(75, 0, 255, 0.44);
 `
 
-const Menu = styled(Flex)({
+const Nav = styled(Flex)({
   flexWrap: 'nowrap',
 })
 
-const MenuItem = props => <Box pl={4} pr={4} {...props} />
+const NavItem = props => <Box pl={4} pr={4} {...props} />
 
 export default withTheme(props => (
   <Header as="header" alignItems="center" justifyContent="center">
@@ -30,18 +30,18 @@ export default withTheme(props => (
         maxWidth: '1200px',
       }}
     >
-      <Logo />
-      <Menu>
-        <MenuItem>
+      <Logo flex="0 0 auto" />
+      <Nav as="nav">
+        <NavItem>
           <ButtonMenu href="#">Why Pledge</ButtonMenu>
-        </MenuItem>
-        <MenuItem>
+        </NavItem>
+        <NavItem>
           <ButtonMenu href="#">Our Partners</ButtonMenu>
-        </MenuItem>
-        <MenuItem>
+        </NavItem>
+        <NavItem>
           <ButtonMenu href="#">Support</ButtonMenu>
-        </MenuItem>
-      </Menu>
+        </NavItem>
+      </Nav>
       <ButtonCTA href="#" size="small">
         Join us today
       </ButtonCTA>
