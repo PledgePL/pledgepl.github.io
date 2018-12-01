@@ -114,14 +114,31 @@ module.exports = {
     //        features: [`IntersectionObserver`]
     //     },
     //  },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       `Roboto+Slab`,
+    //       `Roboto\:300,400`
+    //     ],
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
-          `Roboto+Slab`,
-          `Roboto\:300,400`
+          {
+            family: `Roboto+Slab`,
+            subsets: [`latin`],
+            variants: [`400`]
+          },
+          {
+            family: `Roboto`,
+            subsets: [`latin-ext`],
+            variants: [`400`]
+          },
         ],
       },
-    },
+    }
   ],
 }

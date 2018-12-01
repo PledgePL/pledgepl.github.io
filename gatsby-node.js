@@ -124,7 +124,8 @@ exports.onCreateWebpackConfig = ({
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        'styled-components': require.resolve('@emotion/styled')
+        'styled-components': require.resolve('@emotion/styled'),
+        'globby': require.resolve('fast-glob') // MUST KEEP. coz of error in gatsby-plugin-prefetch-google-fonts, with globby
       }
     },
   })
