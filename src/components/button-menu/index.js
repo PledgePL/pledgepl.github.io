@@ -50,6 +50,7 @@ export default withTheme(({ theme, href, children, size = 'large' }) => {
         textColor="textColor2"
         textSize={'eta'}
         whiteSpace="nowrap"
+        letterSpacing={0.5}
       >
         {children}
       </Text>

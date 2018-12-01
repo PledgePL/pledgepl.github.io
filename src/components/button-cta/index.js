@@ -51,7 +51,7 @@ export default withTheme(({ theme, href, children, size = 'large' }) => {
         fontSize={fontSize}
         textTransform="uppercase"
         whiteSpace="nowrap"
-        letterSpacing={0.5}
+        letterSpacing={1}
       >
         {children}
       </Text>
