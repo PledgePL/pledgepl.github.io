@@ -36,10 +36,6 @@ export default class Logo extends React.Component {
             }
           `}
           render={data => {
-            console.log(
-              'ata.file.childImageSharp.fixed',
-              data.file.childImageSharp.fixed
-            )
             return (
               <Img
                 fixed={data.file.childImageSharp.fixed}

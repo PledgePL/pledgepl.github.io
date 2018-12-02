@@ -4,9 +4,7 @@ import { withTheme } from 'emotion-theming'
 import Text from '../text'
 import { mq } from '../../styles/theme'
 
-export default withTheme(({ theme, href, children, size = 'large' }) => {
-  const isLarge = size === 'large'
-  const heightMultiplier = isLarge ? 11 : 8
+export default withTheme(({ theme, href, children }) => {
 
   const ButtonCTA = styled(href ? 'a' : 'button')`
     position: relative;
