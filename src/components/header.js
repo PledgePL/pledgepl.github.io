@@ -1,86 +1,100 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Box, Flex } from '@rebass/grid'
-import { style } from 'styled-system'
+import { CoreBox, CoreFlex } from './core-box'
 import Logo from './logo'
 import ButtonCTA from './button-cta'
 import ButtonMenu from './button-menu'
 import ButtonHamburger from './button-hamburger'
 
-const height = style({
-  // React prop name
-  prop: 'height',
-  // The corresponding CSS property (defaults to prop argument)
-  cssProperty: 'height',
-  // key for theme values
-  key: 'height',
-  // accessor function for transforming the value
-  transformValue: n => n,
-  // add a fallback scale object or array, if theme is not present
-  scale: [ 'auto' ]
-})
-
-const Header = styled(Flex)`
+const Header = styled(CoreFlex)`
+  position: fixed;
   background-color: ${props => props.theme.bgColor2};
   width: 100%;
   box-shadow: 0 0 20px rgba(75, 0, 255, 0.44);
-  ${height}
 `
-const Nav = styled(Flex)({
-  flexWrap: 'nowrap',
-})
+const Nav = styled(CoreFlex)`
+  flex-wrap: nowrap;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+`
 
-const NavItem = props => <Box pl={4} pr={4} {...props} />
+const NavItem = props => (
+  <CoreBox pt={[4, 0]} pb={[4, 0]} pl={[0, 4]} pr={[0, 4]} {...props} />
+)
 
 export default class extends React.Component {
-
   constructor(props) {
     super(props)
     this.onHamburgerClick = this.onHamburgerClick.bind(this)
     this.state = {
-      active: false
+      active: false,
     }
   }
 
   onHamburgerClick() {
-    console.log("hamburger click")
     this.setState({
-      active: !this.state.active
+      active: !this.state.active,
     })
   }
 
   render() {
+    const { active } = this.state
+    const headerHeight = 84
     return (
-      <Header as="header" alignItems="flex-start" justifyContent="center" height={["100vh", "auto"]}>
-        <Flex
+      <>
+        <Header
+          as="header"
           alignItems="flex-start"
-          justifyContent="space-between"
-          maxWidth="1200"
-          width="100%"
-          p={3}
-          css={{
-            height: "100%",
-            maxWidth: '1200px',
-          }}
+          justifyContent="center"
+          height={[active ? '100vh' : headerHeight, headerHeight]}
         >
-          <Logo flex="0 0 auto" />
-          <Nav as="nav" alignSelf="center">
-            <NavItem>
-              <ButtonMenu href="#">Why Pledge</ButtonMenu>
-            </NavItem>
-            <NavItem>
-              <ButtonMenu href="#">Our Partners</ButtonMenu>
-            </NavItem>
-            <NavItem>
-              <ButtonMenu href="#">Support</ButtonMenu>
-            </NavItem>
-          </Nav>
-          <ButtonCTA href="#" size="small">
-            Join us today
-          </ButtonCTA>
-          <ButtonHamburger onClick={this.onHamburgerClick} active={this.state.active} />
-        </Flex>
-      </Header>
+          <CoreFlex
+            alignItems="center"
+            justifyContent="space-between"
+            maxWidth="1200"
+            width="100%"
+            p={3}
+            css={{
+              maxWidth: '1200px',
+            }}
+          >
+            <Logo flex="0 0 auto" />
+            <Nav
+              as="nav"
+              alignSelf="center"
+              alignItems="center"
+              justifyContent="center"
+              position={['fixed', 'static']}
+              flexDirection={['column', 'row']}
+              hide={[!active, false]}
+            >
+              <NavItem>
+                <ButtonMenu href="#">Why Pledge</ButtonMenu>
+              </NavItem>
+              <NavItem>
+                <ButtonMenu href="#">Our Partners</ButtonMenu>
+              </NavItem>
+              <NavItem>
+                <ButtonMenu href="#">Support</ButtonMenu>
+              </NavItem>
+            </Nav>
+            <CoreBox hide={[true, false]}>
+              <ButtonCTA href="#" size="small">
+                Join us today
+              </ButtonCTA>
+            </CoreBox>
+            <CoreBox hide={[false, true]}>
+              <ButtonHamburger
+                onClick={this.onHamburgerClick}
+                active={this.state.active}
+              />
+            </CoreBox>
+          </CoreFlex>
+        </Header>
+        <CoreBox height={headerHeight} />
+      </>
     )
   }
 }
