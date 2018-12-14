@@ -41,20 +41,25 @@ export default class extends React.Component {
 
   render() {
     const { active } = this.state
-    const headerHeight = 84
+    const headerHeight = [60, 84]
+    const activeHeaderHeight = active
+      ? ['100vh'].concat(headerHeight.slice(1))
+      : headerHeight
+
     return (
       <>
         <Header
           as="header"
           alignItems="flex-start"
           justifyContent="center"
-          height={[active ? '100vh' : headerHeight, headerHeight]}
+          height={activeHeaderHeight}
         >
           <CoreFlex
             alignItems="center"
             justifyContent="space-between"
             maxWidth="1200"
             width="100%"
+            height={headerHeight}
             p={3}
             css={{
               maxWidth: '1200px',

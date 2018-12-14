@@ -8,8 +8,8 @@ export const mq = facepaint(
   breakpoints.map(bp => `@media (min-width: ${bp}px)`)
 )
 
-const pxToRem = (value) => {
-  if(Array.isArray(value)) {
+const pxToRem = value => {
+  if (Array.isArray(value)) {
     return value.map(_ => pxToRem(_))
   }
   return `${value / baseFontSize}rem`
@@ -31,24 +31,23 @@ const modularScale = {
   lamda: 9.989,
 }
 
-const linesToRem = (lines) => pxToRem(lines * baseFontSize)
+const linesToRem = lines => pxToRem(lines * baseFontSize)
 
-const fontSizeToLineHeight = (modularScaleValue) => {
+const fontSizeToLineHeight = modularScaleValue => {
   return [].concat(modularScaleValue).map(value => {
-    const lines = Math.floor((value / baseFontSize) * lineHeightRatio * 2 ) / 2;
+    const lines = Math.floor((value / baseFontSize) * lineHeightRatio * 2) / 2
     return linesToRem(lines)
   })
 }
 
 const theme = {
-  space: [ 0, 4, 8, 12, 16, 24, 32, 64, 128, 256 ],
-  breakpoints: [ '576px', '768px', '992px', '1200px' ],
+  space: [0, 4, 8, 12, 16, 24, 32, 64, 128, 256],
+  breakpoints: ['768px', '992px', '1200px'],
 
   fonts: {
     alpha: '"Roboto",Arial,Helvetica,sans-serif',
-    beta: '"Roboto Slab",Gerogia,serif'
+    beta: '"Roboto Slab",Gerogia,serif',
   },
-  
 
   fontSizes: {
     alpha: [24.32772, 32.437],
@@ -58,12 +57,12 @@ const theme = {
   },
 
   fontWeights: {
-    alpha: '400'
+    alpha: '400',
   },
 
   colors: {
     alpha: '#6b7074',
-    beta: '#fff'
+    beta: '#fff',
   },
 
   spacingUnit1: [4, 6],

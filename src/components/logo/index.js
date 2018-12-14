@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@rebass/grid'
+import { CoreBox } from '../core-box'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -21,14 +21,14 @@ export default class Logo extends React.Component {
 
   render() {
     return (
-      <Box {...this.props}>
+      <CoreBox {...this.props} height="100%">
         <StaticQuery
           query={graphql`
             query LogoQuery {
               file(name: { eq: "pledgepl-logo-white" }) {
                 childImageSharp {
                   id
-                  fixed(width: 131) {
+                  fixed(height: 56) {
                     ...GatsbyImageSharpFixed_withWebp_noBase64
                   }
                 }
@@ -44,12 +44,17 @@ export default class Logo extends React.Component {
                 style={{
                   opacity: this.state.opacity,
                   transition: 'opacity 1s linear 1s',
+                  maxHeight: '100%',
+                }}
+                imgStyle={{
+                  objectFit: 'contain',
+                  objectPosition: 'center left',
                 }}
               />
             )
           }}
         />
-      </Box>
+      </CoreBox>
     )
   }
 }
