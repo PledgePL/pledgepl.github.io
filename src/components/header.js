@@ -65,7 +65,7 @@ export default class extends React.Component {
               maxWidth: '1200px',
             }}
           >
-            <Logo flex="0 0 auto" />
+            <Logo />
             <Nav
               as="nav"
               alignSelf="center"

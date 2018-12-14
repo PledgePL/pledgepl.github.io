@@ -1,5 +1,4 @@
 import React from 'react'
-import { CoreBox } from '../core-box'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -21,40 +20,38 @@ export default class Logo extends React.Component {
 
   render() {
     return (
-      <CoreBox {...this.props} height="100%">
-        <StaticQuery
-          query={graphql`
-            query LogoQuery {
-              file(name: { eq: "pledgepl-logo-white" }) {
-                childImageSharp {
-                  id
-                  fixed(height: 56) {
-                    ...GatsbyImageSharpFixed_withWebp_noBase64
-                  }
+      <StaticQuery
+        query={graphql`
+          query LogoQuery {
+            file(name: { eq: "pledgepl-logo-white" }) {
+              childImageSharp {
+                id
+                fixed(height: 56) {
+                  ...GatsbyImageSharpFixed_withWebp_noBase64
                 }
               }
             }
-          `}
-          render={data => {
-            return (
-              <Img
-                fixed={data.file.childImageSharp.fixed}
-                fadeIn={false}
-                critical={true}
-                style={{
-                  opacity: this.state.opacity,
-                  transition: 'opacity 1s linear 1s',
-                  maxHeight: '100%',
-                }}
-                imgStyle={{
-                  objectFit: 'contain',
-                  objectPosition: 'center left',
-                }}
-              />
-            )
-          }}
-        />
-      </CoreBox>
+          }
+        `}
+        render={data => {
+          return (
+            <Img
+              fixed={data.file.childImageSharp.fixed}
+              fadeIn={false}
+              critical={true}
+              style={{
+                opacity: this.state.opacity,
+                transition: 'opacity 1s linear 1s',
+                maxHeight: '100%',
+              }}
+              imgStyle={{
+                objectFit: 'contain',
+                objectPosition: 'center left',
+              }}
+            />
+          )
+        }}
+      />
     )
   }
 }
