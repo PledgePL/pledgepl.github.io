@@ -31,6 +31,7 @@ module.exports = {
     title: 'Gatsby Default Starter',
   },
   plugins: [
+    'gatsby-plugin-netlify',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
@@ -130,15 +131,15 @@ module.exports = {
           {
             family: `Roboto+Slab`,
             subsets: [`latin`],
-            variants: [`400`]
+            variants: [`400`],
           },
           {
             family: `Roboto`,
             subsets: [`latin-ext`],
-            variants: [`400`]
+            variants: [`400`],
           },
         ],
       },
-    }
+    },
   ],
 }
