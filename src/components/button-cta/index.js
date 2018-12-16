@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
-import { Box } from '@rebass/grid'
+import { CoreBox } from '../core-box'
 import { style } from 'styled-system'
 import Text from '../text'
+import Link from '../../utils/gatsby-link'
 
 export default withTheme(
   ({ theme, href, children, size = 'large', css = {} }) => {
     const isLarge = size === 'large'
 
-    const ButtonCTA = styled(Box)(
+    const ButtonCTA = styled(CoreBox)(
       `
       background-color: ${theme.bgColor3};
       display: inline-block;
@@ -26,7 +27,7 @@ export default withTheme(
     `,
       // attach the borderRadius to use the space arr in theme
       style({
-        prop: 'borderRadius',
+        prop: 'borderradius',
         cssProperty: 'borderRadius',
         key: 'space',
       })
@@ -37,14 +38,17 @@ export default withTheme(
     const borderRadius = isLarge ? 6 : 5
     const fontSize = isLarge ? 'eta' : 'iota'
 
+    const LinkButtonCTA = ButtonCTA.withComponent(Link)
+
     return (
-      <ButtonCTA
-        {...{ href, css }}
+      <LinkButtonCTA
+        href={href}
+        {...{ css }}
         pt={paddingVertical}
         pb={paddingVertical}
         pl={paddingHorizontal}
         pr={paddingHorizontal}
-        borderRadius={borderRadius}
+        borderradius={borderRadius}
       >
         <Text
           inline={true}
@@ -56,7 +60,7 @@ export default withTheme(
         >
           {children}
         </Text>
-      </ButtonCTA>
+      </LinkButtonCTA>
     )
   }
 )

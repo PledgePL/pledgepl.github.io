@@ -10,8 +10,7 @@ const Title = styled('h1')`
 
 const SecondPage = () => (
   <>
-    <Title>Hi from the second page</Title>
-    <p>Welcome to page 2</p>
+    <Title>Support</Title>
     <Link to="/">Go back to the homepage</Link>
   </>
 )

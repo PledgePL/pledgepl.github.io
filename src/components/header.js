@@ -23,7 +23,6 @@ const Nav = styled(CoreFlex)`
 const NavItem = props => (
   <CoreBox pt={[4, 0]} pb={[4, 0]} pl={[0, 4]} pr={[0, 4]} {...props} />
 )
-
 export default class extends React.Component {
   constructor(props) {
     super(props)
@@ -76,17 +75,17 @@ export default class extends React.Component {
               hide={[!active, false]}
             >
               <NavItem>
-                <ButtonMenu href="#">Why Pledge</ButtonMenu>
+                <ButtonMenu href="/why-pledge">Why Pledge</ButtonMenu>
               </NavItem>
               <NavItem>
-                <ButtonMenu href="#">Our Partners</ButtonMenu>
+                <ButtonMenu href="/partners">Our Partners</ButtonMenu>
               </NavItem>
               <NavItem>
-                <ButtonMenu href="#">Support</ButtonMenu>
+                <ButtonMenu href="/support">Support</ButtonMenu>
               </NavItem>
             </Nav>
             <CoreBox hide={[true, false]}>
-              <ButtonCTA href="#" size="small">
+              <ButtonCTA href="/join-us" size="small">
                 Join us today
               </ButtonCTA>
             </CoreBox>

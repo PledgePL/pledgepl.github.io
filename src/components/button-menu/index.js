@@ -3,10 +3,11 @@ import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 import Text from '../text'
 import { mq } from '../../styles/theme'
+import { CoreBox } from '../core-box'
+import Link from '../../utils/gatsby-link'
 
 export default withTheme(({ theme, href, children }) => {
-
-  const ButtonCTA = styled(href ? 'a' : 'button')`
+  const ButtonMenu = styled(CoreBox)`
     position: relative;
     display: inline-flex;
     justify-content: center;
@@ -34,13 +35,20 @@ export default withTheme(({ theme, href, children }) => {
         width: theme.spacingUnit1.map(_ => `calc(100% - ${_ * 2}px)`),
       })}
     }
+    &[aria-current]:after,
     &:hover:after {
       transform: scaleX(1);
     }
   `
 
+  const LinkButtonMenu = ButtonMenu.withComponent(Link)
+
+  const isActive = ({ isCurrent }) => {
+    return isCurrent ? { isCurrent } : { isCurrent }
+  }
+
   return (
-    <ButtonCTA {...{ href }}>
+    <LinkButtonMenu href={href} getProps={isActive}>
       <Text
         inline={true}
         color="beta"
@@ -52,6 +60,6 @@ export default withTheme(({ theme, href, children }) => {
       >
         {children}
       </Text>
-    </ButtonCTA>
+    </LinkButtonMenu>
   )
 })
