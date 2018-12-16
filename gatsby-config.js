@@ -33,6 +33,17 @@ module.exports = {
   plugins: [
     {
       resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/*': [
+            'X-Frame-Options: DENY',
+            'X-XSS-Protection: 1; mode=block',
+            'X-Content-Type-Options: nosniff',
+            'Referrer-Policy: origin-when-cross-origin',
+          ],
+        },
+        mergeLinkHeaders: true,
+      },
     },
     'gatsby-plugin-react-helmet',
     {
