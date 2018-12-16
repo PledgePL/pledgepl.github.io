@@ -42,6 +42,7 @@ module.exports = {
             'Referrer-Policy: origin-when-cross-origin',
           ],
         },
+        allPageHeaders: ['Link: </static/image.jpg>; rel=preload; as=image'],
         mergeLinkHeaders: true,
       },
     },
