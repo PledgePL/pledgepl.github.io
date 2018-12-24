@@ -8,7 +8,7 @@ import { ThemeProvider } from 'emotion-theming'
 import emotionNormalize from 'emotion-normalize'
 import { injectGlobal } from 'emotion'
 
-import theme, {baseFontSize} from '../styles/theme'
+import theme, { baseFontSize } from '../styles/theme'
 import Header from './header'
 
 // Normalize.css
@@ -23,7 +23,7 @@ injectGlobal`
   html {
     font-family: "Roboto",Arial,Helvetica,sans-serif;
     font-weight: 400;
-    font-size: ${16/baseFontSize*100}%;
+    font-size: ${(16 / baseFontSize) * 100}%;
   }
 `
 
@@ -51,16 +51,7 @@ const Layout = ({ children }) => (
             <html lang="en" />
           </Helmet>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            style={{
-              margin: '0 auto',
-              maxWidth: 960,
-              padding: '0px 1.0875rem 1.45rem',
-              paddingTop: 0,
-            }}
-          >
-            {children}
-          </div>
+          <main>{children}</main>
         </>
       </ThemeProvider>
     )}

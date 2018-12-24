@@ -1,7 +1,7 @@
 import facepaint from 'facepaint'
 
 export const baseFontSize = 16
-const breakpoints = [576, 768, 992, 1200]
+const breakpoints = [768, 992, 1200]
 const lineHeightRatio = 1.5
 
 export const mq = facepaint(
@@ -40,9 +40,15 @@ const fontSizeToLineHeight = modularScaleValue => {
   })
 }
 
+const calcLineHeight = fontSizeValue => {
+  const lines =
+    Math.floor((fontSizeValue / baseFontSize) * lineHeightRatio * 2) / 2
+  return lines * baseFontSize
+}
+
 const theme = {
   space: [0, 4, 8, 12, 16, 24, 32, 64, 128, 256],
-  breakpoints: ['768px', '992px', '1200px'],
+  breakpoints,
 
   fonts: {
     alpha: '"Roboto",Arial,Helvetica,sans-serif',
@@ -56,6 +62,13 @@ const theme = {
     iota: [9.4815, 12.642],
   },
 
+  lineHeights: {
+    alpha: [lineHeightRatio],
+    eta: [lineHeightRatio],
+    theta: [lineHeightRatio],
+    iota: [lineHeightRatio],
+  },
+
   fontWeights: {
     alpha: '400',
   },
@@ -63,6 +76,8 @@ const theme = {
   colors: {
     alpha: '#6b7074',
     beta: '#fff',
+    gamma: '#989cd7',
+    delta: '#6ac3c1',
   },
 
   spacingUnit1: [4, 6],

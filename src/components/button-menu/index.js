@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
+import { themeGet } from 'styled-system'
 import Text from '../text'
 import { mq } from '../../styles/theme'
 import { CoreBox } from '../core-box'
@@ -16,28 +17,34 @@ export default withTheme(({ theme, href, children }) => {
     outline: none;
     -webkit-appearance: none;
     text-decoration: none;
-    text-align: center;
-    ${mq({
-      padding: theme.spacingUnit1,
-    })}
     &:after {
       content: '';
       position: absolute;
-      background-color: #fff;
+      background-color: ${theme.colors.beta};
       transform-origin: center;
       transform: scaleX(0);
       transition: transform 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s,
         background-color 0.2s linear 0.2s;
-      ${mq({
-        bottom: [1, 2],
-        left: theme.spacingUnit1,
-        height: [3, 5],
-        width: theme.spacingUnit1.map(_ => `calc(100% - ${_ * 2}px)`),
-      })}
+      ${props => {
+        return mq({
+          height: [3, 5],
+          bottom: props.p.map(_ => {
+            const pValue = themeGet(`space.${_}`, _)(props)
+            return `${pValue / 2}px`
+          }),
+          width: props.p.map(_ => {
+            const pValue = themeGet(`space.${_}`, _)(props)
+            return `calc(100% - ${pValue * 2}px)`
+          }),
+        })
+      }};
     }
     &[aria-current]:after,
     &:hover:after {
       transform: scaleX(1);
+    }
+    &[aria-current]:after {
+      background-color: ${theme.colors.delta};
     }
   `
 
@@ -48,13 +55,14 @@ export default withTheme(({ theme, href, children }) => {
   }
 
   return (
-    <LinkButtonMenu href={href} getProps={isActive}>
+    <LinkButtonMenu href={href} p={[1, 2]}>
       <Text
         inline={true}
         color="beta"
         fontFamily="beta"
         textColor="textColor2"
-        textSize={'eta'}
+        textSize="eta"
+        textAlign="center"
         whiteSpace="nowrap"
         letterSpacing={0.5}
       >
