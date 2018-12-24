@@ -75,17 +75,17 @@ export default class extends React.PureComponent {
               hide={[!active, false]}
             >
               <NavItem>
-                <ButtonMenu href="/why-pledge">Why Pledge</ButtonMenu>
+                <ButtonMenu href="/why-pledge/">Why Pledge</ButtonMenu>
               </NavItem>
               <NavItem>
-                <ButtonMenu href="/partners">Our Partners</ButtonMenu>
+                <ButtonMenu href="/partners/">Our Partners</ButtonMenu>
               </NavItem>
               <NavItem>
-                <ButtonMenu href="/support">Support</ButtonMenu>
+                <ButtonMenu href="/support/">Support</ButtonMenu>
               </NavItem>
             </Nav>
             <CoreBox hide={[true, false]}>
-              <ButtonCTA href="/join-us" size="small">
+              <ButtonCTA href="/join-us/" size="small">
                 Join us today
               </ButtonCTA>
             </CoreBox>
