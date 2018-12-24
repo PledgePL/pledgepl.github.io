@@ -8,6 +8,7 @@ import Link from '../../utils/gatsby-link'
 
 const ImgLink = styled(CoreBox)`
   background-color: transparent;
+  height: 100%;
 `.withComponent(Link)
 
 export default class Logo extends React.Component {
