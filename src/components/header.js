@@ -23,7 +23,7 @@ const Nav = styled(CoreFlex)`
 const NavItem = props => (
   <CoreBox pt={[4, 0]} pb={[4, 0]} pl={[0, 4]} pr={[0, 4]} {...props} />
 )
-export default class extends React.Component {
+export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.onHamburgerClick = this.onHamburgerClick.bind(this)

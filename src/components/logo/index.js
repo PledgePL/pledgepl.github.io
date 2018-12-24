@@ -1,6 +1,14 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from '@emotion/styled'
+import { CoreBox } from '../core-box'
+import { themeGet } from 'styled-system'
+import Link from '../../utils/gatsby-link'
+
+const ImgLink = styled(CoreBox)`
+  background-color: transparent;
+`.withComponent(Link)
 
 export default class Logo extends React.Component {
   constructor(props) {
@@ -35,20 +43,22 @@ export default class Logo extends React.Component {
         `}
         render={data => {
           return (
-            <Img
-              fixed={data.file.childImageSharp.fixed}
-              fadeIn={false}
-              critical={true}
-              style={{
-                opacity: this.state.opacity,
-                transition: 'opacity 1s linear 1s',
-                maxHeight: '100%',
-              }}
-              imgStyle={{
-                objectFit: 'contain',
-                objectPosition: 'center left',
-              }}
-            />
+            <ImgLink href="/">
+              <Img
+                fixed={data.file.childImageSharp.fixed}
+                fadeIn={false}
+                critical={true}
+                style={{
+                  opacity: this.state.opacity,
+                  transition: 'opacity 10s linear 1s',
+                  maxHeight: '100%',
+                }}
+                imgStyle={{
+                  objectFit: 'contain',
+                  objectPosition: 'center left',
+                }}
+              />
+            </ImgLink>
           )
         }}
       />

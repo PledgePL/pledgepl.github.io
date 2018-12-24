@@ -46,4 +46,4 @@ Text.defaultProps = {
   color: 'alpha',
 }
 
-export default withTheme(Text)
+export default React.memo(withTheme(Text))
