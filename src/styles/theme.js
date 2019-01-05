@@ -56,7 +56,9 @@ const theme = {
   },
 
   fontSizes: {
+    xl: [30.75, 41.053],
     alpha: [24.32772, 32.437],
+    delta: [17, 22.781],
     eta: [12, 16],
     theta: [10.66653, 14.222],
     iota: [9.4815, 12.642],
@@ -78,6 +80,7 @@ const theme = {
     beta: '#fff',
     gamma: '#989cd7',
     delta: '#6ac3c1',
+    epsilon: '#f0f5fa',
   },
 
   spacingUnit1: [4, 6],

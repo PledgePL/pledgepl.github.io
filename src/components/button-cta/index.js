@@ -33,9 +33,9 @@ export default withTheme(
       })
     )
 
-    const paddingHorizontal = isLarge ? 7 : 6
-    const paddingVertical = isLarge ? [4, 5] : [3, 4]
-    const borderRadius = isLarge ? 6 : 5
+    const paddingHorizontal = isLarge ? 6 : 6
+    const paddingVertical = isLarge ? [3, 4] : [3, 4]
+    const borderRadius = isLarge ? 8 : 5
     const fontSize = isLarge ? 'eta' : 'iota'
 
     const LinkButtonCTA = ButtonCTA.withComponent(Link)
