@@ -62,6 +62,7 @@ const theme = {
     eta: [12, 16],
     theta: [10.66653, 14.222],
     iota: [9.4815, 12.642],
+    lamda: [7.4175, 9.989],
   },
 
   lineHeights: {
@@ -81,6 +82,7 @@ const theme = {
     gamma: '#989cd7',
     delta: '#6ac3c1',
     epsilon: '#f0f5fa',
+    zeta: '#83cecc',
   },
 
   spacingUnit1: [4, 6],

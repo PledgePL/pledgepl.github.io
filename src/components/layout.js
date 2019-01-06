@@ -10,6 +10,8 @@ import { injectGlobal } from 'emotion'
 
 import theme, { baseFontSize } from '../styles/theme'
 import Header from './header'
+import SectionEmployeeCount from '../components/sections/section-employee-count'
+import SectionFooter from '../components/sections/section-footer'
 
 // Normalize.css
 injectGlobal`
@@ -52,6 +54,8 @@ const Layout = ({ children }) => (
           </Helmet>
           <Header siteTitle={data.site.siteMetadata.title} />
           <main>{children}</main>
+          <SectionEmployeeCount />
+          <SectionFooter />
         </>
       </ThemeProvider>
     )}

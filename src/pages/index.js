@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import Text from '../components/text'
 import ButtonCTA from '../components/button-cta'
 import Banner from '../components/banner'
-import SectionEmployeeCount from '../components/sections/section-employee-count'
 
 const IndexPage = ({ data }) => {
   console.log(data)
@@ -31,7 +30,6 @@ const IndexPage = ({ data }) => {
         and healthy future. Meet our partners who have helped make the Pledge
         Parental Leave movement a reality.
       </Banner>
-      <SectionEmployeeCount />
       <Link to="/page-2/">Go to page 2</Link>
     </>
   )

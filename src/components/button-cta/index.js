@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
-import { CoreBox } from '../core-box'
+import { CoreFlex } from '../core-box'
 import { style } from 'styled-system'
 import Text from '../text'
 import Link from '../../utils/gatsby-link'
 
 export default withTheme(
-  ({ theme, href, children, size = 'large', css = {} }) => {
+  ({ theme, href, children, size = 'large', type = 'alpha', css = {} }) => {
     const isLarge = size === 'large'
+    const isTypeAlpha = type === 'alpha'
 
-    const ButtonCTA = styled(CoreBox)(
+    const ButtonCTA = styled(CoreFlex)(
       `
-      background-color: ${theme.bgColor3};
       display: inline-block;
       display: inline-flex;
       justify-content: center;
@@ -22,7 +22,10 @@ export default withTheme(
       text-decoration: none;
       text-align: center;
       &:hover {
-        background-color: ${theme.bgColor3Active};
+        background-color: ${
+          isTypeAlpha ? theme.colors.zeta : theme.colors.zeta
+        };
+        color: ${theme.colors.beta};
       }
     `,
       // attach the borderRadius to use the space arr in theme
@@ -37,6 +40,8 @@ export default withTheme(
     const paddingVertical = isLarge ? [3, 4] : [3, 4]
     const borderRadius = isLarge ? 8 : 5
     const fontSize = isLarge ? 'eta' : 'iota'
+    const bg = isTypeAlpha ? 'delta' : 'transparent'
+    const color = isTypeAlpha ? 'beta' : 'delta'
 
     const LinkButtonCTA = ButtonCTA.withComponent(Link)
 
@@ -49,11 +54,13 @@ export default withTheme(
         pl={paddingHorizontal}
         pr={paddingHorizontal}
         borderradius={borderRadius}
+        bg={bg}
+        color={color}
       >
         <Text
           inline={true}
-          color="beta"
           fontSize={fontSize}
+          color="inherit"
           textTransform="uppercase"
           whiteSpace="nowrap"
           letterSpacing={1}

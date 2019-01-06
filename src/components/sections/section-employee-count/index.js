@@ -58,7 +58,9 @@ const SectionEmployeeCount = ({ count, date }) => {
                   <ButtonCTA href="/join-us">We're ready to join</ButtonCTA>
                 </CoreBox>
                 <CoreBox mt={1}>
-                  <ButtonCTA href="/support">We have more question</ButtonCTA>
+                  <ButtonCTA href="/support" type="beta">
+                    We have more questions
+                  </ButtonCTA>
                 </CoreBox>
               </CoreFlex>
             </CoreBox>
