@@ -73,7 +73,7 @@ const Logo = ({ type, size }) => {
             : file.childImageSharp.small
 
         return (
-          <ImgLink href="/">
+          <ImgLink href="/" alt="Home">
             <Img
               fixed={src}
               fadeIn={false}
@@ -85,6 +85,7 @@ const Logo = ({ type, size }) => {
                 objectFit: 'contain',
                 objectPosition: 'center left',
               }}
+              alt="Home"
             />
           </ImgLink>
         )
