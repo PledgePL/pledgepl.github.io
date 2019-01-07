@@ -78,7 +78,7 @@ class SectionHero extends Component {
       <div className={cx(contentVideoStyle)}>
         <div className="section-hero__video__content">
           <Youtube
-            videoId="g-ilsu4bVmk"
+            videoId="wU-OpTFmO1g"
             opts={opts}
             onReady={this.onReady}
             onEnd={this.onVideoEnd}
