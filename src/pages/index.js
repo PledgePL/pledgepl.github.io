@@ -3,11 +3,22 @@ import { Link, graphql } from 'gatsby'
 import Text from '../components/text'
 import ButtonCTA from '../components/button-cta'
 import Banner from '../components/banner'
+import VideoBanner from '../components/video-banner'
 
 const IndexPage = ({ data }) => {
   console.log(data)
+  const videoBannerBG = data.videoBannerBG
+    ? data.videoBannerBG.childImageSharp.fluid
+    : null
+  const videoLoop = data.videoLoop ? data.videoLoop.publicURL : null
   return (
     <>
+      <VideoBanner
+        title="Pledge Parental Leave is setting the standard for paid leave benefits in
+        the U.S. creative industry"
+        bg={videoBannerBG}
+        loop={videoLoop}
+      />
       <Text textSize="alpha" tagName="h1">
         Alpha
       </Text>
@@ -50,6 +61,18 @@ export const query = graphql`
           }
         }
       }
+    }
+    videoBannerBG: file(name: { eq: "video-banner-bg" }) {
+      childImageSharp {
+        id
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    videoLoop: file(name: { eq: "video-loop" }) {
+      id
+      publicURL
     }
   }
 `

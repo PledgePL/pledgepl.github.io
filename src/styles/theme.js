@@ -83,6 +83,7 @@ const theme = {
     delta: '#6ac3c1',
     epsilon: '#f0f5fa',
     zeta: '#83cecc',
+    eta: '#000000',
   },
 
   spacingUnit1: [4, 6],
