@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Img from 'gatsby-image'
 import { CoreBox, CoreFlex } from '../core-box'
 import Text from '../text'
 import VideoBG from '../video-bg'
