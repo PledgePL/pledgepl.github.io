@@ -4,8 +4,10 @@ import { CoreBox, CoreFlex } from '../core-box'
 import Text from '../text'
 import VideoBG from '../video-bg'
 
-const VideoBGContainer = styled(CoreBox)(
-  `
+const VideoBGContainer = styled(CoreFlex)(
+  ` 
+  max-height: 600px;
+  overflow: hidden;
     &:after {
         content: '';
         position: absolute;
@@ -22,7 +24,7 @@ const VideoBanner = ({ title, bg, loop }) => {
   return (
     <CoreBox bg="eta" css={{ position: 'relative' }}>
       {bg && (
-        <VideoBGContainer>
+        <VideoBGContainer flexDirection="column" justifyContent="center">
           <VideoBG bg={bg} loop={loop} />
         </VideoBGContainer>
       )}

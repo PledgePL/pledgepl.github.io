@@ -8,6 +8,7 @@ const AspectRatioBox = styled(CoreBox)(
     overflow: hidden;
     background: white;
     position: relative;
+    flex: 1 1 auto;
     `
 )
 
