@@ -19,7 +19,12 @@ const SectionResourceToolBox = () => {
       >
         Resource Tool Box
       </Text>
-      <CoreGrid gridTemplateColumns={['100%', '1fr 1fr']} gridGap={[4, 6]}>
+      <CoreGrid
+        gridTemplateColumns={['100%', '1fr 1fr', '1fr 1fr 1fr']}
+        gridGap={[4, 5]}
+        mx="auto"
+        css={{ maxWidth: '1200px' }}
+      >
         <InfoBox title="Parental leave template">
           If you’re not sure where to start, this is a great place.
         </InfoBox>

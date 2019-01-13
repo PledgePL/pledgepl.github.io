@@ -73,7 +73,7 @@ const gridGap = style({
   // The corresponding CSS property (defaults to prop argument)
   cssProperty: 'grid-gap',
   // key for theme values
-  key: 'gridTemplateColumns',
+  key: 'space', // use the space values
   // accessor function for transforming the value
   transformValue: n => n,
   // add a fallback scale object or array, if theme is not present
