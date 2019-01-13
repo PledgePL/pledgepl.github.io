@@ -41,7 +41,7 @@ export default class extends React.PureComponent {
 
   render() {
     const { active } = this.state
-    const headerHeight = [60, 84]
+    const headerHeight = [60, 80]
     const activeHeaderHeight = active
       ? ['100vh'].concat(headerHeight.slice(1))
       : headerHeight
