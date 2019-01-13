@@ -41,18 +41,19 @@ const lineHeight = style({
   scale: [],
 })
 
-const hidden = style({
-  // React prop name
-  prop: 'hide',
-  // The corresponding CSS property (defaults to prop argument)
-  cssProperty: 'display',
-  // key for theme values
-  key: 'hide',
-  // accessor function for transforming the value
-  transformValue: n => (n ? 'none' : 'inherit'),
-  // add a fallback scale object or array, if theme is not present
-  scale: [],
-})
+const hidden = ({ display = 'block' }) =>
+  style({
+    // React prop name
+    prop: 'hide',
+    // The corresponding CSS property (defaults to prop argument)
+    cssProperty: 'display',
+    // key for theme values
+    key: 'hide',
+    // accessor function for transforming the value
+    transformValue: n => (n ? 'none' : display),
+    // add a fallback scale object or array, if theme is not present
+    scale: [],
+  })
 
 const gridTemplateColumns = style({
   // React prop name
@@ -65,6 +66,19 @@ const gridTemplateColumns = style({
   transformValue: n => n,
   // add a fallback scale object or array, if theme is not present
   scale: ['auto'],
+})
+
+const gridTemplateRows = style({
+  // React prop name
+  prop: 'gridTemplateRows',
+  // The corresponding CSS property (defaults to prop argument)
+  cssProperty: 'grid-template-rows',
+  // key for theme values
+  key: 'gridTemplateRows',
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [],
 })
 
 const gridGap = style({
@@ -82,21 +96,22 @@ const gridGap = style({
 
 export const CoreBox = styled(Box)`
   ${position}
-  ${hidden}
+  ${hidden({ display: 'block' })}
   ${height}
   ${lineHeight}
 `
 
 export const CoreFlex = styled(Flex)`
   ${position}
-  ${hidden}
+  ${hidden({ display: 'flex' })}
   ${height}
   ${lineHeight}
 `
 
-export const CoreGrid = styled(CoreBox)`
+export const CoreGrid = styled(CoreFlex)`
   display: grid;
   ${gridTemplateColumns}
+  ${gridTemplateRows}
   ${gridGap}
 `
 

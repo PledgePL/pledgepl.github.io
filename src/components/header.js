@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { CoreBox, CoreFlex } from './core-box'
+import { CoreBox, CoreFlex, CoreGrid } from './core-box'
 import Logo from './logo'
 import ButtonCTA from './button-cta'
 import ButtonMenu from './button-menu'
@@ -54,9 +54,10 @@ export default class extends React.PureComponent {
           justifyContent="center"
           height={activeHeaderHeight}
         >
-          <CoreFlex
+          <CoreGrid
+            gridTemplateColumns={['1fr 1fr', '1fr 3fr 1fr 0fr']}
+            gridTemplateRows="100%"
             alignItems="center"
-            justifyContent="space-between"
             maxWidth="1200"
             width="100%"
             height={headerHeight}
@@ -70,6 +71,7 @@ export default class extends React.PureComponent {
               as="nav"
               alignSelf="center"
               alignItems="center"
+              flexDirection="row"
               justifyContent="center"
               position={['fixed', 'static']}
               flexDirection={['column', 'row']}
@@ -90,13 +92,13 @@ export default class extends React.PureComponent {
                 Join us today
               </ButtonCTA>
             </CoreBox>
-            <CoreBox hide={[false, true]}>
+            <CoreBox hide={[false, true]} css={{ justifySelf: 'flex-end' }}>
               <ButtonHamburger
                 onClick={this.onHamburgerClick}
                 active={this.state.active}
               />
             </CoreBox>
-          </CoreFlex>
+          </CoreGrid>
         </Header>
         <CoreBox height={headerHeight} />
       </>
