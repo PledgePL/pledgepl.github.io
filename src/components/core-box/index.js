@@ -54,6 +54,32 @@ const hidden = style({
   scale: [],
 })
 
+const gridTemplateColumns = style({
+  // React prop name
+  prop: 'gridTemplateColumns',
+  // The corresponding CSS property (defaults to prop argument)
+  cssProperty: 'grid-template-columns',
+  // key for theme values
+  key: 'gridTemplateColumns',
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: ['auto'],
+})
+
+const gridGap = style({
+  // React prop name
+  prop: 'gridGap',
+  // The corresponding CSS property (defaults to prop argument)
+  cssProperty: 'grid-gap',
+  // key for theme values
+  key: 'gridTemplateColumns',
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [],
+})
+
 export const CoreBox = styled(Box)`
   ${position}
   ${hidden}
@@ -66,6 +92,12 @@ export const CoreFlex = styled(Flex)`
   ${hidden}
   ${height}
   ${lineHeight}
+`
+
+export const CoreGrid = styled(CoreBox)`
+  display: grid;
+  ${gridTemplateColumns}
+  ${gridGap}
 `
 
 export default CoreBox

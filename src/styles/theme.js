@@ -59,6 +59,7 @@ const theme = {
     xl: [30.75, 41.053],
     alpha: [24.32772, 32.437],
     delta: [17, 22.781],
+    epsilon: [15.1875, 20.25],
     eta: [12, 16],
     theta: [10.66653, 14.222],
     iota: [9.4815, 12.642],
@@ -84,6 +85,7 @@ const theme = {
     epsilon: '#f0f5fa',
     zeta: '#83cecc',
     eta: '#000000',
+    theta: '#6b7074',
   },
 
   spacingUnit1: [4, 6],
