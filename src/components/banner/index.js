@@ -4,7 +4,7 @@ import Text from '../text'
 
 const Banner = ({ title, children }) => {
   return (
-    <CoreBox bg="gamma" py={[6, 7]} px={[4, 5]}>
+    <CoreBox bg="gamma" py={[6, 7]} px={[6, 7]}>
       <CoreBox css={{ maxWidth: 1000 }} mx="auto">
         {title && (
           <Text
