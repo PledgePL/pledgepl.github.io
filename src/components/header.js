@@ -11,7 +11,7 @@ const Header = styled(CoreFlex)`
   background-color: ${props => props.theme.bgColor2};
   width: 100%;
   box-shadow: 0 0 20px rgba(75, 0, 255, 0.44);
-  zindex: 999;
+  z-index: 999;
 `
 const Nav = styled(CoreFlex)`
   flex-wrap: nowrap;
