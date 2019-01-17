@@ -3,10 +3,11 @@ import { CoreBox } from '../core-box'
 import Text from '../text'
 import Tile from '../tile'
 
-const InfoBox = ({ icon, title, children }) => {
+const InfoBox = ({ header, title, children }) => {
   return (
     <Tile>
-      <CoreBox mx="auto">
+      <CoreBox mx="auto" mb={[2, 4]}>
+        {header && <CoreBox mb={[2, 5]}>{header()}</CoreBox>}
         {title && (
           <Text
             color="theta"
@@ -19,23 +20,14 @@ const InfoBox = ({ icon, title, children }) => {
             {title}
           </Text>
         )}
-        {children && (
-          <Text
-            color="theta"
-            fontSize="eta"
-            fontFamily="alpha"
-            textAlign="left"
-            as="p"
-          >
-            {children}
-          </Text>
-        )}
+        {children}
       </CoreBox>
     </Tile>
   )
 }
 
 InfoBox.defaultProps = {
+  header: null,
   title: null,
   children: null,
 }

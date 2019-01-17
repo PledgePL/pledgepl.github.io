@@ -6,7 +6,7 @@ const Tile = ({ theme, children }) => {
   return children ? (
     <CoreBox
       bg="beta"
-      py={[6, 7]}
+      py={[5, 6]}
       px={[4, 5]}
       css={{
         borderWidth: '1px',

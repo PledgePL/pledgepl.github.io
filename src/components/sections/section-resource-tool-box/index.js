@@ -2,7 +2,15 @@ import React from 'react'
 import { CoreBox, CoreGrid } from '../../core-box'
 import Text from '../../text'
 import InfoBox from '../../info-box'
-import Tile from '../../tile'
+import { Paper, Chart, Stack } from '../../icons'
+
+const IconContainer = ({ children }) => {
+  return (
+    <CoreBox css={{ width: 75, height: 'auto', margin: 'auto' }}>
+      {children}
+    </CoreBox>
+  )
+}
 
 const SectionResourceToolBox = () => {
   return (
@@ -25,14 +33,86 @@ const SectionResourceToolBox = () => {
         mx="auto"
         css={{ maxWidth: '1200px' }}
       >
-        <InfoBox title="Parental leave template">
-          If you’re not sure where to start, this is a great place.
+        <InfoBox
+          title="Parental leave template"
+          header={() => (
+            <IconContainer>
+              <Paper />
+            </IconContainer>
+          )}
+        >
+          <>
+            <Text
+              color="theta"
+              fontSize="eta"
+              fontFamily="alpha"
+              textAlign="left"
+              mb={4}
+              as="p"
+            >
+              If you’re not sure where to start, this is a great place.
+            </Text>
+            <ul>
+              <CoreBox as="li" mb={2}>
+                <a href="#">Download Word Document</a>
+              </CoreBox>
+              <CoreBox as="li" mt={2}>
+                <a href="#">Download PDF</a>
+              </CoreBox>
+            </ul>
+          </>
         </InfoBox>
-        <InfoBox title="Paid salary leave example">
-          How much will it cost you to give someone paid leave?
+        <InfoBox
+          title="Paid salary leave example"
+          header={() => (
+            <IconContainer>
+              <Chart />
+            </IconContainer>
+          )}
+        >
+          <>
+            <Text
+              color="theta"
+              fontSize="eta"
+              fontFamily="alpha"
+              textAlign="left"
+              mb={4}
+              as="p"
+            >
+              How much will it cost you to give someone paid leave?
+            </Text>
+            <ul>
+              <CoreBox as="li">
+                <a href="#">Download PDF</a>
+              </CoreBox>
+            </ul>
+          </>
         </InfoBox>
-        <InfoBox title="Press Kit">
-          Press releases, logos, coverage; you’ll find it all here.
+        <InfoBox
+          title="Press Kit"
+          header={() => (
+            <IconContainer>
+              <Stack />
+            </IconContainer>
+          )}
+        >
+          <>
+            <Text
+              color="theta"
+              fontSize="eta"
+              fontFamily="alpha"
+              textAlign="left"
+              mb={4}
+              as="p"
+            >
+              Press releases, logos, coverage; you’ll find it all here.
+            </Text>
+            <ul>
+              <CoreBox as="li">
+                <a href="#">Download press kit (.zip)</a>
+              </CoreBox>
+            </ul>
+          </>
         </InfoBox>
       </CoreGrid>
     </CoreBox>

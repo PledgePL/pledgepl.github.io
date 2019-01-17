@@ -26,6 +26,22 @@ injectGlobal`
     font-family: "Roboto",Arial,Helvetica,sans-serif;
     font-weight: 400;
     font-size: ${(16 / baseFontSize) * 100}%;
+  },
+  p {
+    margin: 0
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: ${theme.colors.delta};
+    text-decoration: none;
+  }
+  a:hover {
+    color: ${theme.colors.gamma};
+    text-decoration: underline;
   }
 `
 
