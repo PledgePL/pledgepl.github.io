@@ -75,6 +75,7 @@ export default class extends React.PureComponent {
               alignSelf="center"
               alignItems="center"
               flexDirection="row"
+              height="100%"
               justifyContent="center"
               position={['fixed', 'static']}
               flexDirection={['column', 'row']}
