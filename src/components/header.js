@@ -61,7 +61,10 @@ export default class extends React.PureComponent {
             maxWidth="1200"
             width="100%"
             height={headerHeight}
-            p={3}
+            pt={3}
+            pb={3}
+            pl={[4, 5]}
+            pr={[4, 5]}
             css={{
               maxWidth: '1200px',
             }}
@@ -87,7 +90,7 @@ export default class extends React.PureComponent {
                 <ButtonMenu href="/support/">Support</ButtonMenu>
               </NavItem>
             </Nav>
-            <CoreBox hide={[true, false]}>
+            <CoreBox hide={[true, false]} css={{ justifySelf: 'flex-end' }}>
               <ButtonCTA href="/join-us/" size="small">
                 Join us today
               </ButtonCTA>
