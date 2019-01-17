@@ -12,6 +12,21 @@ const IconContainer = ({ children }) => {
   )
 }
 
+const TextLink = ({ children, ...props }) => {
+  return (
+    <Text
+      color="delta"
+      fontSize="eta"
+      fontFamily="alpha"
+      textAlign="left"
+      {...props}
+      as="a"
+    >
+      {children}
+    </Text>
+  )
+}
+
 const SectionResourceToolBox = () => {
   return (
     <CoreBox bg="epsilon" py={[6, 7]} px={[4, 5]} as="section">
@@ -47,17 +62,17 @@ const SectionResourceToolBox = () => {
               fontSize="eta"
               fontFamily="alpha"
               textAlign="left"
-              mb={4}
+              mb={[2, 4]}
               as="p"
             >
               If you’re not sure where to start, this is a great place.
             </Text>
             <ul>
-              <CoreBox as="li" mb={2}>
-                <a href="#">Download Word Document</a>
+              <CoreBox as="li" mb={[null, null]}>
+                <TextLink href="#">Download Word Document</TextLink>
               </CoreBox>
-              <CoreBox as="li" mt={2}>
-                <a href="#">Download PDF</a>
+              <CoreBox as="li" mt={[null, null]}>
+                <TextLink href="#">Download PDF</TextLink>
               </CoreBox>
             </ul>
           </>
@@ -76,14 +91,14 @@ const SectionResourceToolBox = () => {
               fontSize="eta"
               fontFamily="alpha"
               textAlign="left"
-              mb={4}
+              mb={[2, 4]}
               as="p"
             >
               How much will it cost you to give someone paid leave?
             </Text>
             <ul>
               <CoreBox as="li">
-                <a href="#">Download PDF</a>
+                <TextLink href="#">Download PDF</TextLink>
               </CoreBox>
             </ul>
           </>
@@ -102,14 +117,14 @@ const SectionResourceToolBox = () => {
               fontSize="eta"
               fontFamily="alpha"
               textAlign="left"
-              mb={4}
+              mb={[2, 4]}
               as="p"
             >
               Press releases, logos, coverage; you’ll find it all here.
             </Text>
             <ul>
               <CoreBox as="li">
-                <a href="#">Download press kit (.zip)</a>
+                <TextLink href="#">Download press kit (.zip)</TextLink>
               </CoreBox>
             </ul>
           </>

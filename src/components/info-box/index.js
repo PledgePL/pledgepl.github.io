@@ -15,7 +15,7 @@ const InfoBox = ({ header, title, children }) => {
             fontFamily="beta"
             as="h3"
             textAlign="left"
-            mb={4}
+            mb={[3, 4]}
           >
             {title}
           </Text>
