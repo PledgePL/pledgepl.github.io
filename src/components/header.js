@@ -63,8 +63,8 @@ export default class extends React.PureComponent {
             height={headerHeight}
             pt={3}
             pb={3}
-            pl={[4, 5]}
-            pr={[4, 5]}
+            ml={[4, 5]}
+            mr={[4, 5]}
             css={{
               maxWidth: '1200px',
             }}
