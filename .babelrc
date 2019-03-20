@@ -1,15 +1,12 @@
 {
   "presets": [
     [
-      "env",
+      "babel-preset-gatsby",
       {
         "targets": {
-          "browsers": ["last 2 versions"]
+          "browsers": ["> 5% in US", "last 2 Chrome versions", "not ie 11", "not op_mini all"]
         }
       }
-    ],
-    "react",
-    "stage-2"
-  ],
-  "plugins": ["transform-decorators-legacy"]
+    ]
+  ]
 }
