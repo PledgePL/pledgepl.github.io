@@ -7,7 +7,7 @@ import AspectRatio from '../aspect-ratio'
 import Tile from '../tile'
 
 const PartnerBox = ({ theme, name, src }) => {
-  const srcProps = src
+  const srcCss = src
     ? {
         backgroundImage: `url(${src})`,
         backgroundSize: '80%',
@@ -24,7 +24,7 @@ const PartnerBox = ({ theme, name, src }) => {
     <Tile
       padding={false}
       css={{
-        ...srcProps,
+        ...srcCss,
         '&:hover': {
           transitionDelay: '0.15s',
         },
