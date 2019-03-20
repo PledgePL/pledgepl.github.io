@@ -21,9 +21,9 @@ const AspectRatioBoxInner = styled(CoreBox)(
     `
 )
 
-const AspectRatio = ({ ratio, children, ...props }) => {
+const AspectRatio = ({ ratio, children, css = {}, ...props }) => {
   return (
-    <AspectRatioBox {...props} css={{ paddingTop: `calc(${ratio} * 100%)` }}>
+    <AspectRatioBox {...props} css={{ ...css, paddingTop: `calc(${ratio} * 100%)` }}>
       <AspectRatioBoxInner>{children}</AspectRatioBoxInner>
     </AspectRatioBox>
   )

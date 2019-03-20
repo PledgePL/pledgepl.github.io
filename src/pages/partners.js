@@ -1,9 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import styled from '@emotion/styled'
 import Banner from '../components/banner'
 import SectionPartnerList from '../components/sections/section-partner-list'
-
 
 const PartnersPage = ({data}) => {
   const foundingPartners = data.foundingPartners ? data.foundingPartners.edges.map(_ => _.node) : null

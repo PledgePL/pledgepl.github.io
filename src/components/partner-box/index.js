@@ -25,14 +25,6 @@ const PartnerBox = ({ theme, name, src }) => {
       padding={false}
       css={{
         ...srcProps,
-        '.overlay': {
-          transitionDelay: '0.15s',
-          transitionTimingFunction: 'cubic-bezier(.39,.575,.565,1)',
-          transitionProperty: 'opacity',
-          transitionDuration: '0.35s',
-          backgroundColor: `rgba(${backgroundColorRgba})`,
-          opacity: 0,
-        },
         '&:hover': {
           transitionDelay: '0.15s',
         },
@@ -44,7 +36,18 @@ const PartnerBox = ({ theme, name, src }) => {
         },
       }}
     >
-      <AspectRatio mx="auto" className="overlay">
+      <AspectRatio
+        mx="auto"
+        className="overlay"
+        css={{
+          transitionDelay: '0.15s',
+          transitionTimingFunction: 'cubic-bezier(.39,.575,.565,1)',
+          transitionProperty: 'opacity',
+          transitionDuration: '0.35s',
+          backgroundColor: `rgba(${backgroundColorRgba})`,
+          opacity: 0,
+        }}
+      >
         {name && (
           <CoreFlex
             alignItems="center"
