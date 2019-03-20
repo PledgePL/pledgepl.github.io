@@ -1,18 +1,19 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
+import { CoreBox } from '../components/core-box'
 import styled from '@emotion/styled'
 
-const Title = styled('h1')`
-  background-color: red;
-  font-size: 90px;
+const Iframe = styled('iframe')`
+  width: 100%;
+  height: 100%;
+  border: none;
 `
 
 const SecondPage = () => (
-  <>
-    <Title>Join Us</Title>
-    <Link to="/">Go back to the homepage</Link>
-  </>
+  <CoreBox bg="gamma" py={[6, 7]} px={[6, 7]} height="100vh">
+    <Iframe width="600" height="338" src="https://docs.google.com/forms/d/e/1FAIpQLSfiXvVAKV7ToEXuapN3YDna8cZEiWqMumV9p_xPFh66vEAELQ/viewform?embedded=true">
+      Loading...
+    </Iframe>
+  </CoreBox>
 )
 
 export default SecondPage
