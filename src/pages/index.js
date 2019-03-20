@@ -6,7 +6,6 @@ import Banner from '../components/banner'
 import VideoBanner from '../components/video-banner'
 
 const IndexPage = ({ data }) => {
-  console.log(data)
   const videoBannerBG = data.videoBannerBG
     ? data.videoBannerBG.childImageSharp.fluid
     : null

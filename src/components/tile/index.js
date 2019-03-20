@@ -2,17 +2,19 @@ import React from 'react'
 import { CoreBox } from '../core-box'
 import { withTheme } from 'emotion-theming'
 
-const Tile = ({ theme, children }) => {
+const Tile = ({ theme, padding, children, css = {}, ...props }) => {
   return children ? (
     <CoreBox
       bg="beta"
-      py={[5, 6]}
-      px={[4, 5]}
+      py={padding ? [5, 6] : 0}
+      px={padding ? [4, 5] : 0}
       css={{
+        ...css,
         borderWidth: '1px',
         borderColor: theme.colors.gamma,
         borderStyle: 'solid',
       }}
+      {...props}
     >
       {children}
     </CoreBox>
@@ -20,6 +22,7 @@ const Tile = ({ theme, children }) => {
 }
 
 Tile.defaultProps = {
+  padding: true,
   children: null,
 }
 

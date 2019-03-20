@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 import { Link } from 'gatsby'
 import { CoreBox } from '../components/core-box'
