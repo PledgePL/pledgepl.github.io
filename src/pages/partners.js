@@ -32,6 +32,7 @@ export const query = graphql`
   query {
     foundingPartners: allGoogleSheetPartnersRow(
       filter: { partnerCategory: { eq: "Founding" } }
+      sort: { fields: [partnerName] }
     ) {
       edges {
         node {
@@ -48,6 +49,7 @@ export const query = graphql`
     }
     partners: allGoogleSheetPartnersRow(
       filter: { partnerCategory: { eq: "Partner" } }
+      sort: { fields: [partnerName] }
     ) {
       edges {
         node {
