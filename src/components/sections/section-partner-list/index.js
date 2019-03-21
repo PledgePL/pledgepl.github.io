@@ -5,7 +5,7 @@ import PartnerBox from '../../partner-box'
 
 const SectionPartnerList = ({ partners, title }) => {
   return (
-    <CoreBox bg="epsilon" py={[6, 7]} px={[4, 5]} as="section">
+    <CoreBox bg="beta" py={[6, 7]} px={[4, 5]} as="section">
       <Text
         color="theta"
         fontSize="alpha"
@@ -30,8 +30,8 @@ const SectionPartnerList = ({ partners, title }) => {
         css={{ maxWidth: '1200px' }}
       >
         {partners &&
-          partners.map(({ partnerName, logoUrl: { cloudinaryUrl } }) => (
-            <PartnerBox name={partnerName} src={cloudinaryUrl} />
+          partners.map(({ partnerName, url, policyUrl, logoUrl: { cloudinaryUrl } }) => (
+            <PartnerBox name={partnerName} src={cloudinaryUrl} url={url} policyUrl={policyUrl} />
           ))}
       </CoreGrid>
     </CoreBox>

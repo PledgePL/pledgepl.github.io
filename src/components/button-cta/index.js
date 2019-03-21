@@ -8,7 +8,6 @@ import Link from '../../utils/gatsby-link'
 
 export default withTheme(
   ({ theme, href, children, size = 'large', type = 'alpha', css = {} }) => {
-    const isLarge = size === 'large'
     const isTypeAlpha = type === 'alpha'
 
     const ButtonCTA = styled(CoreFlex)(
@@ -36,12 +35,53 @@ export default withTheme(
       })
     )
 
-    const paddingHorizontal = isLarge ? 6 : 6
-    const paddingVertical = isLarge ? [3, 4] : [3, 4]
-    const borderRadius = isLarge ? 8 : 5
-    const fontSize = isLarge ? 'eta' : 'iota'
-    const bg = isTypeAlpha ? 'delta' : 'transparent'
-    const color = isTypeAlpha ? 'beta' : 'delta'
+    let paddingHorizontal
+    let paddingVertical
+    let borderRadius
+    let fontSize
+
+    switch (size) {
+      case 'large':
+        paddingHorizontal = 6
+        paddingVertical = [3, 4]
+        borderRadius = 8
+        fontSize = 'eta'
+        break
+      case 'xsmall':
+        paddingHorizontal = 4
+        paddingVertical = [1, 2]
+        borderRadius = 5
+        fontSize = 'iota'
+        break
+      default:
+        paddingHorizontal = 6
+        paddingVertical = [3, 4]
+        borderRadius = 5
+        fontSize = 'iota'
+        break
+    }
+
+    let textTransform
+    let bg
+    let color
+
+    switch (type) {
+      case 'beta':
+        bg = 'transparent'
+        color = 'delta'
+        textTransform = 'uppercase'
+        break
+      case 'gamma':
+        bg = 'beta'
+        color = 'gamma'
+        textTransform = 'none'
+        break
+      default:
+        bg = 'delta'
+        color = 'beta'
+        textTransform = 'uppercase'
+        break
+    }
 
     const LinkButtonCTA = ButtonCTA.withComponent(Link)
 
@@ -61,7 +101,7 @@ export default withTheme(
           inline={true}
           fontSize={fontSize}
           color="inherit"
-          textTransform="uppercase"
+          textTransform={textTransform}
           whiteSpace="nowrap"
           letterSpacing={1}
         >

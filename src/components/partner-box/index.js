@@ -1,12 +1,13 @@
 import React from 'react'
 import hexRgb from 'hex-rgb'
 import { withTheme } from 'emotion-theming'
-import { CoreFlex } from '../core-box'
+import { CoreBox, CoreFlex, CoreGrid } from '../core-box'
 import Text from '../text'
+import ButtonCTA from '../button-cta'
 import AspectRatio from '../aspect-ratio'
 import Tile from '../tile'
 
-const PartnerBox = ({ theme, name, src }) => {
+const PartnerBox = ({ theme, name, url, policyUrl, src }) => {
   const srcCss = src
     ? {
         backgroundImage: `url(${src})`,
@@ -22,6 +23,8 @@ const PartnerBox = ({ theme, name, src }) => {
 
   return (
     <Tile
+      as="a"
+      href={url}
       padding={false}
       css={{
         ...srcCss,
@@ -50,21 +53,52 @@ const PartnerBox = ({ theme, name, src }) => {
       >
         {name && (
           <CoreFlex
+            flexDirection="column"
             alignItems="center"
-            justifyContent="center"
+            justifyContent="space-around"
             width="100%"
             height="100%"
             className="name"
+            css={{ position: 'relative' }}
           >
-            <Text
-              color="beta"
-              fontSize="beta"
-              fontFamily="beta"
-              as="h3"
-              textAlign="center"
+            <CoreFlex flex="1 1 100%" alignItems="center">
+              <Text
+                color="beta"
+                fontSize="beta"
+                fontFamily="beta"
+                as="h3"
+                textAlign="center"
+              >
+                {name}
+              </Text>
+            </CoreFlex>
+            <CoreGrid
+              gridTemplateColumns={['1fr', '1fr 1fr']}
+              gridGap={[4]}
+              css={{ position: 'absolute', bottom: 0 }}
+              pb={[3, 2]}
+              mx="auto"
             >
-              {name}
-            </Text>
+              {url && (
+                <CoreFlex>
+                  <ButtonCTA href={url} size="xsmall" type="gamma" mx="auto">
+                    Website
+                  </ButtonCTA>
+                </CoreFlex>
+              )}
+              {policyUrl && (
+                <CoreFlex>
+                  <ButtonCTA
+                    href={policyUrl}
+                    size="xsmall"
+                    type="gamma"
+                    mx="auto"
+                  >
+                    Policy
+                  </ButtonCTA>
+                </CoreFlex>
+              )}
+            </CoreGrid>
           </CoreFlex>
         )}
       </AspectRatio>
@@ -75,6 +109,7 @@ const PartnerBox = ({ theme, name, src }) => {
 PartnerBox.defaultProps = {
   name: null,
   src: null,
+  url: null,
 }
 
 export default withTheme(PartnerBox)
