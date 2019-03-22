@@ -20,8 +20,13 @@ const PartnersPage = ({ data }) => {
       <SectionPartnerList
         partners={foundingPartners}
         title="Founding Partners"
+        description="These companies came together to start Pledge Parental Leave"
       />
-      <SectionPartnerList partners={partners} title="Partners" />
+      <SectionPartnerList
+        partners={partners}
+        title="Partners"
+        description="Since our launch, these companies have joined our ranks."
+      />
     </>
   )
 }
