@@ -4,27 +4,36 @@ import styled from '@emotion/styled'
 import { CoreBox } from '../core-box'
 import Text from '../text'
 
-
-
-
-
 const Details = ({ chevronSrc, title, children, ...props }) => {
     const Summary = styled(Text)`
-    list-style-image: url(${chevronSrc});
     cursor: pointer;
+    position: relative;
+    list-style-type: none;
+    padding-left: 20px;
+    outline: none;
     ::-webkit-details-marker {
-        color: transparent;
+        display: none;
+    }
+    :after {
         content: "";
+        position: absolute;
+        width: 13px;
+        height: 23px;
+        background-color: "red";
+        left: 0;
+        top: 0;
+    }
+    :after {
+        color: transparent;
         background-image: url(${chevronSrc});
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        background-size: contain;
-        transform-origin: 50% 50%;
+        transform-origin: 4px 50%;
         transition-duration: .2s;
         transition-timing-function: cubic-bezier(.445,.05,.55,.95);
         transition-property: transform;
     }
-    details[open] > &::-webkit-details-marker {
+    details[open] > &:after {
         transform: rotate(90deg);
     }
 `
@@ -46,6 +55,7 @@ const Details = ({ chevronSrc, title, children, ...props }) => {
             color="theta"
             fontSize="eta"
             fontFamily="alpha"
+            mb={[2, 3]}
             {...child.props}
             as="p"
           />
