@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { CoreBox } from '../components/core-box'
 import Banner from '../components/banner'
 import SectionResourceToolBox from '../components/sections/section-resource-tool-box'
+import SectionFAQ from "../components/sections/section-faq"
 
 const CustomizedLink = withTheme(({ theme, ...props }) => {
   return (
@@ -30,7 +31,7 @@ const SecondPage = () => (
       </CustomizedLink>
     </Banner>
     <SectionResourceToolBox />
-    <Link to="/">Go back to the homepage</Link>
+    <SectionFAQ />
   </>
 )
 
