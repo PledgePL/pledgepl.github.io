@@ -51,7 +51,7 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
             const id = getIdFromGoogleDrive(source.logoUrl)
             cloudinaryUrl =
               source.logoUrl && id
-                ? `https://res.cloudinary.com/pledgepl/image/upload/f_auto,w_900,dpr_auto/v1542411695/google-drive/${id}`
+                ? `https://res.cloudinary.com/pledgepl/image/upload/f_auto,w_900,dpr_auto,bo_80px_solid_transparent/v1542411695/google-drive/${id}`
                 : null
           }
           return {

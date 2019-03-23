@@ -11,7 +11,7 @@ const PartnerBox = ({ theme, name, url, policyUrl, src }) => {
   const srcCss = src
     ? {
         backgroundImage: `url(${src})`,
-        backgroundSize: '80%',
+        backgroundSize: 'contain',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
       }
