@@ -67,6 +67,135 @@ const SectionFAQ = ({}) => {
           without worrying about losing their job.
         </p>
       </Details>
+      <Details title="Why is target/focus on the creative industry?">
+        <p>
+          Historically, the creative industry (not only in the United States,
+          but across the world) has had the reputation of a terrible work/life
+          balance. 80 hour work weeks and bending over backward for client work
+          is the norm in many agencies, so when it comes to parental leave, even
+          if a policy is in place, the taboo behind actually taking time off as
+          new parents is strong. Pledge Parental Leave is tackling the creative
+          industry first for these reasons, with a focus on ensuring policies
+          are made public and the taboo is dispelled. It’s a small step, but
+          we’re proud to be taking it with a group of partners who believe it’s
+          the right thing to do.
+        </p>
+      </Details>
+      <Details title="What is the end goal of Pledge Parental Leave?">
+        <p>
+          Changing the future of parenting in the United States may be a lofty
+          goal, but it’s certainly one we aspire to. In the more immediate
+          future, our goal is to inspire and help as many private-sector
+          creative companies as possible, of all sizes, both in New York and
+          beyond to reevaluate and change their parental leave policies to meet
+          our minimum standards.
+        </p>
+      </Details>
+      <Details title="How does the Pledge Parental Leave application process work?">
+        <p>
+          Each company interested in joining the Pledge simply emails us a copy
+          of their Policy. If the policy meets the Pledge qualifications, we ask
+          you to commit to posting your policy publicly. If the policy doesn’t
+          meet the Pledge qualifications, we will give you suggestions for
+          adjusting it. We also have a template policy in our toolkit for you to
+          use. Once a company is an official Partner, we will add their logo to
+          the website. New Partner Companies are added quarterly.
+        </p>
+      </Details>
+      <Details title="How can our company afford to offer these benefits?">
+        <p>
+          The most common argument against company-paid parental leave is that
+          it’s too expensive for businesses to provide. Turns out, that’s not
+          actually true.
+        </p>
+        <p>
+          We took the estimated costs of paid leave for an employee with a
+          salary of $100k and compared that to the cost, both in time and money,
+          that it takes to recruit and replace an employee.
+        </p>
+        <p>GRAPH GOES HERE</p>
+        <p>
+          As you can see, the cost to recruit and replace an employee is about
+          $20k more than providing paid leave. If it actually costs less to
+          provide paid leave, it’s common sense that a company go that route.
+          Afterall, who wants to spend 500 hours recruiting, onboarding, and
+          training a replacement?
+        </p>
+      </Details>
+      <Details title="What does short-term disability have to do with parental leave?">
+        <p>
+          Currently in the US, the only access some parents have to paid
+          parental leave is short-term disability. Based on the same example
+          salary we used previously, we’ve illustrated how employers can help
+          control their costs of paid leave by topping up any short-term
+          disability payments to qualified employees.
+        </p>
+        <p>IMAGE GOES HERE</p>
+        <p>
+          Qualification depends on a employer’s insurance policy carrier’s
+          restrictions and will vary in terms of pay, length of leave, and other
+          specifications. Some states have state-supported short term disability
+          benefits as well.
+        </p>
+      </Details>
+      <Details title="We’re starting from scratch. Can you help?">
+        <p>
+          Absolutely! We’ve put together a Toolkit to help make it as easy as
+          possible for companies join the Pledge. If our FAQs and toolkit still
+          don’t quite answer your questions, feel free to reach out to our team
+          at <a href="mailto:team@pledgepl.org">team@pledgepl.org</a>
+        </p>
+      </Details>
+      <Details title="What is a primary caregiver? What about a secondary caregiver?">
+        <p>
+          &dbquo;Primary Caregiver&dbquo; refers to the parent who has the
+          majority responsibility for the care of the child for a significant
+          part of the day during a regular work week. Primary caregivers can be
+          any parent, and this term applies to anyone adopting, giving birth,
+          utilizing a surrogate, etc.
+        </p>
+        <p>
+          Secondary caregivers are the supporting parent that does not handle a
+          majority of the responsibilities associated with parenting during a
+          regular work week.
+        </p>
+      </Details>
+      <Details title='How does "job security" work?'>
+        <p>
+          FMLA (Family Medical Leave Act) protects a person’s job for up to 12
+          weeks, but only for employees that work for companies that qualify for
+          it. Employees that work for companies with less than 50 employees do
+          not fall under FMLA’s regulations. Additionally, families that adopt a
+          child or use a surrogate, also do not qualify for FMLA.
+        </p>
+        <p>
+          As a result, offering 6 months job security to employees, regardless
+          of FMLA, ensures that primary caregivers take the time they need to
+          care for their child without having to worry about losing their job.
+          Companies agree to return the employee to the same or similar
+          position, as long as they were in good standing with the company at
+          the time they took their parental leave.
+        </p>
+      </Details>
+
+      <Details title="What parental leave state regulations should I know about?">
+        <p>
+          Currently, only 3 states in the US have laws around paid parental
+          leave(not related to disability leave): California, New Jersey, and
+          Rhode Island.
+        </p>
+        <p>
+          Earlier this year, New York became the fourth state in the nation to
+          pass legislation mandating paid parental leave. NY’s plan takes effect
+          on January 1, 2018 will ramp up over time. New Yorkers will have
+          access to 50% paid time off for 8 weeks in 2018 and by 2021 the law
+          will allow for 67% paid leave for 10 weeks.
+        </p>
+        <p>
+          Washington state's legislators have had a proposed bill for paid
+          family leave in their laps, but it is yet to be passed.
+        </p>
+      </Details>
     </CoreBox>
   )
 }
