@@ -19,9 +19,9 @@ const Details = ({ chevronSrc, title, children, ...props }) => {
         position: absolute;
         width: 13px;
         height: 23px;
-        background-color: "red";
+        max-height: 100%;
         left: 0;
-        top: 0;
+        top: -1px;
     }
     :after {
         color: transparent;
