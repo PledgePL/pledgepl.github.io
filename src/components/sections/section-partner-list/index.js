@@ -35,7 +35,7 @@ const SectionPartnerList = ({ partners, title, description }) => {
       <CoreGrid
         gridTemplateColumns={[
           '1fr 1fr',
-          '1fr 1fr',
+          '1fr 1fr 1fr',
           '1fr 1fr 1fr',
           '1fr 1fr 1fr 1fr',
         ]}

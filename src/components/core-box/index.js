@@ -94,11 +94,51 @@ const gridGap = style({
   scale: [],
 })
 
+const gridRowGap = style({
+  // React prop name
+  prop: 'gridRowGap',
+  // The corresponding CSS property (defaults to prop argument)
+  cssProperty: 'grid-row-gap',
+  // key for theme values
+  key: 'space', // use the space values
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [],
+})
+
+const gridColumnGap = style({
+  // React prop name
+  prop: 'gridColumnGap',
+  // The corresponding CSS property (defaults to prop argument)
+  cssProperty: 'grid-column-gap',
+  // key for theme values
+  key: 'space', // use the space values
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [],
+})
+
+const gridColumn = style({
+  // React prop name
+  prop: 'gridColumn',
+  // The corresponding CSS property (defaults to prop argument)
+  cssProperty: 'grid-column',
+  // key for theme values
+  key: 'space', // use the space values
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [],
+})
+
 export const CoreBox = styled(Box)`
   ${position}
   ${hidden({ display: 'block' })}
   ${height}
   ${lineHeight}
+  ${gridColumn}
 `
 
 export const CoreFlex = styled(Flex)`
@@ -113,6 +153,8 @@ export const CoreGrid = styled(CoreFlex)`
   ${gridTemplateColumns}
   ${gridTemplateRows}
   ${gridGap}
+  ${gridRowGap}
+  ${gridColumnGap}
 `
 
 export default CoreBox
