@@ -28,7 +28,7 @@ const SectionFAQ = ({}) => {
       </Text>
       <CoreGrid
         gridTemplateColumns={['1fr', '1fr', '1fr', 'auto 1fr']}
-        gridColumnGap={[0, 0, 0, 5]}
+        gridColumnGap={[0, 0, 0, 7]}
         gridRowGap={[0]}
         mx="auto"
         css={{ maxWidth: '1200px' }}
