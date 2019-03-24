@@ -83,13 +83,13 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
           const id = source.logoUrl ? getIdFromGoogleDrive(source.logoUrl) : null
           return {
             aspectRatio: 1,
-            width: 600,
-            height: 600,
-            src: id ? getCloundinaryUrl(id, 600) : "",
-            srcSet: id ? `${getCloundinaryUrl(id, 300)} 300w,${getCloundinaryUrl(id, 600)} 600w,${getCloundinaryUrl(id, 900)} 900w,${getCloundinaryUrl(id, 1200)} 1200w` : "",
+            width: 700,
+            height: 700,
+            src: id ? getCloundinaryUrl(id, 700) : "",
+            srcSet: id ? `${getCloundinaryUrl(id, 350)} 350w,${getCloundinaryUrl(id, 700)} 700w` : "",
             originalName: source.logoUrl,
-            presentationWidth: 600,
-            presentationHeight: 600,
+            presentationWidth: 700,
+            presentationHeight: 700,
           }
         },
       },
