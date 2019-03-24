@@ -45,10 +45,16 @@ const SectionPartnerList = ({ partners, title, description }) => {
       >
         {partners &&
           partners.map(
-            ({ partnerName, url, policyUrl, logoUrl: { cloudinaryUrl } }) => (
+            ({
+              partnerName,
+              url,
+              policyUrl,
+              fluid
+            }) => (
+              // <Img fluid={fluid} fadeIn={false} critical={false} />
               <PartnerBox
                 name={partnerName}
-                src={cloudinaryUrl}
+                fluid={fluid}
                 url={url}
                 policyUrl={policyUrl}
               />
@@ -61,7 +67,7 @@ const SectionPartnerList = ({ partners, title, description }) => {
 
 SectionPartnerList.defaultProps = {
   partners: [],
-  title: "Partnet List",
+  title: 'Partnet List',
   description: null,
 }
 

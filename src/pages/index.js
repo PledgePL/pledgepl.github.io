@@ -49,18 +49,6 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allGoogleSheetPartnersRow {
-      edges {
-        node {
-          id
-          active
-          partnerName
-          logoUrl {
-            cloudinaryUrl
-          }
-        }
-      }
-    }
     videoBannerBG: file(name: { eq: "video-banner-bg" }) {
       childImageSharp {
         id

@@ -6,7 +6,11 @@
 
 // You can delete this file if you're not using it
 
-const { GraphQLString, GraphQLObjectType } = require('gatsby/graphql')
+const {
+  GraphQLString,
+  GraphQLInt,
+  GraphQLObjectType,
+} = require('gatsby/graphql')
 
 const getIdFromGoogleDrive = url => {
   let id = ''
@@ -27,39 +31,69 @@ const getIdFromGoogleDrive = url => {
   }
 }
 
+const getCloundinaryUrl = (id, w = 900) =>
+  `https://res.cloudinary.com/pledgepl/image/upload/f_auto,w_${w},ar_1:1,c_pad,dpr_auto/v1542411695/google-drive/${id}`
+
 exports.setFieldsOnGraphQLNodeType = ({ type }) => {
   if (type.name === `googleSheetPartnersRow`) {
     return {
-      logoUrl: {
+      fluid: {
         type: new GraphQLObjectType({
-          name: 'cloudinaryLogoUrl',
+          name: 'cloudinaryFluidObject',
           fields: {
-            originalUrl: {
-              type: GraphQLString,
-              description: 'The original url of the media.',
+            aspectRatio: {
+              type: GraphQLInt,
+              description: 'aspect ratio',
             },
-            cloudinaryUrl: {
+            width: {
+              type: GraphQLInt,
+              description: 'width of original image',
+            },
+            height: {
+              type: GraphQLInt,
+              description: 'height of original image',
+            },
+            src: {
               type: GraphQLString,
-              description: 'The cloudinary url of the media.',
+              description: 'src',
+            },
+            srcSet: {
+              type: GraphQLString,
+              description: 'srcSet',
+            },
+            sizes: {
+              type: GraphQLString,
+              description: 'sizes',
+            },
+            originalName: {
+              type: GraphQLString,
+              description: 'sizes',
+            },
+            presentationWidth: {
+              type: GraphQLInt,
+              description: 'presentationWidth',
+            },
+            presentationHeight: {
+              type: GraphQLInt,
+              description: 'presentationHeight',
             },
           },
         }),
         resolve: (source, fieldArgs) => {
-          let cloudinaryUrl = null
-          if (source.logoUrl) {
-            // check it is google drive link
-            const id = getIdFromGoogleDrive(source.logoUrl)
-            cloudinaryUrl =
-              source.logoUrl && id
-                ? `https://res.cloudinary.com/pledgepl/image/upload/f_auto,w_900,dpr_auto,bo_80px_solid_transparent/v1542411695/google-drive/${id}`
-                : null
-          }
+          const id = source.logoUrl ? getIdFromGoogleDrive(source.logoUrl) : null
           return {
-            originalUrl: source.logoUrl,
-            cloudinaryUrl: cloudinaryUrl,
+            aspectRatio: 1,
+            width: 600,
+            height: 600,
+            src: id ? getCloundinaryUrl(id, 600) : "",
+            srcSet: id ? `${getCloundinaryUrl(id, 300)} 300w,${getCloundinaryUrl(id, 600)} 600w,${getCloundinaryUrl(id, 900)} 900w,${getCloundinaryUrl(id, 1200)} 1200w` : "",
+            originalName: source.logoUrl,
+            presentationWidth: 600,
+            presentationHeight: 600,
           }
         },
       },
+     
     }
   }
 
@@ -81,36 +115,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     if (!node.active) {
       deleteNode({ node })
     }
-    // let cloudinaryUrl = null
-    // if (node.logoUrl) {
-    //   const urlParams = new URLSearchParams(node.logoUrl.split('?')[1])
-    //   const id = urlParams.get('id')
-    //   cloudinaryUrl =
-    //     node.logoUrl && id
-    //       ? `https://res.cloudinary.com/pledgepl/image/fetch/${encodeURIComponent(
-    //           node.logoUrl
-    //         )}` //`https://res.cloudinary.com/pledgepl/image/upload/v1542411695/google-drive/${id}.jpg`
-    //       : null
-    // }
-    // const fieldData = {
-    //   cloudinaryUrl,
-    // }
-    // const driveImageNode = {
-    //   ...fieldData,
-    //   id: node.id + Math.random().toString(16),
-    //   parent: node.id,
-    //   children: [],
-    //   internal: {
-    //     type: `CloudinaryImage`,
-    //     contentDigest: crypto
-    //       .createHash(`md5`)
-    //       .update(JSON.stringify(fieldData))
-    //       .digest(`hex`),
-    //   },
-    // }
-
-    // createNode(driveImageNode)
-    // createParentChildLink({ parent: node, child: driveImageNode })
   }
 }
 
@@ -125,8 +129,8 @@ exports.onCreateWebpackConfig = ({
     resolve: {
       alias: {
         'styled-components': require.resolve('@emotion/styled'),
-        'globby': require.resolve('fast-glob') // MUST KEEP. coz of error in gatsby-plugin-prefetch-google-fonts, with globby
-      }
+        globby: require.resolve('fast-glob'), // MUST KEEP. coz of error in gatsby-plugin-prefetch-google-fonts, with globby
+      },
     },
   })
 }

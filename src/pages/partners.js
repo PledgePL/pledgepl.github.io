@@ -46,8 +46,15 @@ export const query = graphql`
           partnerName
           url
           policyUrl
-          logoUrl {
-            cloudinaryUrl
+          fluid {
+            aspectRatio
+            width
+            height
+            src
+            srcSet
+            originalName
+            presentationWidth
+            presentationHeight
           }
         }
       }
@@ -63,8 +70,15 @@ export const query = graphql`
           partnerName
           url
           policyUrl
-          logoUrl {
-            cloudinaryUrl
+          fluid {
+            aspectRatio
+            width
+            height
+            src
+            srcSet
+            originalName
+            presentationWidth
+            presentationHeight
           }
         }
       }
