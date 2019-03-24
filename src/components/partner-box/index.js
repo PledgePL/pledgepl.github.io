@@ -73,30 +73,36 @@ const PartnerBox = ({ theme, name, url, policyUrl, src }) => {
               </Text>
             </CoreFlex>
             <CoreGrid
-              gridTemplateColumns={['1fr', '1fr 1fr']}
+              gridTemplateColumns={[
+                '1fr',
+                url && policyUrl ? '1fr 1fr' : '1fr',
+              ]}
               gridGap={[4]}
               css={{ position: 'absolute', bottom: 0 }}
               pb={[3, 2]}
               mx="auto"
             >
               {url && (
-                <CoreFlex>
-                  <ButtonCTA href={url} size="xsmall" type="gamma" mx="auto">
-                    Website
-                  </ButtonCTA>
-                </CoreFlex>
+                <ButtonCTA
+                  href={url}
+                  size="xsmall"
+                  type="gamma"
+                  mx="auto"
+                  css={{ width: '100%' }}
+                >
+                  Website
+                </ButtonCTA>
               )}
               {policyUrl && (
-                <CoreFlex>
-                  <ButtonCTA
-                    href={policyUrl}
-                    size="xsmall"
-                    type="gamma"
-                    mx="auto"
-                  >
-                    Policy
-                  </ButtonCTA>
-                </CoreFlex>
+                <ButtonCTA
+                  href={policyUrl}
+                  size="xsmall"
+                  type="gamma"
+                  css={{ width: '100%' }}
+                  mx="auto"
+                >
+                  Policy
+                </ButtonCTA>
               )}
             </CoreGrid>
           </CoreFlex>
