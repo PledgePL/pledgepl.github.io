@@ -3,9 +3,16 @@ import { CoreBox } from '../core-box'
 import Text from '../text'
 import Tile from '../tile'
 
-const InfoBox = ({ header, title, children }) => {
+const InfoBox = ({
+  header,
+  title,
+  textAlign = 'left',
+  hasTile = true,
+  children,
+}) => {
+  const Container = hasTile ? Tile : React.Fragment
   return (
-    <Tile>
+    <Container>
       <CoreBox mx="auto" mb={[2, 4]}>
         {header && <CoreBox mb={[2, 5]}>{header()}</CoreBox>}
         {title && (
@@ -14,7 +21,7 @@ const InfoBox = ({ header, title, children }) => {
             fontSize="epsilon"
             fontFamily="beta"
             as="h3"
-            textAlign="left"
+            textAlign={textAlign}
             mb={[3, 4]}
           >
             {title}
@@ -22,7 +29,7 @@ const InfoBox = ({ header, title, children }) => {
         )}
         {children}
       </CoreBox>
-    </Tile>
+    </Container>
   )
 }
 

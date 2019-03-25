@@ -4,6 +4,7 @@ import Text from '../components/text'
 import ButtonCTA from '../components/button-cta'
 import Banner from '../components/banner'
 import VideoBanner from '../components/video-banner'
+import SectionPromises from '../components/sections/section-promises'
 
 const IndexPage = ({ data }) => {
   const videoBannerBG = data.videoBannerBG
@@ -40,7 +41,7 @@ const IndexPage = ({ data }) => {
         and healthy future. Meet our partners who have helped make the Pledge
         Parental Leave movement a reality.
       </Banner>
-      <Link to="/page-2/">Go to page 2</Link>
+      <SectionPromises />
     </>
   )
 }
