@@ -6,12 +6,16 @@ import Banner from '../components/banner'
 import VideoBanner from '../components/video-banner'
 import SectionPromises from '../components/sections/section-promises'
 import SectionQuote from '../components/sections/section-quote'
+import SectionFounders from '../components/sections/section-founders'
 
 const IndexPage = ({ data }) => {
   const videoBannerBG = data.videoBannerBG
     ? data.videoBannerBG.childImageSharp.fluid
     : null
   const videoLoop = data.videoLoop ? data.videoLoop.publicURL : null
+  const foundingPartners = data.foundingPartners
+    ? data.foundingPartners.edges.map(_ => _.node)
+    : null
   return (
     <>
       <VideoBanner
@@ -20,30 +24,9 @@ const IndexPage = ({ data }) => {
         bg={videoBannerBG}
         loop={videoLoop}
       />
-      <Text textSize="alpha" tagName="h1">
-        Alpha
-      </Text>
-      <Text textSize="beta" tagName="h2">
-        Beta
-      </Text>
-      <Text textSize="gamma" tagName="h3">
-        Gamma
-      </Text>
-      <Text textSize="theta" tagName="p">
-        paragraph
-      </Text>
-      <Text textSize="theta" tagName="section">
-        <p>This is a paragraph text</p>
-        <p>Here is another paragraph</p>
-      </Text>
-      <ButtonCTA href="#">We're ready to join</ButtonCTA>
-      <Banner title="Companies who really care">
-        Thanks to them, thousands of employees and their families have a bright
-        and healthy future. Meet our partners who have helped make the Pledge
-        Parental Leave movement a reality.
-      </Banner>
       <SectionPromises />
       <SectionQuote />
+      {foundingPartners && <SectionFounders partners={foundingPartners} />}
     </>
   )
 }
@@ -63,6 +46,29 @@ export const query = graphql`
     videoLoop: file(name: { eq: "video-loop" }) {
       id
       publicURL
+    }
+    foundingPartners: allGoogleSheetPartnersRow(
+      filter: { partnerCategory: { eq: "Founding" } }
+    ) {
+      edges {
+        node {
+          id
+          active
+          partnerName
+          url
+          policyUrl
+          fluid {
+            aspectRatio
+            width
+            height
+            src
+            srcSet
+            originalName
+            presentationWidth
+            presentationHeight
+          }
+        }
+      }
     }
   }
 `
