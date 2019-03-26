@@ -28,7 +28,7 @@ console.log(
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Pledge Parental Leave: Four simple requirements. One monumental statement.',
   },
   plugins: [
     {

@@ -5,6 +5,7 @@ import ButtonCTA from '../components/button-cta'
 import Banner from '../components/banner'
 import VideoBanner from '../components/video-banner'
 import SectionPromises from '../components/sections/section-promises'
+import SectionQuote from '../components/sections/section-quote'
 
 const IndexPage = ({ data }) => {
   const videoBannerBG = data.videoBannerBG
@@ -42,6 +43,7 @@ const IndexPage = ({ data }) => {
         Parental Leave movement a reality.
       </Banner>
       <SectionPromises />
+      <SectionQuote />
     </>
   )
 }

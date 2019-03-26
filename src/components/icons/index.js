@@ -84,6 +84,31 @@ export const Shield = () => {
   )
 }
 
+export const QuoteEnd = () => {
+  return (
+    <svg viewBox="0 0 111 82.06">
+      <path
+        fill="#ffffff"
+        d="M111 30.65q0 22-10.47 34.72c-7 8.5-17.53 14.06-30.53 16.7V66.84c10-3.13 16.69-8.13 20.11-15.75a25.34 25.34 0 0 0 2.24-12.08H69v-39h42v30.65zm-69 0q0 22.26-10.76 34.86T1 82.06V66.83c10-3 16.33-8.13 19.75-16a21.48 21.48 0 0 0 2.17-11.79H0v-39h42v30.65z"
+      />
+    </svg>
+  )
+}
+
+export const QuoteStart = () => {
+  return (
+    <svg
+      viewBox="0 0 111 82.06"
+      style={{ transformOrgin: 'center', transform: 'rotate(180deg)' }}
+    >
+      <path
+        fill="#ffffff"
+        d="M111 30.65q0 22-10.47 34.72c-7 8.5-17.53 14.06-30.53 16.7V66.84c10-3.13 16.69-8.13 20.11-15.75a25.34 25.34 0 0 0 2.24-12.08H69v-39h42v30.65zm-69 0q0 22.26-10.76 34.86T1 82.06V66.83c10-3 16.33-8.13 19.75-16a21.48 21.48 0 0 0 2.17-11.79H0v-39h42v30.65z"
+      />
+    </svg>
+  )
+}
+
 export default {
   Paper,
   Chart,
@@ -91,5 +116,7 @@ export default {
   Briefcase,
   Eye,
   Money,
-  Shield
+  Shield,
+  QuoteStart,
+  QuoteEnd,
 }
