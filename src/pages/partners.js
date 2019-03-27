@@ -7,8 +7,9 @@ const PartnersPage = ({ data }) => {
   const foundingPartners = data.foundingPartners
     ? data.foundingPartners.edges.map(_ => _.node)
     : null
-  const partners = data.foundingPartners
-    ? data.partners.edges.map(_ => _.node)
+  const partners = data.partners ? data.partners.edges.map(_ => _.node) : null
+  const supportingPartners = data.supportingPartners
+    ? data.supportingPartners.edges.map(_ => _.node)
     : null
   return (
     <>
@@ -26,6 +27,11 @@ const PartnersPage = ({ data }) => {
         partners={partners}
         title="Partners"
         description="Since our launch, these companies have joined our ranks."
+      />
+      <SectionPartnerList
+        partners={supportingPartners}
+        title="Supporting Partners"
+        description="Helping us every step of the way."
       />
     </>
   )
@@ -61,6 +67,30 @@ export const query = graphql`
     }
     partners: allGoogleSheetPartnersRow(
       filter: { partnerCategory: { eq: "Partner" } }
+      sort: { fields: [partnerName] }
+    ) {
+      edges {
+        node {
+          id
+          active
+          partnerName
+          url
+          policyUrl
+          fluid {
+            aspectRatio
+            width
+            height
+            src
+            srcSet
+            originalName
+            presentationWidth
+            presentationHeight
+          }
+        }
+      }
+    }
+    supportingPartners: allGoogleSheetPartnersRow(
+      filter: { partnerCategory: { eq: "Supporting" } }
       sort: { fields: [partnerName] }
     ) {
       edges {

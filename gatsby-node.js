@@ -31,8 +31,10 @@ const getIdFromGoogleDrive = url => {
   }
 }
 
-const getCloundinaryUrl = (id, w = 900) =>
-  `https://res.cloudinary.com/pledgepl/image/upload/f_auto,w_${w},ar_1:1,c_pad,dpr_auto/v1542411695/google-drive/${id}`
+const getCloundinaryUrl = (id, w = 900, svg = false) =>
+  `https://res.cloudinary.com/pledgepl/image/upload/f_${
+    svg ? 'svg' : `auto,w_${w},ar_1:1,c_pad,dpr_auto`
+  }/v1542411695/google-drive/${id}`
 
 exports.setFieldsOnGraphQLNodeType = ({ type }) => {
   if (type.name === `googleSheetPartnersRow`) {
@@ -80,20 +82,29 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
           },
         }),
         resolve: (source, fieldArgs) => {
-          const id = source.logoUrl ? getIdFromGoogleDrive(source.logoUrl) : null
+          const id = source.logoUrl
+            ? getIdFromGoogleDrive(source.logoUrl)
+            : null
+          const isSvg = source.logoSvg ? !!source.logoSvg : false
           return {
             aspectRatio: 1,
             width: 700,
             height: 700,
-            src: id ? getCloundinaryUrl(id, 700) : "",
-            srcSet: id ? `${getCloundinaryUrl(id, 350)} 350w,${getCloundinaryUrl(id, 700)} 700w` : "",
+            src: id ? getCloundinaryUrl(id, 700, isSvg) : '',
+            srcSet: id && !isSvg
+              ? `${getCloundinaryUrl(id, 350, isSvg)} 350w,${getCloundinaryUrl(
+                  id,
+                  700,
+                  isSvg
+                )} 700w`
+              : '',
             originalName: source.logoUrl,
             presentationWidth: 700,
             presentationHeight: 700,
+            sizes: "350, 700"
           }
         },
       },
-     
     }
   }
 

@@ -41,7 +41,7 @@ const SectionPartnerList = ({ partners, title, description }) => {
         ]}
         gridGap={[4, 5]}
         mx="auto"
-        css={{ maxWidth: '1200px' }}
+        css={{ maxWidth: '1160px' }}
       >
         {partners &&
           partners.map(
@@ -57,6 +57,7 @@ const SectionPartnerList = ({ partners, title, description }) => {
                 fluid={fluid}
                 url={url}
                 policyUrl={policyUrl}
+                key={partnerName}
               />
             )
           )}

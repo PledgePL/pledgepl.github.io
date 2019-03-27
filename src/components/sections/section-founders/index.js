@@ -34,6 +34,7 @@ const SectionFounders = ({ partners }) => {
                 fadeIn={true}
                 critical={false}
                 alt={partnerName}
+                imgStyle={{ objectFit: 'contain' }}
               />
             </CoreBox>
           ))}

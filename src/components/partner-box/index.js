@@ -32,7 +32,13 @@ const PartnerBox = ({ theme, name, url, policyUrl, fluid }) => {
       }}
     >
       <CoreBox p={4}>
-        <Img fluid={fluid} fadeIn={true} critical={false} />
+        <Img
+          fluid={fluid}
+          fadeIn={true}
+          critical={false}
+          alt={name}
+          imgStyle={{ objectFit: 'contain' }}
+        />
       </CoreBox>
       <CoreBox
         css={{
