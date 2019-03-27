@@ -88,9 +88,9 @@ export default class extends React.PureComponent {
               flexDirection={['column', 'row']}
               hide={[!active, false]}
             >
-              <NavItem>
+              {/* <NavItem>
                 <ButtonMenu href="/why-pledge/" onClick={this.closeMenu}>Why Pledge</ButtonMenu>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <ButtonMenu href="/partners/" onClick={this.closeMenu}>Our Partners</ButtonMenu>
               </NavItem>
