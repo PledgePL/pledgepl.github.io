@@ -1,4 +1,5 @@
 import React from 'react'
+import { withPrefix } from 'gatsby'
 import { CoreBox, CoreGrid } from '../../core-box'
 import Text from '../../text'
 import InfoBox from '../../info-box'
@@ -69,10 +70,22 @@ const SectionResourceToolBox = () => {
             </Text>
             <ul>
               <CoreBox as="li" mb={[null, null]}>
-                <TextLink href="#">Download Word Document</TextLink>
+                <TextLink
+                  href={withPrefix(
+                    '/files/PledgeParentalLeave-SampleParentalLeavePolicy-1.0.docx'
+                  )}
+                >
+                  Download Word Document
+                </TextLink>
               </CoreBox>
               <CoreBox as="li" mt={[null, null]}>
-                <TextLink href="#">Download PDF</TextLink>
+                <TextLink
+                  href={withPrefix(
+                    '/files/PledgeParentalLeave-SampleParentalLeavePolicy-1.0.pdf'
+                  )}
+                >
+                  Download PDF
+                </TextLink>
               </CoreBox>
             </ul>
           </>
@@ -98,7 +111,9 @@ const SectionResourceToolBox = () => {
             </Text>
             <ul>
               <CoreBox as="li">
-                <TextLink href="#">Download PDF</TextLink>
+                <TextLink href={withPrefix(
+                    '/files/PledgeParentalLeave-PaidSalaryLeaveExample-1.0.pdf'
+                  )}>Download PDF</TextLink>
               </CoreBox>
             </ul>
           </>
@@ -124,7 +139,9 @@ const SectionResourceToolBox = () => {
             </Text>
             <ul>
               <CoreBox as="li">
-                <TextLink href="#">Download press kit (.zip)</TextLink>
+                <TextLink  href={withPrefix(
+                    '/files/PledgeParentalLeave-PressKit-1.0.zip'
+                  )}>Download press kit (.zip)</TextLink>
               </CoreBox>
             </ul>
           </>

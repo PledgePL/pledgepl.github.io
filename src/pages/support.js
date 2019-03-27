@@ -19,7 +19,7 @@ const CustomizedLink = withTheme(({ theme, ...props }) => {
   )
 })
 
-const SecondPage = () => (
+const SupportPage = () => (
   <>
     <Banner title="We are here to help">
       Whether you’re starting from scratch, need help with legalities, or simply
@@ -35,4 +35,4 @@ const SecondPage = () => (
   </>
 )
 
-export default SecondPage
+export default SupportPage
