@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Match } from '@reach/router'
-import { withTheme } from 'emotion-theming'
 import { themeGet } from 'styled-system'
 import Text from '../text'
 import { mq } from '../../styles/theme'
@@ -48,15 +47,15 @@ const ButtonMenu = styled(CoreBox)`
 
 const LinkButtonMenu = ButtonMenu.withComponent(Link)
 
-export default ({ href, children }) => {
+export default ({ href, children, ...props }) => {
   const isActive = ({ isPartiallyCurrent }) => {
     return isPartiallyCurrent ? { className: 'active' } : null
   }
 
   return (
     <Match path={href}>
-      {props => (
-        <LinkButtonMenu href={href} p={[1, 2]} active={props.match}>
+      {value => (
+        <LinkButtonMenu href={href} p={[1, 2]} active={value.match} {...props}>
           <Text
             inline={true}
             color="beta"

@@ -28,6 +28,7 @@ export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.onHamburgerClick = this.onHamburgerClick.bind(this)
+    this.closeMenu = this.closeMenu.bind(this)
     this.state = {
       active: false,
     }
@@ -36,6 +37,12 @@ export default class extends React.PureComponent {
   onHamburgerClick() {
     this.setState({
       active: !this.state.active,
+    })
+  }
+
+  closeMenu() {
+    this.setState({
+      active: false,
     })
   }
 
@@ -82,13 +89,16 @@ export default class extends React.PureComponent {
               hide={[!active, false]}
             >
               <NavItem>
-                <ButtonMenu href="/why-pledge/">Why Pledge</ButtonMenu>
+                <ButtonMenu href="/why-pledge/" onClick={this.closeMenu}>Why Pledge</ButtonMenu>
               </NavItem>
               <NavItem>
-                <ButtonMenu href="/partners/">Our Partners</ButtonMenu>
+                <ButtonMenu href="/partners/" onClick={this.closeMenu}>Our Partners</ButtonMenu>
               </NavItem>
               <NavItem>
-                <ButtonMenu href="/support/">Support</ButtonMenu>
+                <ButtonMenu href="/support/" onClick={this.closeMenu}>Support</ButtonMenu>
+              </NavItem>
+              <NavItem hide={[false, true]}>
+                <ButtonMenu href="/join-us/" onClick={this.closeMenu}>Join Us</ButtonMenu>
               </NavItem>
             </Nav>
             <CoreBox hide={[true, false]} css={{ justifySelf: 'flex-end' }}>
