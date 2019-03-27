@@ -31,6 +31,7 @@ module.exports = {
     title: 'Pledge Parental Leave: Four simple requirements. One monumental statement.',
   },
   plugins: [
+    
     {
       resolve: 'gatsby-plugin-netlify',
       options: {
@@ -152,6 +153,12 @@ module.exports = {
             variants: [`400`],
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-70105354-1"
       },
     },
   ],

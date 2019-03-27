@@ -1,4 +1,5 @@
 import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Link as GatsbyLink } from 'gatsby'
 
 // Since DOM elements <a> cannot receive activeClassName,
@@ -18,9 +19,9 @@ const Link = ({ children, href, activeClassName, ...other }) => {
     )
   }
   return (
-    <a href={href} {...other}>
+    <OutboundLink href={href} target="_blank" {...other}>
       {children}
-    </a>
+    </OutboundLink>
   )
 }
 
