@@ -31,7 +31,7 @@ const PartnerBox = ({ theme, name, url, policyUrl, fluid }) => {
           },
         }}
       >
-        <CoreBox p={4}>
+        <CoreBox p={"15%"}>
           <Img
             fluid={fluid}
             fadeIn={true}
