@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from '@emotion/styled'
 import { CoreBox, CoreGrid } from '../../core-box'
 import Text from '../../text'
 import InfoBox from '../../info-box'
@@ -28,7 +27,7 @@ const InfoBoxDescription = ({ children }) => {
   )
 }
 
-const SectionPromises = ({}) => {
+const SectionPromises = () => {
   return (
     <CoreBox bg="epsilon" py={[6, 7]} px={[4, 5]} as="section">
       <Text

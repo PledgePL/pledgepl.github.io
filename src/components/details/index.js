@@ -81,10 +81,9 @@ const ContentProvider = props => {
           }
         }
       `}
-      render={data => {
-        console.log('data', data.chevron.publicURL)
-        return <Details {...props} chevronSrc={data.chevron.publicURL} />
-      }}
+      render={data => (
+        <Details {...props} chevronSrc={data.chevron.publicURL} />
+      )}
     />
   )
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { CoreBox, CoreGrid } from '../../core-box'
 import Text from '../../text'
@@ -11,7 +13,15 @@ const HR = styled(CoreBox)`
   margin-bottom: ${props => props.my || props.mb || props.m || 0};
 `
 
-const SectionFAQ = ({}) => {
+const SectionFAQ = data => {
+  const graphCost =
+    data && data.graphCost && data.graphCost.childImageSharp
+      ? data.graphCost.childImageSharp
+      : null
+  const graphCoverage =
+    data && data.graphCoverage && data.graphCoverage.childImageSharp
+      ? data.graphCoverage.childImageSharp
+      : null
   return (
     <CoreBox bg="beta" py={[6, 7]} px={[4, 5]} as="section">
       <Text
@@ -166,7 +176,17 @@ const SectionFAQ = ({}) => {
               salary of $100k and compared that to the cost, both in time and
               money, that it takes to recruit and replace an employee.
             </p>
-            <p>GRAPH GOES HERE</p>
+            <p>
+              <Img
+                fluid={graphCost.fluid}
+                fadeIn={true}
+                critical={false}
+                alt="Graph of the cost of parental leave"
+                style={{
+                  maxWidth: '500px',
+                }}
+              />
+            </p>
             <p>
               As you can see, the cost to recruit and replace an employee is
               about $20k more than providing paid leave. If it actually costs
@@ -183,7 +203,17 @@ const SectionFAQ = ({}) => {
               help control their costs of paid leave by topping up any
               short-term disability payments to qualified employees.
             </p>
-            <p>IMAGE GOES HERE</p>
+            <p>
+              <Img
+                fluid={graphCoverage.fluid}
+                fadeIn={true}
+                critical={false}
+                alt="Graph of the short-term disability coverage"
+                style={{
+                  maxWidth: '800px',
+                }}
+              />
+            </p>
             <p>
               Qualification depends on a employer’s insurance policy carrier’s
               restrictions and will vary in terms of pay, length of leave, and
@@ -259,4 +289,30 @@ const SectionFAQ = ({}) => {
 
 SectionFAQ.defaultProps = {}
 
-export default SectionFAQ
+export default () => {
+  return (
+    <StaticQuery
+      query={graphql`
+        {
+          graphCost: file(name: { eq: "graph-cost" }) {
+            childImageSharp {
+              id
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+          graphCoverage: file(name: { eq: "graph-coverage" }) {
+            childImageSharp {
+              id
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+      `}
+      render={SectionFAQ}
+    />
+  )
+}
