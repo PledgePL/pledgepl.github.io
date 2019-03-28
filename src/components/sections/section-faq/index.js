@@ -232,7 +232,7 @@ const SectionFAQ = data => {
           </Details>
           <Details title="What is a primary caregiver? What about a secondary caregiver?">
             <p>
-              &dbquo;Primary Caregiver&dbquo; refers to the parent who has the
+              "Primary Caregiver" refers to the parent who has the
               majority responsibility for the care of the child for a
               significant part of the day during a regular work week. Primary
               caregivers can be any parent, and this term applies to anyone
