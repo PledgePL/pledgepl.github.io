@@ -15,23 +15,23 @@ const PartnerBox = ({ theme, name, url, policyUrl, fluid }) => {
   }).toString()
 
   return (
-    <Link href={url} target="_blank">
-      <Tile
-        padding={false}
-        css={{
-          position: 'relative',
-          '&:hover': {
-            transitionDelay: '0.15s',
-          },
-          '&:hover .overlay': {
-            opacity: 1,
-          },
-          '&:hover .name': {
-            opacity: 1,
-          },
-        }}
-      >
-        <CoreBox p={"15%"}>
+    <Tile
+      padding={false}
+      css={{
+        position: 'relative',
+        '&:hover': {
+          transitionDelay: '0.15s',
+        },
+        '&:hover .overlay': {
+          opacity: 1,
+        },
+        '&:hover .name': {
+          opacity: 1,
+        },
+      }}
+    >
+      <Link href={url} target="_blank">
+        <CoreBox p={'15%'}>
           <Img
             fluid={fluid}
             fadeIn={true}
@@ -40,86 +40,87 @@ const PartnerBox = ({ theme, name, url, policyUrl, fluid }) => {
             imgStyle={{ objectFit: 'contain' }}
           />
         </CoreBox>
-        <CoreBox
+      </Link>
+      <CoreBox
+        css={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: '100%',
+          pointerEvents: 'none',
+        }}
+      >
+        <AspectRatio
+          mx="auto"
+          className="overlay"
           css={{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            width: '100%',
+            transitionDelay: '0.15s',
+            transitionTimingFunction: 'cubic-bezier(.39,.575,.565,1)',
+            transitionProperty: 'opacity',
+            transitionDuration: '0.35s',
+            backgroundColor: `rgba(${backgroundColorRgba})`,
+            opacity: 0,
           }}
         >
-          <AspectRatio
-            mx="auto"
-            className="overlay"
-            css={{
-              transitionDelay: '0.15s',
-              transitionTimingFunction: 'cubic-bezier(.39,.575,.565,1)',
-              transitionProperty: 'opacity',
-              transitionDuration: '0.35s',
-              backgroundColor: `rgba(${backgroundColorRgba})`,
-              opacity: 0,
-            }}
-          >
-            {name && (
-              <CoreFlex
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="space-around"
-                width="100%"
-                height="100%"
-                className="name"
-                css={{ position: 'relative' }}
-              >
-                <CoreFlex flex="1 1 100%" alignItems="center">
-                  <Text
-                    color="beta"
-                    fontSize="beta"
-                    fontFamily="beta"
-                    as="h3"
-                    textAlign="center"
-                  >
-                    {name}
-                  </Text>
-                </CoreFlex>
-                <CoreGrid
-                  gridTemplateColumns={[
-                    '1fr',
-                    url && policyUrl ? '1fr 1fr' : '1fr',
-                  ]}
-                  gridGap={[4]}
-                  css={{ position: 'absolute', bottom: 0 }}
-                  pb={[3, 2]}
-                  mx="auto"
+          {name && (
+            <CoreFlex
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="space-around"
+              width="100%"
+              height="100%"
+              className="name"
+              css={{ position: 'relative' }}
+            >
+              <CoreFlex flex="1 1 100%" alignItems="center">
+                <Text
+                  color="beta"
+                  fontSize="beta"
+                  fontFamily="beta"
+                  as="h3"
+                  textAlign="center"
                 >
-                  {url && (
-                    <ButtonCTA
-                      href={url}
-                      size="xsmall"
-                      type="gamma"
-                      mx="auto"
-                      css={{ width: '100%' }}
-                    >
-                      Website
-                    </ButtonCTA>
-                  )}
-                  {policyUrl && (
-                    <ButtonCTA
-                      href={policyUrl}
-                      size="xsmall"
-                      type="gamma"
-                      css={{ width: '100%' }}
-                      mx="auto"
-                    >
-                      Policy
-                    </ButtonCTA>
-                  )}
-                </CoreGrid>
+                  {name}
+                </Text>
               </CoreFlex>
-            )}
-          </AspectRatio>
-        </CoreBox>
-      </Tile>
-    </Link>
+              <CoreGrid
+                gridTemplateColumns={[
+                  '1fr',
+                  url && policyUrl ? '1fr 1fr' : '1fr',
+                ]}
+                gridGap={[4]}
+                css={{ position: 'absolute', bottom: 0 }}
+                pb={[3, 2]}
+                mx="auto"
+              >
+                {url && (
+                  <ButtonCTA
+                    href={url}
+                    size="xsmall"
+                    type="gamma"
+                    mx="auto"
+                    css={{ width: '100%', pointerEvents: 'auto' }}
+                  >
+                    Website
+                  </ButtonCTA>
+                )}
+                {policyUrl && (
+                  <ButtonCTA
+                    href={policyUrl}
+                    size="xsmall"
+                    type="gamma"
+                    css={{ width: '100%', pointerEvents: 'auto' }}
+                    mx="auto"
+                  >
+                    Policy
+                  </ButtonCTA>
+                )}
+              </CoreGrid>
+            </CoreFlex>
+          )}
+        </AspectRatio>
+      </CoreBox>
+    </Tile>
   )
 }
 
