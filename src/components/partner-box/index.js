@@ -31,7 +31,7 @@ const PartnerBox = ({ theme, name, url, policyUrl, fluid }) => {
       }}
     >
       <Link href={url} target="_blank">
-        <CoreBox p={'15%'}>
+        <CoreBox p={'15%'} as="span" css={{ display: 'block' }}>
           <Img
             fluid={fluid}
             fadeIn={true}
