@@ -1,22 +1,22 @@
 import React from 'react'
-import css from '@styled-system/css'
+import { withTheme } from 'emotion-theming'
 import { CoreBox } from '../components/core-box'
 import Banner from '../components/banner'
 import SectionResourceToolBox from '../components/sections/section-resource-tool-box'
 import SectionFAQ from '../components/sections/section-faq'
 
-const CustomizedLink = ({ ...props }) => {
+const CustomizedLink = withTheme(({ theme, ...props }) => {
   return (
     <CoreBox
       as="a"
       color="beta"
-      css={css({ '&:hover': { color: 'beta' } })}
+      css={{ '&:hover': { color: theme.colors.beta } }}
       {...props}
     >
       team@pledgepl.org
     </CoreBox>
   )
-}
+})
 
 const SupportPage = () => (
   <>

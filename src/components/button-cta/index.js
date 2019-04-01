@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import css from '@styled-system/css'
+import { withTheme } from 'emotion-theming'
 import { CoreFlex } from '../core-box'
 import { style } from 'styled-system'
 import Text from '../text'
 import Link from '../../utils/gatsby-link'
 
-export default ({
+export default withTheme(({
+  theme, 
   href,
   children,
   size = 'large',
@@ -26,12 +27,12 @@ export default ({
       &:hover {
       }
     `,
-    css({
+    {
       '&:hover': {
-        backgroundColor: 'zeta',
+        backgroundColor: theme.colors.zeta,
         color: 'beta',
       },
-    }),
+    },
     // attach the borderRadius to use the space arr in theme
     style({
       prop: 'borderradius',
@@ -114,4 +115,4 @@ export default ({
       </Text>
     </LinkButtonCTA>
   )
-}
+})
