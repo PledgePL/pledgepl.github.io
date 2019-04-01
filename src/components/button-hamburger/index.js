@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Box } from '@rebass/grid'
+import { CoreBox } from '../core-box'
 
-const Button = styled(Box)`
+const Button = styled(CoreBox)`
   display: block;
   border: none;
   outline: none;

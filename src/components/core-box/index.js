@@ -1,6 +1,22 @@
 import styled from '@emotion/styled'
-import { Box, Flex } from '@rebass/grid'
-import { style } from 'styled-system'
+import {
+  style,
+  space,
+  color,
+  fontSize,
+  width,
+  lineHeight,
+  alignItems,
+  alignContent,
+  justifyContent,
+  flexWrap,
+  flexBasis,
+  flexDirection,
+  flex,
+  justifySelf,
+  alignSelf,
+  order,
+} from 'styled-system'
 
 const height = style({
   // React prop name
@@ -28,18 +44,18 @@ const position = style({
   scale: ['static'],
 })
 
-const lineHeight = style({
-  // React prop name
-  prop: 'lineHeight',
-  // The corresponding CSS property (defaults to prop argument)
-  cssProperty: 'lineHeight',
-  // key for theme values
-  key: 'lineHeight',
-  // accessor function for transforming the value
-  transformValue: n => (n ? `${n}` : ''),
-  // add a fallback scale object or array, if theme is not present
-  scale: [],
-})
+// const lineHeight = style({
+//   // React prop name
+//   prop: 'lineHeight',
+//   // The corresponding CSS property (defaults to prop argument)
+//   cssProperty: 'lineHeight',
+//   // key for theme values
+//   key: 'lineHeight',
+//   // accessor function for transforming the value
+//   transformValue: n => (n ? `${n}` : ''),
+//   // add a fallback scale object or array, if theme is not present
+//   scale: [],
+// })
 
 const hidden = ({ display = 'block' }) =>
   style({
@@ -132,6 +148,27 @@ const gridColumn = style({
   // add a fallback scale object or array, if theme is not present
   scale: [],
 })
+
+const Box = styled('div')`
+  ${space}
+  ${width}
+  ${fontSize}
+  ${color}
+`
+
+const Flex = styled(Box)`
+  display: flex;
+  ${alignItems}
+  ${alignContent}
+  ${justifyContent}
+  ${flexWrap}
+  ${flexBasis}
+  ${flexDirection}
+  ${flex}
+  ${justifySelf}
+  ${alignSelf}
+  ${order}
+`
 
 export const CoreBox = styled(Box)`
   ${position}

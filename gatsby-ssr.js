@@ -1,25 +1,10 @@
-const React = require('react')
-const Layout = require('./src/components/layout').default
-
-// export const replaceRenderer = ({ bodyComponent }) => {
-//     const page = bodyComponent.children.props.children
-//     bodyComponent.children.props.children = <YourLayout {...page.props}>{page}</YourLayout>
-//     return bodyComponent
-//   }
 
 
-// exports.wrapRootElement = ({ element, props }) => (
-//   <Layout {...props}>{element}</Layout>
-// );
+import React from "react"
+import Layout from "./src/components/layout"
 
-    exports.wrapPageElement = ({ element, props }) => (
-        <Layout {...props}>{element}</Layout>
-      );
-
-// export const replaceRenderer = ({ bodyComponent }) => {
-//   const page = bodyComponent.children.props.children
-//   bodyComponent.children.props.children = (
-//     <Layout {...page.props}>{page}</Layout>
-//   )
-//   return bodyComponent
-// }
+export const wrapPageElement = ({ element, props }) => {
+  // props provide same data to Layout as Page element will get
+  // including location, data, etc - you don't need to pass it
+  return <Layout {...props}>{element}</Layout>
+}
