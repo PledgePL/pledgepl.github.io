@@ -1,10 +1,9 @@
 import React from 'react'
 import { withTheme } from 'emotion-theming'
-import { Link } from 'gatsby'
 import { CoreBox } from '../components/core-box'
 import Banner from '../components/banner'
 import SectionResourceToolBox from '../components/sections/section-resource-tool-box'
-import SectionFAQ from "../components/sections/section-faq"
+import SectionFAQ from '../components/sections/section-faq'
 
 const CustomizedLink = withTheme(({ theme, ...props }) => {
   return (
