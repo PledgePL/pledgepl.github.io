@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { CoreBox, CoreGrid } from '../../core-box'
+import { CoreBox } from '../../core-box'
 import Text from '../../text'
 import { QuoteStart, QuoteEnd } from '../../icons'
 

@@ -44,19 +44,6 @@ const position = style({
   scale: ['static'],
 })
 
-// const lineHeight = style({
-//   // React prop name
-//   prop: 'lineHeight',
-//   // The corresponding CSS property (defaults to prop argument)
-//   cssProperty: 'lineHeight',
-//   // key for theme values
-//   key: 'lineHeight',
-//   // accessor function for transforming the value
-//   transformValue: n => (n ? `${n}` : ''),
-//   // add a fallback scale object or array, if theme is not present
-//   scale: [],
-// })
-
 const hidden = ({ display = 'block' }) =>
   style({
     // React prop name

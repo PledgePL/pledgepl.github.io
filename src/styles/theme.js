@@ -1,12 +1,6 @@
-import facepaint from 'facepaint'
-
 export const baseFontSize = 16
 const breakpoints = [768, 992, 1200]
 const lineHeightRatio = 1.5
-
-export const mq = facepaint(
-  breakpoints.map(bp => `@media (min-width: ${bp}px)`)
-)
 
 const pxToRem = value => {
   if (Array.isArray(value)) {
@@ -38,12 +32,6 @@ const fontSizeToLineHeight = modularScaleValue => {
     const lines = Math.floor((value / baseFontSize) * lineHeightRatio * 2) / 2
     return linesToRem(lines)
   })
-}
-
-const calcLineHeight = fontSizeValue => {
-  const lines =
-    Math.floor((fontSizeValue / baseFontSize) * lineHeightRatio * 2) / 2
-  return lines * baseFontSize
 }
 
 const theme = {
