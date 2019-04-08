@@ -20,7 +20,7 @@ const QuoteEndContainer = styled(CoreBox)`
   transform: translateX(150%);
 `
 
-const SectionQuote = ({}) => {
+const SectionQuote = () => {
   return (
     <CoreBox bg="gamma" py={[6, 7]} px={[4, 5]} as="section">
       <Text

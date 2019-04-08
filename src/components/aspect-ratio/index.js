@@ -10,8 +10,14 @@ const AspectRatio = ({ ratio, children, css = {}, ...props }) => {
       flex="1 1 auto"
       position="relative"
     >
-      <CoreFlex 
-      position="relative" width="100%" height="100%">{children}</CoreFlex>
+      <CoreFlex
+        position="absolute"
+        width="100%"
+        height="100%"
+        css={{ top: 0, left: 0 }}
+      >
+        {children}
+      </CoreFlex>
     </CoreFlex>
   )
 }
