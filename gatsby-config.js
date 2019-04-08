@@ -161,5 +161,8 @@ module.exports = {
         trackingId: "UA-70105354-1"
       },
     },
+    {
+      resolve: 'gatsby-plugin-brotli'
+    }
   ],
 }
