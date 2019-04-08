@@ -1,31 +1,18 @@
 import React from 'react'
-import styled from '@emotion/styled'
-import { CoreBox } from '../core-box'
-
-const AspectRatioBox = styled(CoreBox)(
-  `
-    height: 0;
-    overflow: hidden;
-    position: relative;
-    flex: 1 1 auto;
-    `
-)
-
-const AspectRatioBoxInner = styled(CoreBox)(
-  `
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    `
-)
+import { CoreFlex } from '../core-box'
 
 const AspectRatio = ({ ratio, children, css = {}, ...props }) => {
   return (
-    <AspectRatioBox {...props} css={{ ...css, paddingTop: `calc(${ratio} * 100%)` }}>
-      <AspectRatioBoxInner>{children}</AspectRatioBoxInner>
-    </AspectRatioBox>
+    <CoreFlex
+      {...props}
+      css={{ ...css, overflow: 'hidden' }}
+      pt={`calc(${ratio} * 100%)`}
+      flex="1 1 auto"
+      position="relative"
+    >
+      <CoreFlex 
+      position="relative" width="100%" height="100%">{children}</CoreFlex>
+    </CoreFlex>
   )
 }
 

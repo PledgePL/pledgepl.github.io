@@ -16,7 +16,24 @@ import {
   justifySelf,
   alignSelf,
   order,
+  get,
+  px,
+  num
 } from 'styled-system'
+
+const getSpace = (n, scale) => {
+  if (!num(n)) {
+    return px(get(scale, n, n))
+  }
+
+  const isNegative = n < 0
+  const absolute = Math.abs(n)
+  const value = get(scale, absolute)
+  if (!num(value)) {
+    return isNegative ? '-' + value : value
+  }
+  return px(value * (isNegative ? -1 : 1))
+}
 
 const height = style({
   // React prop name
@@ -92,7 +109,7 @@ const gridGap = style({
   // key for theme values
   key: 'space', // use the space values
   // accessor function for transforming the value
-  transformValue: n => n,
+  transformValue: getSpace,
   // add a fallback scale object or array, if theme is not present
   scale: [],
 })
@@ -105,20 +122,20 @@ const gridRowGap = style({
   // key for theme values
   key: 'space', // use the space values
   // accessor function for transforming the value
-  transformValue: n => n,
+  transformValue: getSpace,
   // add a fallback scale object or array, if theme is not present
   scale: [],
 })
 
 const gridColumnGap = style({
-  // React prop name
+  // React prop name and CSS property
   prop: 'gridColumnGap',
-  // The corresponding CSS property (defaults to prop argument)
+  // CSS property (if different from prop argument)
   cssProperty: 'grid-column-gap',
   // key for theme values
-  key: 'space', // use the space values
+  key: 'space',
   // accessor function for transforming the value
-  transformValue: n => n,
+  transformValue: getSpace,
   // add a fallback scale object or array, if theme is not present
   scale: [],
 })
@@ -131,19 +148,24 @@ const gridColumn = style({
   // key for theme values
   key: 'space', // use the space values
   // accessor function for transforming the value
-  transformValue: n => n,
+  transformValue: getSpace,
   // add a fallback scale object or array, if theme is not present
   scale: [],
 })
 
-const Box = styled('div')`
+export const CoreBox = styled.div`
   ${space}
   ${width}
   ${fontSize}
   ${color}
+  ${position}
+  ${hidden({ display: 'block' })}
+  ${height}
+  ${lineHeight}
+  ${gridColumn}
 `
 
-const Flex = styled(Box)`
+export const CoreFlex = styled(CoreBox)`
   display: flex;
   ${alignItems}
   ${alignContent}
@@ -155,21 +177,7 @@ const Flex = styled(Box)`
   ${justifySelf}
   ${alignSelf}
   ${order}
-`
-
-export const CoreBox = styled(Box)`
-  ${position}
-  ${hidden({ display: 'block' })}
-  ${height}
-  ${lineHeight}
-  ${gridColumn}
-`
-
-export const CoreFlex = styled(Flex)`
-  ${position}
   ${hidden({ display: 'flex' })}
-  ${height}
-  ${lineHeight}
 `
 
 export const CoreGrid = styled(CoreFlex)`
