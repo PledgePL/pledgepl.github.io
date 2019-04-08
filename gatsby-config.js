@@ -31,6 +31,19 @@ module.exports = {
     title: 'Pledge Parental Leave: Four simple requirements. One monumental statement.',
   },
   plugins: [
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Pledge Parental Leave`,
+        short_name: `PledgePL`,
+        start_url: `/`,
+        background_color: `#f0f5fa`,
+        theme_color: `#989cd7`,
+        display: `minimal-ui`,
+        icon: `src/images/pledgepl-logo.svg`, // This path is relative to the root of the site.
+      },
+    },
     
     {
       resolve: 'gatsby-plugin-netlify',

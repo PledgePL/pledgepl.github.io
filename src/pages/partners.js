@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Banner from '../components/banner'
 import SectionPartnerList from '../components/sections/section-partner-list'
 
