@@ -31,7 +31,7 @@ module.exports = {
     title: 'Pledge Parental Leave: Four simple requirements. One monumental statement.',
   },
   plugins: [
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
