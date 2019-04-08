@@ -43,7 +43,7 @@ module.exports = {
         icon: `src/images/pledgepl-logo.svg`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-netlify',
       options: {
