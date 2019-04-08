@@ -10,7 +10,7 @@ import AspectRatio from '../aspect-ratio'
 import Tile from '../tile'
 
 const PartnerBox = ({ theme, name, url, policyUrl, fluid }) => {
-  const backgroundColorRgba = hexRgb(`${theme.colors.gamma}dd`, {
+  const backgroundColorRgba = hexRgb(`${theme.colors.gamma}ee`, {
     format: 'array',
   }).toString()
 
