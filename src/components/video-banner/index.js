@@ -59,7 +59,7 @@ const VideoBanner = ({ title, bg, loop }) => {
             {title}
           </Text>
         )}
-        <ButtonWatch>Watch The Video</ButtonWatch>
+        {/* <ButtonWatch>Watch The Video</ButtonWatch> */}
       </CoreFlex>
     </CoreBox>
   )
