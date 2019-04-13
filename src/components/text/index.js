@@ -14,11 +14,7 @@ const CustomBox = styled(CoreBox)(
       textAlign: props.textAlign,
       whiteSpace: props.whiteSpace,
     }
-  },
-  `
-    a {
-    }
-  `
+  }
 )
 
 const Text = props => {
@@ -27,9 +23,9 @@ const Text = props => {
   props = {
     ...props,
     fontSize: themeGet(`fontSizes.${props.fontSize}`, props.fontSize)(props),
-    lineHeight: themeGet(`lineHeights.${props.fontSize}`, props.fontSize)(
-      props
-    ),
+    lineHeight:
+      props.lineHeight ||
+      themeGet(`lineHeights.${props.fontSize}`, null)(props)
   }
   return <CustomBox m={0} p={0} {...props} />
 }

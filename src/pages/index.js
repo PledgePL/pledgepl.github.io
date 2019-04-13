@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import VideoBanner from '../components/video-banner'
+import SectionVideo from '../components/sections/section-video'
 import SectionPromises from '../components/sections/section-promises'
 import SectionQuote from '../components/sections/section-quote'
 import SectionFounders from '../components/sections/section-founders'
@@ -15,12 +15,7 @@ const IndexPage = ({ data }) => {
     : null
   return (
     <>
-      <VideoBanner
-        title="Pledge Parental Leave is setting the standard for paid leave benefits in
-        the U.S. creative industry"
-        bg={videoBannerBG}
-        loop={videoLoop}
-      />
+      <SectionVideo src={videoLoop} bg={videoBannerBG} />
       <SectionPromises />
       <SectionQuote />
       {foundingPartners && <SectionFounders partners={foundingPartners} />}

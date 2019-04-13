@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { CoreBox, CoreFlex } from '../core-box'
 import Text from '../text'
 import VideoBG from '../video-bg'
+import ButtonWatch from "../button-watch"
 
 const VideoBGContainer = styled(CoreFlex)(
   ` 
@@ -30,7 +31,7 @@ const VideoBanner = ({ title, bg, loop }) => {
       )}
       <CoreFlex
         css={{
-          maxWidth: 1000,
+          maxWidth: 750,
           position: 'absolute',
           zIndex: 1,
           top: 0,
@@ -38,23 +39,27 @@ const VideoBanner = ({ title, bg, loop }) => {
           right: 0,
           bottom: 0,
         }}
-        alignItems="center"
+        flexDirection="column"
+        alignItems="flex-start"
+        justifyContent="center"
         mx="auto"
         py={[6, 7]}
-        px={[4, 5]}
+        px={[6, 5]}
       >
         {title && (
           <Text
             color="beta"
             mb={3}
-            fontSize="alpha"
+            fontSize={[16, 26, 30.75, 41.053]}
+            lineHeight="1.5"
             fontFamily="beta"
             as="h1"
-            textAlign="center"
+            textAlign="left"
           >
             {title}
           </Text>
         )}
+        <ButtonWatch>Watch The Video</ButtonWatch>
       </CoreFlex>
     </CoreBox>
   )

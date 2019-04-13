@@ -8,7 +8,6 @@ import ButtonHamburger from './button-hamburger'
 
 const Header = styled(CoreFlex)`
   position: fixed;
-  background-color: ${props => props.theme.bgColor2};
   width: 100%;
   box-shadow: 0 0 20px rgba(75, 0, 255, 0.44);
   z-index: 999;
@@ -60,6 +59,7 @@ export default class extends React.PureComponent {
           alignItems="flex-start"
           justifyContent="center"
           height={activeHeaderHeight}
+          bg="gamma"
         >
           <CoreGrid
             gridTemplateColumns={['1fr 1fr', '1fr 3fr 1fr 0fr']}

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Match } from '@reach/router'
-import { themeGet, width } from 'styled-system'
+import { themeGet } from 'styled-system'
 import Text from '../text'
 import { CoreBox, CoreFlex } from '../core-box'
 import Link from '../../utils/gatsby-link'

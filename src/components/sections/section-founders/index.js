@@ -28,7 +28,7 @@ const SectionFounders = ({ partners }) => {
       >
         {partners &&
           partners.map(({ partnerName, fluid }) => (
-            <CoreBox p={4} width={120}>
+            <CoreBox p={4} width={120} key={partnerName}>
               <Img
                 fluid={fluid}
                 fadeIn={true}
