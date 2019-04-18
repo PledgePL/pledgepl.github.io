@@ -6,3 +6,5 @@ https://next.pledgepl.org/* https://pledgepl.org/:splat 301!
 
 # Optional: Redirect default Netlify subdomain to primary domain
 https://pledgepl.netlify.com/* https://pledgepl.org/:splat 301!
+
+/static/downloads/PledgeParentalLeave-SampleParentalLeavePolicy-1.0.pdf /files/PledgeParentalLeave-SampleParentalLeavePolicy-1.0.pdf
