@@ -5,8 +5,19 @@ import Text from '../text'
 
 export default ({ children, ...props }) => {
   return (
-    <CoreFlex flexDirection="row" alignItems="center">
-      <Play css={{flex: "0 0 auto"}} />
+    <CoreFlex
+      flexDirection="row"
+      alignItems="center"
+      as="button"
+      css={{
+        backgroundColor: 'transparent',
+        border: 0,
+        '-webkit-appearance': 'none',
+        cursor: 'pointer',
+      }}
+      {...props}
+    >
+      <Play css={{ flex: '0 0 auto' }} />
       <Text
         color="beta"
         fontSize="eta"

@@ -153,9 +153,9 @@ export const Play = () => {
             cy="25.74"
             r="22.74"
             stroke="#fff"
-            stroke-dasharray="200"
+            strokeDasharray="200"
             fill="none"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <path
             fill="#fff"
