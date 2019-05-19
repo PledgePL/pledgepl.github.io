@@ -8,32 +8,7 @@ import Link from '../../utils/gatsby-link'
 
 export default withTheme(
   ({ theme, href, children, size = 'large', type = 'alpha', ...props }) => {
-    const ButtonCTA = styled(CoreFlex)(
-      `
-      display: inline-block;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      outline: none;
-      -webkit-appearance: none;
-      text-decoration: none;
-      text-align: center;
-      &:hover {
-      }
-    `,
-      {
-        '&:hover': {
-          backgroundColor: theme.colors.zeta,
-          color: 'beta',
-        },
-      },
-      // attach the borderRadius to use the space arr in theme
-      style({
-        prop: 'borderradius',
-        cssProperty: 'borderRadius',
-        key: 'space',
-      })
-    )
+    
 
     let paddingHorizontal
     let paddingVertical
@@ -74,6 +49,7 @@ export default withTheme(
     let textTransform
     let bg
     let color
+    let activeColor = 'beta'
 
     switch (type) {
       case 'beta':
@@ -92,6 +68,34 @@ export default withTheme(
         textTransform = 'uppercase'
         break
     }
+
+    const ButtonCTA = styled(CoreFlex)(
+      `
+      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+      -webkit-appearance: none;
+      text-decoration: none;
+      text-align: center;
+      color: ${color};
+    `,
+      {
+        '&:hover': {
+          backgroundColor: theme.colors.zeta,
+          textDecoration: "none",
+          color: theme.colors[activeColor]
+        },
+      },
+      
+      // attach the borderRadius to use the space arr in theme
+      style({
+        prop: 'borderradius',
+        cssProperty: 'borderRadius',
+        key: 'space',
+      })
+    )
 
     const LinkButtonCTA = ButtonCTA.withComponent(Link)
 
