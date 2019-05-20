@@ -2,7 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import SectionVideo from '../components/sections/section-video'
 import SectionPromises from '../components/sections/section-promises'
-import SectionQuote from '../components/sections/section-quote'
+// import SectionQuote from '../components/sections/section-quote'
+import SectionDonation from '../components/sections/section-donation'
 import SectionFounders from '../components/sections/section-founders'
 
 const IndexPage = ({ data }) => {
@@ -17,7 +18,7 @@ const IndexPage = ({ data }) => {
     <>
       <SectionVideo src={videoLoop} bg={videoBannerBG} />
       <SectionPromises />
-      <SectionQuote />
+      <SectionDonation />
       {foundingPartners && <SectionFounders partners={foundingPartners} />}
     </>
   )

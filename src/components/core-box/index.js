@@ -18,7 +18,8 @@ import {
   order,
   get,
   px,
-  num
+  num,
+  textAlign
 } from 'styled-system'
 
 const getSpace = (n, scale) => {
@@ -157,6 +158,7 @@ export const CoreBox = styled.div`
   ${space}
   ${width}
   ${fontSize}
+  ${textAlign}
   ${color}
   ${position}
   ${hidden({ display: 'block' })}
