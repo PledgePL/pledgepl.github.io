@@ -11,7 +11,6 @@ const CustomBox = styled(CoreBox)(
   props => {
     return {
       textTransform: props.textTransform,
-      textAlign: props.textAlign,
       whiteSpace: props.whiteSpace,
     }
   }
@@ -25,7 +24,7 @@ const Text = props => {
     fontSize: themeGet(`fontSizes.${props.fontSize}`, props.fontSize)(props),
     lineHeight:
       props.lineHeight ||
-      themeGet(`lineHeights.${props.fontSize}`, null)(props)
+      themeGet(`lineHeights.${props.fontSize}`, null)(props),
   }
   return <CustomBox m={0} p={0} {...props} />
 }
@@ -35,7 +34,6 @@ Text.defaultProps = {
   fontFamily: 'alpha',
   fontWeight: 'alpha',
   textTransform: null,
-  textAlign: 'inherit',
   fontSize: 'eta',
   whiteSpace: null,
   color: 'alpha',
