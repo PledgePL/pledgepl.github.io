@@ -2,7 +2,8 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { CoreBox } from '../core-box'
 import { withTheme } from 'emotion-theming'
-import { fontFamily, fontWeight, letterSpacing, themeGet } from 'styled-system'
+import { fontFamily, fontWeight, letterSpacing } from 'styled-system'
+import {themeGet} from '@styled-system/theme-get'
 
 const CustomBox = styled(CoreBox)(
   fontFamily,

@@ -74,6 +74,7 @@ export default class extends React.PureComponent {
             mr={[4, 5]}
             css={{
               maxWidth: '1200px',
+              overflow: 'hidden'
             }}
           >
             <Logo />
@@ -81,31 +82,28 @@ export default class extends React.PureComponent {
               as="nav"
               alignSelf="center"
               alignItems="center"
-              height="100%"
+              height={activeHeaderHeight}
               justifyContent="center"
               position={['fixed', 'static']}
               flexDirection={['column', 'row']}
-              hide={[!active, false]}
+              display={[active ? Nav.defaultProps.display : 'none', Nav.defaultProps.display]}
             >
-              {/* <NavItem>
-                <ButtonMenu href="/why-pledge/" onClick={this.closeMenu}>Why Pledge</ButtonMenu>
-              </NavItem> */}
               <NavItem>
                 <ButtonMenu href="/partners/" onClick={this.closeMenu}>Our Partners</ButtonMenu>
               </NavItem>
               <NavItem>
                 <ButtonMenu href="/support/" onClick={this.closeMenu}>Support</ButtonMenu>
               </NavItem>
-              <NavItem hide={[false, true]}>
+              <NavItem display={['block', 'none']}>
                 <ButtonMenu href="/join-us/" onClick={this.closeMenu}>Join Us</ButtonMenu>
               </NavItem>
             </Nav>
-            <CoreBox hide={[true, false]} css={{ justifySelf: 'flex-end' }}>
+            <CoreBox display={['none', 'block']} css={{ justifySelf: 'flex-end' }}>
               <ButtonCTA href="/join-us/" size="small">
                 Join us today
               </ButtonCTA>
             </CoreBox>
-            <CoreBox hide={[false, true]} css={{ justifySelf: 'flex-end' }}>
+            <CoreBox display={['block', 'none']} css={{ justifySelf: 'flex-end' }}>
               <ButtonHamburger
                 onClick={this.onHamburgerClick}
                 active={this.state.active}

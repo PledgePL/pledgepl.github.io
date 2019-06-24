@@ -1,5 +1,5 @@
 export const baseFontSize = 16
-const breakpoints = [768, 992, 1200]
+const breakpoints = ['768px', '992px', '1200px']
 export const lineHeightRatio = 1.5
 
 const theme = {

@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Match } from '@reach/router'
-import { themeGet } from 'styled-system'
 import Text from '../text'
 import { CoreBox, CoreFlex } from '../core-box'
 import Link from '../../utils/gatsby-link'
+import {themeGet} from '@styled-system/theme-get'
 
 const ButtonMenu = styled(CoreFlex)`
   position: relative;
