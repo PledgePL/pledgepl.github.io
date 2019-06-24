@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "pledgepl",
+  "description": "Pledge PL Website",
   "version": "1.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Simon Lindsay <simonlindsay@gmail.com>",
   "dependencies": {
     "@dylanvann/gatsby-transformer-cloudinary": "^1.0.36",
     "@emotion/core": "^10.0.10",

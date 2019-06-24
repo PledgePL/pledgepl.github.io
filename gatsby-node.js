@@ -123,8 +123,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const rowNode = getNode(node.parent)
 
     // Sanitize CMS output
-    if (!node.active) {
-      deleteNode({ node })
-    }
+    // if (!node.active) {
+    //   deleteNode({ node })
+    // }
   }
 }
