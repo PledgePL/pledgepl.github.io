@@ -5,24 +5,23 @@
   "author": "Simon Lindsay <simonlindsay@gmail.com>",
   "dependencies": {
     "@dylanvann/gatsby-transformer-cloudinary": "^1.0.36",
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.10",
-    "@fs/gatsby-plugin-drive": "^0.0.1",
-    "@styled-system/theme-get": "^5.0.6",
-    "babel-plugin-emotion": "^10.0.9",
-    "babel-preset-gatsby": "^0.1.10",
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "@styled-system/theme-get": "^5.0.12",
+    "babel-plugin-emotion": "^10.0.14",
+    "babel-preset-gatsby": "^0.2.0",
     "crypto": "^1.0.1",
-    "dotenv": "^6.1.0",
-    "emotion": "^10.0.0",
+    "dotenv": "^8.0.0",
+    "emotion": "^10.0.14",
     "emotion-normalize": "^10.0.0",
-    "emotion-server": "^10.0.0",
-    "emotion-theming": "^10.0.10",
-    "gatsby": "^2.10.0",
-    "gatsby-image": "^2.2.1",
+    "emotion-server": "^10.0.14",
+    "emotion-theming": "^10.0.14",
+    "gatsby": "^2.11.6",
+    "gatsby-image": "^2.2.3",
     "gatsby-plugin-brotli": "^1.0.1",
     "gatsby-plugin-emotion": "^4.0.6",
-    "gatsby-plugin-google-analytics": "^2.0.18",
-    "gatsby-plugin-google-fonts": "^0.0.4",
+    "gatsby-plugin-google-analytics": "^2.1.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.0",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-no-sourcemaps": "^2.0.1",
@@ -32,13 +31,13 @@
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sharp": "^2.2.1",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
-    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-source-filesystem": "^2.1.1",
     "gatsby-source-google-sheets": "^1.1.1",
     "gatsby-transformer-sharp": "^2.1.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "styled-system": "^5.0.10"
+    "styled-system": "^5.0.12"
   },
   "keywords": [
     "gatsby"
@@ -52,9 +51,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@emotion/babel-preset-css-prop": "^10.0.9",
-    "hex-rgb": "^4.0.0",
-    "prettier": "^1.14.2"
+    "@emotion/babel-preset-css-prop": "^10.0.14",
+    "hex-rgb": "^4.1.0",
+    "prettier": "^1.18.2"
   },
   "repository": {
     "type": "git",

@@ -43,7 +43,7 @@ export default PartnersPage
 export const query = graphql`
   query {
     foundingPartners: allGoogleSheetPartnersRow(
-      filter: { partnerCategory: { eq: "Founding" } }
+      filter: { partnerCategory: { eq: "Founding" }, active: {eq: true}}
       sort: { fields: [partnerName] }
     ) {
       edges {
@@ -67,7 +67,7 @@ export const query = graphql`
       }
     }
     partners: allGoogleSheetPartnersRow(
-      filter: { partnerCategory: { eq: "Partner" } }
+      filter: { partnerCategory: { eq: "Partner" }, active: {eq: true} }
       sort: { fields: [partnerName] }
     ) {
       edges {
@@ -91,7 +91,7 @@ export const query = graphql`
       }
     }
     supportingPartners: allGoogleSheetPartnersRow(
-      filter: { partnerCategory: { eq: "Supporting" } }
+      filter: { partnerCategory: { eq: "Supporting" }, active: {eq: true} }
       sort: { fields: [partnerName] }
     ) {
       edges {

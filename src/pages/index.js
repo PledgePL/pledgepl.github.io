@@ -41,7 +41,7 @@ export const query = graphql`
       publicURL
     }
     foundingPartners: allGoogleSheetPartnersRow(
-      filter: { partnerCategory: { eq: "Founding" } }
+      filter: { partnerCategory: { eq: "Founding" }, active: {eq: true} }
     ) {
       edges {
         node {

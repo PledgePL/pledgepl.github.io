@@ -111,20 +111,3 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
   // by default return empty object
   return {}
 }
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  if (node.internal.type === 'googleSheetPartnersRow') {
-    const {
-      createNodeField,
-      createNode,
-      createParentChildLink,
-      deleteNode,
-    } = actions
-    const rowNode = getNode(node.parent)
-
-    // Sanitize CMS output
-    // if (!node.active) {
-    //   deleteNode({ node })
-    // }
-  }
-}
