@@ -100,7 +100,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-no-sourcemaps',
     },
-    /*{
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
@@ -116,7 +116,7 @@ module.exports = {
           },
         ],
       },
-    },*/
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
