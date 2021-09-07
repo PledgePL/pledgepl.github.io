@@ -18,7 +18,6 @@ const SectionFAQ = data => {
     data && data.graphCost && data.graphCost.childImageSharp
       ? data.graphCost.childImageSharp
       : null
-  console.log("graphCost", graphCost)
   const graphCoverage =
     data && data.graphCoverage && data.graphCoverage.childImageSharp
       ? data.graphCoverage.childImageSharp

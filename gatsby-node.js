@@ -36,7 +36,6 @@ const getCloundinaryUrl = (id, w = 900, svg = false) =>
   }/v1542411695/google-drive/${id}`
 
 exports.setFieldsOnGraphQLNodeType = ({ type }) => {
-  console.log("Type --->", type)
   if (type.name === `GoogleSpreadsheetPartners`) {
     return {
       fluid: {
