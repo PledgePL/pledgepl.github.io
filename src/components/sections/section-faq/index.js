@@ -1,10 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { CoreBox, CoreGrid } from '../../core-box'
 import Text from '../../text'
 import Details from '../../details'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const HR = styled(CoreBox)`
   border: none;
@@ -18,6 +18,7 @@ const SectionFAQ = data => {
     data && data.graphCost && data.graphCost.childImageSharp
       ? data.graphCost.childImageSharp
       : null
+  console.log("graphCost", graphCost)
   const graphCoverage =
     data && data.graphCoverage && data.graphCoverage.childImageSharp
       ? data.graphCoverage.childImageSharp
@@ -177,15 +178,12 @@ const SectionFAQ = data => {
               money, that it takes to recruit and replace an employee.
             </p>
             <p>
-              <Img
-                fluid={graphCost.fluid}
-                fadeIn={true}
+              <GatsbyImage image={getImage(graphCost)} fadeIn={true}
                 critical={false}
                 alt="Graph of the cost of parental leave"
                 style={{
                   maxWidth: '500px',
-                }}
-              />
+                }} />
             </p>
             <p>
               As you can see, the cost to recruit and replace an employee is
@@ -204,15 +202,12 @@ const SectionFAQ = data => {
               short-term disability payments to qualified employees.
             </p>
             <p>
-              <Img
-                fluid={graphCoverage.fluid}
-                fadeIn={true}
+              <GatsbyImage image={getImage(graphCoverage)} fadeIn={true}
                 critical={false}
                 alt="Graph of the short-term disability coverage"
                 style={{
-                  maxWidth: '800px',
-                }}
-              />
+                  maxWidth: '500px',
+                }} />
             </p>
             <p>
               Qualification depends on a employer’s insurance policy carrier’s
@@ -297,17 +292,13 @@ export default () => {
           graphCost: file(name: { eq: "graph-cost" }) {
             childImageSharp {
               id
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
+              gatsbyImageData
             }
           }
           graphCoverage: file(name: { eq: "graph-coverage" }) {
             childImageSharp {
               id
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
+              gatsbyImageData
             }
           }
         }

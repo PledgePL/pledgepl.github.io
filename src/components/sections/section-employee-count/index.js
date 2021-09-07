@@ -11,7 +11,7 @@ const SectionEmployeeCount = ({ count, date }) => {
     <StaticQuery
       query={graphql`
         query EmployeeCountQuery {
-          allGoogleSheetPartnersRow(filter: { active: { eq: true } }) {
+          allGoogleSpreadsheetPartners(filter: { active: { eq: "TRUE" } }) {
             edges {
               node {
                 id
@@ -22,8 +22,15 @@ const SectionEmployeeCount = ({ count, date }) => {
         }
       `}
       render={data => {
-        const employeeCount = data.allGoogleSheetPartnersRow.edges.reduce(
-          (prev, next) => prev + next.node.employeeCount,
+        const employeeCount = data.allGoogleSpreadsheetPartners.edges.reduce(
+          (prev, next) => {
+            const employeeCountInt = parseInt(next.node.employeeCount, 10)
+            if (!isNaN(employeeCountInt)) {
+              return prev + employeeCountInt
+            } else {
+              return prev
+            }
+          },
           0
         )
         return (

@@ -42,8 +42,29 @@ export default PartnersPage
 
 export const query = graphql`
   query {
-    foundingPartners: allGoogleSheetPartnersRow(
-      filter: { partnerCategory: { eq: "Founding" }, active: {eq: true}}
+    foundingPartners: allGoogleSpreadsheetPartners(filter: {partnerCategory: {eq: "Founding"}, active: {eq: "TRUE"}}, sort: {fields: [partnerName]}) {
+      edges {
+        node {
+          id
+          active
+          partnerName
+          url
+          policyUrl
+          fluid {
+            aspectRatio
+            width
+            height
+            src
+            srcSet
+            originalName
+            presentationWidth
+            presentationHeight
+          }
+        }
+      }
+    }
+    partners: allGoogleSpreadsheetPartners(
+      filter: { partnerCategory: { eq: "Partner" }, active: {eq: "TRUE"} }
       sort: { fields: [partnerName] }
     ) {
       edges {
@@ -66,32 +87,8 @@ export const query = graphql`
         }
       }
     }
-    partners: allGoogleSheetPartnersRow(
-      filter: { partnerCategory: { eq: "Partner" }, active: {eq: true} }
-      sort: { fields: [partnerName] }
-    ) {
-      edges {
-        node {
-          id
-          active
-          partnerName
-          url
-          policyUrl
-          fluid {
-            aspectRatio
-            width
-            height
-            src
-            srcSet
-            originalName
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-    }
-    supportingPartners: allGoogleSheetPartnersRow(
-      filter: { partnerCategory: { eq: "Supporting" }, active: {eq: true} }
+    supportingPartners: allGoogleSpreadsheetPartners(
+      filter: { partnerCategory: { eq: "Supporting" }, active: {eq: "TRUE"} }
       sort: { fields: [partnerName] }
     ) {
       edges {

@@ -23,7 +23,7 @@ const getIdFromGoogleDrive = url => {
   } else {
     id = parts[5].split('/')
     //Using sort to get the id as it is the longest element.
-    const sortArr = id.sort(function(a, b) {
+    const sortArr = id.sort(function (a, b) {
       return b.length - a.length
     })
     id = sortArr[0]
@@ -32,12 +32,12 @@ const getIdFromGoogleDrive = url => {
 }
 
 const getCloundinaryUrl = (id, w = 900, svg = false) =>
-  `https://res.cloudinary.com/pledgepl/image/upload/f_${
-    svg ? 'svg' : `auto,w_${w},ar_1:1,c_pad,dpr_auto`
+  `https://res.cloudinary.com/pledgepl/image/upload/f_${svg ? 'svg' : `auto,w_${w},ar_1:1,c_pad,dpr_auto`
   }/v1542411695/google-drive/${id}`
 
 exports.setFieldsOnGraphQLNodeType = ({ type }) => {
-  if (type.name === `googleSheetPartnersRow`) {
+  console.log("Type --->", type)
+  if (type.name === `GoogleSpreadsheetPartners`) {
     return {
       fluid: {
         type: new GraphQLObjectType({
@@ -93,10 +93,10 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
             src: id ? getCloundinaryUrl(id, 700, isSvg) : '',
             srcSet: id && !isSvg
               ? `${getCloundinaryUrl(id, 350, isSvg)} 350w,${getCloundinaryUrl(
-                  id,
-                  700,
-                  isSvg
-                )} 700w`
+                id,
+                700,
+                isSvg
+              )} 700w`
               : '',
             originalName: source.logoUrl,
             presentationWidth: 700,

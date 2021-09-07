@@ -40,8 +40,8 @@ export const query = graphql`
       id
       publicURL
     }
-    foundingPartners: allGoogleSheetPartnersRow(
-      filter: { partnerCategory: { eq: "Founding" }, active: {eq: true} }
+    foundingPartners: allGoogleSpreadsheetPartners(
+      filter: { partnerCategory: { eq: "Founding" }, active: {eq: "TRUE"} }
     ) {
       edges {
         node {

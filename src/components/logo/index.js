@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { CoreFlex } from '../core-box'
 import Link from '../../utils/gatsby-link'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const ImgLink = styled(CoreFlex)`
   background-color: transparent;
@@ -33,12 +34,8 @@ const Logo = ({ type, size }) => {
                 name
                 childImageSharp {
                   id
-                  large: fixed(height: 56) {
-                    ...GatsbyImageSharpFixed_withWebp_noBase64
-                  }
-                  small: fixed(height: 43) {
-                    ...GatsbyImageSharpFixed_withWebp_noBase64
-                  }
+                  large: gatsbyImageData(height: 56)
+                  small: gatsbyImageData(height: 43)
                 }
               }
             }
@@ -74,7 +71,8 @@ const Logo = ({ type, size }) => {
 
         return (
           <ImgLink href="/" alt="Home">
-            <Img
+
+            <GatsbyImage image={getImage(src)}
               fixed={src}
               fadeIn={false}
               critical={true}
@@ -85,8 +83,7 @@ const Logo = ({ type, size }) => {
                 objectFit: 'contain',
                 objectPosition: 'center left',
               }}
-              alt="Home"
-            />
+              alt="Home" />
           </ImgLink>
         )
       }}

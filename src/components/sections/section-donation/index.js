@@ -1,10 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { CoreBox, CoreFlex, CoreGrid } from '../../core-box'
-import Img from 'gatsby-image'
 import Text from '../../text'
 import ButtonCTA from '../../button-cta'
 import Link from '../../../utils/gatsby-link'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const SectionDonation = () => {
   return (
@@ -14,33 +14,25 @@ const SectionDonation = () => {
           aclu: file(name: { eq: "american-civil-liberties-union-logo" }) {
             childImageSharp {
               id
-              fixed(width: 100) {
-                ...GatsbyImageSharpFixed_withWebp_noBase64
-              }
+              gatsbyImageData(width: 100)
             }
           }
           gateway: file(name: { eq: "gateway-womens-access-fund" }) {
             childImageSharp {
               id
-              fixed(width: 100) {
-                ...GatsbyImageSharpFixed_withWebp_noBase64
-              }
+              gatsbyImageData(width: 100)
             }
           }
           yellowhammer: file(name: { eq: "yellowhammer-fund" }) {
             childImageSharp {
               id
-              fixed(width: 100) {
-                ...GatsbyImageSharpFixed_withWebp_noBase64
-              }
+              gatsbyImageData(width: 100)
             }
           }
           nnaf: file(name: { eq: "national-network-of-abortion-funds" }) {
             childImageSharp {
               id
-              fixed(width: 100) {
-                ...GatsbyImageSharpFixed_withWebp_noBase64
-              }
+              gatsbyImageData(width: 100)
             }
           }
         }
@@ -106,20 +98,14 @@ const SectionDonation = () => {
                     css={{ justifyItems: 'center' }}
                   >
                     <Link href={url} css={{ lineHeight: 0 }}>
-                      <Img
-                        fixed={image.childImageSharp.fixed}
-                        fadeIn={false}
-                        critical={true}
-                        style={{
-                          maxHeight: '100%',
-                          minHeight: '100px',
-                        }}
-                        imgStyle={{
-                          objectFit: 'contain',
-                          objectPosition: 'center left',
-                        }}
-                        alt={name}
-                      />
+                      <GatsbyImage image={getImage(image.childImageSharp)} alt={name} style={{
+                        maxHeight: '100%',
+                        minHeight: '100px',
+                      }} imgStyle={{
+                        objectFit: 'contain',
+                        objectPosition: 'center left',
+                      }} fadeIn={false}
+                        critical={true} />
                     </Link>
                     <CoreFlex
                       flexDirection="column"
