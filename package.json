@@ -28,7 +28,7 @@
     "gatsby-plugin-polyfill-io": "^1.0.5",
     "gatsby-plugin-prefetch-google-fonts": "^1.0.11",
     "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-plugin-sharp": "^2.0.7",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-source-google-sheets": "^1.1.1",
